@@ -1,0 +1,133 @@
+[id=footer] {
+    margin: 20px 0 100px 0;
+
+    @include response-max($laptop-landscape) {
+        margin: 32px 0;
+    }
+
+    * {
+        color: $color-font;
+    }
+
+    .menu {
+        li {
+            a {
+                padding: 12px 24px;
+            }
+        }
+    }
+}
+
+.footer__body {
+    background: rgb(27, 6, 66);
+    background: linear-gradient(90deg, rgba(27, 6, 66, 1) 15%, rgba(16, 10, 28, 1) 51%, rgba(51, 7, 54, 1) 89%);
+    border-radius: 20px;
+    padding: 32px;
+}
+
+.footer__row {
+    width: 100%;
+    display: flex;
+
+    @include response-min($laptop-landscape - 1) {
+        justify-content: space-between;
+    }
+
+    @include response-max($laptop-landscape) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.footer__col {
+    width: 100%;
+
+    &:nth-child(2), &:nth-child(3) {
+        display: flex;
+        justify-content: center;
+    }
+
+    @include response-max($laptop-landscape) {
+        &:not(:nth-child(2)):not(:last-child) {
+            margin-bottom: 32px;
+        }
+
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.footer__logo {
+    margin-bottom: 20px;
+    height: 40px;
+    width: 100px;
+}
+
+.footer__text {
+    max-width: 264px;
+    line-height: 22px;
+}
+
+.socials {
+    margin: 0 -7px;
+    display: flex;
+
+    @include response-min($laptop-landscape - 1) {
+        justify-content: flex-end;
+    }
+
+    @include response-max($laptop-landscape) {
+        justify-content: center;
+        width: 100%;
+    }
+
+    @include response-max($mobile) {
+        justify-content: space-between;
+    }
+}
+
+.social__item {
+    margin: 0 7px;
+    width: 27px;
+    height: 27px;
+    position: relative;
+    z-index: 2;
+
+    @include pointer;
+
+    a {
+        height: 100%;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        transition: .3s ease-in-out;
+        width: 1px;
+        height: 1px;
+        border-radius: 50%;
+        box-shadow: 0 0 9px 12px #ba00b25c;
+        opacity: 0;
+    }
+
+    @include response-min($desktop) {
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.footer__copyright {
+    border-top: 1px solid #fff;
+    font-size: 16px;
+    line-height: 22.4px;
+    padding-top: 32px;
+    margin-top: 32px;
+    text-align: center;
+}
