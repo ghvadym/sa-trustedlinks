@@ -35,7 +35,8 @@ add_action('after_setup_theme', 'after_setup_theme_call');
 function after_setup_theme_call()
 {
     register_nav_menus([
-        'main_header' => __('Main Header', DOMAIN)
+        'main_header' => __('Main Header', DOMAIN),
+        'main_footer' => __('Main Footer', DOMAIN)
     ]);
 
     add_post_type_support('page', 'excerpt');

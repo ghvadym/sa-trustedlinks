@@ -16,7 +16,7 @@ body {
     overflow-x: hidden;
     color: $color-font;
     font-family: 'Hind', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.6rem;
     display: flex;
     flex-direction: column;
@@ -29,48 +29,12 @@ body {
         }
     }
 
-    @include response-min($header-responsive + 1) {
-        &.home {
-            main {
-                padding-top: 100px;
-            }
-        }
-
-        &:not(.home) {
-            main {
-                padding-top: 40px;
-            }
-        }
+    &.home {
+        background-color: rgba(242, 242, 242, 1);
     }
 
-    @include response-max($header-responsive) {
-       &.home {
-            main {
-                padding-top: 80px;
-            }
-        }
-
-        &:not(.home) {
-            main {
-                padding-top: 120px;
-            }
-        }
-    }
-
-    @include response-min($laptop-portrait) {
-        &.home {
-            background: url('../img/bg-landing.png') bottom / cover no-repeat rgba(23, 2, 36, 0.4);
-        }
-    }
-
-    @include response-min($laptop-portrait) {
-        &:not(.home) {
-            background: url('../img/bg-all.png') top / cover no-repeat rgba(23, 2, 36, 0.4);
-        }
-    }
-
-    @include response-max($mobile) {
-        background: url('../img/bg-all-mob.png') top / cover no-repeat rgba(23, 2, 36, 0.4);
+    &:not(.home) {
+        background-color: rgba(18, 18, 18, 1);
     }
 
     @media (max-width: $mobile) {
@@ -144,7 +108,7 @@ img {
 }
 
 .logo {
-    max-width: 101px;
+    max-height: 17px;
     flex-shrink: 0;
 
     img {
@@ -186,7 +150,7 @@ img {
 }
 
 .container {
-    max-width: 1304px;
+    max-width: 1362px;
     width: 100%;
     margin: 0 auto;
     padding: 0 32px;
@@ -256,8 +220,7 @@ section {
 }
 
 .btn {
-    background: rgb(53, 4, 119);
-    background: linear-gradient(90deg, rgba(53, 4, 119, 1) 17%, rgba(99, 5, 117, 1) 74%);
+    background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
     box-shadow: $box-shadow;
     display: inline-block;
     font-family: 'Bruno Ace SC', sans-serif;
@@ -268,7 +231,7 @@ section {
     white-space: nowrap;
     font-weight: 400;
     text-align: center;
-    padding: 14px 25px;
+    padding: 16px 25px;
     position: relative;
     border: none;
     border-radius: 24px;

@@ -14,9 +14,9 @@ if (!function_exists('dd')) {
 if (!function_exists('get_template_part_var')) {
     function get_template_part_var($template, $data = [])
     {
-//        if (!file_exists(get_template_directory() . "/template-parts/{$template}.php")) {
-//            return;
-//        }
+        if (!file_exists(get_template_directory() . "/template-parts/{$template}.php")) {
+            return;
+        }
 
         extract($data);
         require locate_template("template-parts/{$template}.php");
@@ -104,6 +104,19 @@ function _get_field($field, string $class = '', string $tag = 'div')
     }
 
     echo sprintf('<%1$s%2$s>%3$s</%1$s>', $tag, $class, esc_html($field));
+}
+
+function acf_option(string $key = '')
+{
+    if (!function_exists('get_field')) {
+        return null;
+    }
+
+    if (!$key) {
+        return null;
+    }
+
+    return get_field($key, 'options');
 }
 
 function is_my_ip(): bool

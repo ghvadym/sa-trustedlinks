@@ -1,46 +1,25 @@
 [id=header] {
     width: 100%;
-    padding: 20px 0;
-    background: rgba(1, 0, 8, 0.1);
-    box-shadow: 0 8px 20px 0 rgba(26, 3, 48, 0.2);
+    position: fixed;
+    top: 24px;
+    left: 0;
+    z-index: 10;
 
     a {
         color: $color-font;
-        font-family: 'Bruno Ace SC', sans-serif;
+        font-family: 'Inter', sans-serif;
         letter-spacing: 2px;
         font-size: 16px;
         white-space: nowrap;
     }
 
     @media (max-width: $header-responsive) {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 10;
         padding: 16px 0;
         transition: $transition;
 
         .header__menu {
             width: 100vw;
             height: 100vh;
-            background: rgba(1, 0, 8, 0.9);
-            backdrop-filter: blur(3px);
-        }
-    }
-}
-
-@media (max-width: $header-responsive) {
-    body.home [id=header] {
-        background: rgba(1, 0, 8, 0.9);
-        backdrop-filter: blur(3px);
-    }
-
-    body:not(.home) {
-        [id=header] {
-            &._scrolled {
-                background: rgba(1, 0, 8, 0.9);
-                backdrop-filter: blur(3px);
-            }
         }
     }
 }
@@ -48,10 +27,25 @@
 .header__row {
     @include flex-center;
     justify-content: space-between;
+
+    width: 100%;
+    padding: 20px 36px;
+    border-radius: 48px;
+
+    @include response-max($header-responsive) {
+        padding: 20px 16px;
+    }
+}
+
+[id=header]._scrolled .header__row {
+    background: rgba(1, 0, 8, 0.1);
+    background: linear-gradient(148.58deg, rgba(101, 101, 101, 0.3) 0%, rgba(37, 37, 37, 0.3) 100%);
+    backdrop-filter: blur(4px);
 }
 
 .header__menu {
     margin-left: auto;
+    position: relative;
 
     ul {
         @include flex-center;
@@ -100,7 +94,7 @@
 
     @include response-max($header-responsive) {
         display: none;
-        padding: 119px 15px 15px;
+        padding: 119px 15px 50px 15px;
         position: fixed;
         left: 0;
         top: 0;
@@ -119,17 +113,31 @@
                 }
 
                 a {
-                    font-size: 18px;
                     padding: 16px 24px;
                 }
 
                 &.menu-item-btn {
-                    margin-top: 70px;
+                    margin-top: 48px;
                     max-width: 296px;
                     width: 100%;
                 }
             }
         }
+    }
+}
+
+.header__menu_bg {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+    @media (max-width: $header-responsive) {
+        display: block;
     }
 }
 
@@ -145,18 +153,21 @@
     @include pointer;
 
     max-width: 20px;
+}
 
-    .header_close_icon {
-        display: none;
-    }
+.header_close_icon {
+    display: none;
+    width: 16px;
+    height: 18px;
+    position: absolute;
+    top: calc(100% - 37px);
+    left: 50%;
+    transform: translateX(-50%);
+    @include pointer;
 }
 
 [id=header] {
     &.active-menu {
-        .header_burger_icon {
-            display: none;
-        }
-
         .header_close_icon {
             display: block;
             animation: fadeId $transition;
