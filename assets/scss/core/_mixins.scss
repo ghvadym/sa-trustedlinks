@@ -68,7 +68,6 @@
     }
 
     h3, h4, h5, h6 {
-        font-family: 'Hind', sans-serif;
         font-weight: 500;
     }
 
@@ -158,4 +157,10 @@
             min-width: 100% !important;
         }
     }
+}
+
+@mixin font-color-main() {
+    background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

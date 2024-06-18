@@ -15,11 +15,11 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     color: $color-font;
-    font-family: 'Hind', sans-serif;
     font-weight: 400;
     font-size: 1.6rem;
     display: flex;
     flex-direction: column;
+    font-family: 'Inter', sans-serif;
 
     &:not(.home) {
         section {
@@ -64,7 +64,6 @@ h3,
     margin: 0 0 15px;
     font-weight: 600;
     line-height: 1.2;
-    font-family: 'Bruno Ace SC', sans-serif;
     letter-spacing: 2px;
 }
 
@@ -187,6 +186,10 @@ section {
     display: block;
 }
 
+.d-none {
+    display: none !important;
+}
+
 .d-flex {
     display: flex;
     align-items: center;
@@ -223,7 +226,6 @@ section {
     background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
     box-shadow: $box-shadow;
     display: inline-block;
-    font-family: 'Bruno Ace SC', sans-serif;
     letter-spacing: 2px;
     color: $color-font;
     font-size: 1.6rem;
@@ -235,8 +237,8 @@ section {
     position: relative;
     border: none;
     border-radius: 24px;
-    transition: ease-in-out 0.2s;
-    text-transform: capitalize;
+    transition: $transition;
+    text-transform: uppercase;
 
     &.disabled, &[disabled] {
         opacity: 0.5;
@@ -257,6 +259,14 @@ section {
         min-width: 100%;
         width: 100%;
     }
+}
+
+.btn_light {
+    @extend .btn;
+
+    background: rgba(255, 255, 255, 1);
+    color: $color-font-main;
+    font-weight: 600;
 }
 
 .breadcrumbs {

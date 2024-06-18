@@ -6,14 +6,13 @@
         const burgerClose = $('.header_close_icon');
         const header = $('#header');
         const isDesktop = $(window).width() > 1024;
-        
-        if ($(window).width() < 1250) {
-            const headerMenu = $('#header');
+
+        if (header.length) {
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 50) {
-                    headerMenu.addClass('_scrolled');
+                    header.addClass('_scrolled');
                 } else {
-                    headerMenu.removeClass('_scrolled');
+                    header.removeClass('_scrolled');
                 }
             });
         }

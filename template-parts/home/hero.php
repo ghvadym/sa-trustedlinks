@@ -1,13 +1,12 @@
 <?php
-return;
 if (empty($fields)) {
     return;
 }
 
 $bgUrl = !empty($fields['hero_bg_desk']) ? wp_get_attachment_image_url($fields['hero_bg_desk'], 'large') : '';
-$bgMob = !empty($fields['hero_bg_mob']) ? wp_get_attachment_image_url($fields['hero_bg_mob'], 'large') : '';
+$bgMobUrl = !empty($fields['hero_bg_mob']) ? wp_get_attachment_image_url($fields['hero_bg_mob'], 'large') : '';
 $earthUrl = !empty($fields['hero_earth']) ? wp_get_attachment_image_url($fields['hero_earth'], 'large') : '';
-$earthMobUrl = !empty($fields['hero_earth_mob']) ? wp_get_attachment_image_url($fields['hero_earth_mob'], 'large') : '';
+//$earthMobUrl = !empty($fields['hero_earth_mob']) ? wp_get_attachment_image_url($fields['hero_earth_mob'], 'large') : '';
 $flyLeftImbUrl = !empty($fields['hero_fly_img_left']) ? wp_get_attachment_image_url($fields['hero_fly_img_left'], 'large') : '';
 $flyRightImbUrl = !empty($fields['hero_fly_img_right']) ? wp_get_attachment_image_url($fields['hero_fly_img_right'], 'large') : '';
 $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($fields['hero_spaceman'], 'large') : '';
@@ -16,21 +15,60 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
 <section class="hero_section">
     <div class="hero__bg">
         <?php if (wp_is_mobile()) { ?>
-            <?php if ($hero_bg_mobile) { ?>
-                <img src="<?php echo esc_url($hero_bg_mobile); ?>" alt="Hero Image">
+            <?php if ($bgUrl) { ?>
+                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_desk'])); ?>">
             <?php } ?>
         <?php } else { ?>
-            <?php if ($hero_bg_url) { ?>
-                <img src="<?php echo esc_url($hero_bg_url); ?>" alt="Hero Image">
+            <?php if ($bgUrl) { ?>
+                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_mob'])); ?>">
             <?php } ?>
+        <?php } ?>
+        <?php if ($earthUrl) { ?>
+            <img src="<?php echo esc_url($earthUrl); ?>" class="hero__bg_earth" alt="<?php echo esc_attr(get_the_title($fields['hero_earth'])); ?>">
+        <?php } ?>
+        <?php if ($spacemanUrl) { ?>
+            <img src="<?php echo esc_url($spacemanUrl); ?>" class="hero__bg_spaceman" alt="<?php echo esc_attr(get_the_title($fields['hero_spaceman'])); ?>">
         <?php } ?>
     </div>
     <div class="container">
+        <div class="hero__images">
+            <?php if ($flyLeftImbUrl) { ?>
+                <img src="<?php echo esc_url($flyLeftImbUrl); ?>" class="hero__bg_fly_left" alt="<?php echo esc_attr(get_the_title($fields['hero_fly_img_left'])); ?>">
+            <?php } ?>
+            <?php if ($flyRightImbUrl) { ?>
+                <img src="<?php echo esc_url($flyRightImbUrl); ?>" class="hero__bg_fly_right" alt="<?php echo esc_attr(get_the_title($fields['hero_fly_img_right'])); ?>">
+            <?php } ?>
+        </div>
         <div class="hero__content">
-            <?php _get_field($fields['hero_title'], 'hero__title', 'h1'); ?>
-            <?php if (!empty($fields['hero_text'])) { ?>
-                <div class="hero__subtitle">
-                    <?php echo $fields['hero_text']; ?>
+            <?php if (!empty($fields['hero_title'])) { ?>
+                <h1 class="hero__title">
+                    <?php echo $fields['hero_title']; ?>
+                </h1>
+            <?php } ?>
+            <?php _get_field($fields['hero_text'] ?? '', 'hero__text'); ?>
+            <?php _get_field($fields['hero_link_text'] ?? '', 'hero__btn btn_light'); ?>
+            <?php _get_field($fields['hero_subtitle'] ?? '', 'hero__subtitle'); ?>
+            <?php
+            $partners = acf_option('partners');
+            if (!empty($partners)) { ?>
+                <div class="hero__partners">
+                    <?php foreach ($partners as $partnerImg) {
+                        $partnerImgId = $partnerImg['img'] ?? '';
+
+                        if (!$partnerImgId) {
+                            continue;
+                        }
+
+                        $partnerImgUrl = wp_get_attachment_image_url($partnerImgId, 'medium');
+
+                        if (!$partnerImgUrl) {
+                            continue;
+                        }
+                        ?>
+                        <div class="hero__partner">
+                            <img src="<?php echo esc_url($partnerImgUrl); ?>" alt="Partner">
+                        </div>
+                    <?php } ?>
                 </div>
             <?php } ?>
         </div>

@@ -214,10 +214,7 @@
         line-height: 18px;
         text-transform: uppercase;
         display: block;
-
-        background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        @include font-color-main;
     }
 
     @include response-max($mobile) {

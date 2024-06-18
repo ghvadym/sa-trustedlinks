@@ -5,6 +5,10 @@
     left: 0;
     z-index: 10;
 
+    .container {
+        padding: 0 16px;
+    }
+
     a {
         color: $color-font;
         font-family: 'Inter', sans-serif;
@@ -14,13 +18,17 @@
     }
 
     @media (max-width: $header-responsive) {
-        padding: 16px 0;
         transition: $transition;
 
         .header__menu {
             width: 100vw;
             height: 100vh;
         }
+    }
+
+    @include response-max($laptop-portrait) {
+        top: 0;
+        padding: 16px 0;
     }
 }
 
@@ -31,6 +39,7 @@
     width: 100%;
     padding: 20px 36px;
     border-radius: 48px;
+    transition: $transition;
 
     @include response-max($header-responsive) {
         padding: 20px 16px;
@@ -39,8 +48,8 @@
 
 [id=header]._scrolled .header__row {
     background: rgba(1, 0, 8, 0.1);
-    background: linear-gradient(148.58deg, rgba(101, 101, 101, 0.3) 0%, rgba(37, 37, 37, 0.3) 100%);
-    backdrop-filter: blur(4px);
+    background: linear-gradient(148.58deg, rgb(101 101 101 / 60%) 0%, rgb(37 37 37 / 60%) 100%);
+    backdrop-filter: blur(10px);
 }
 
 .header__menu {
@@ -124,6 +133,16 @@
             }
         }
     }
+
+    @include response-max($mobile) {
+        .menu {
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 }
 
 .header__menu_bg {
@@ -160,7 +179,7 @@
     width: 16px;
     height: 18px;
     position: absolute;
-    top: calc(100% - 37px);
+    bottom: 37px;
     left: 50%;
     transform: translateX(-50%);
     @include pointer;
@@ -176,6 +195,11 @@
         .header__menu {
             display: block;
             animation: fadeId $transition;
+        }
+
+        .header__row {
+            backdrop-filter: none;
+            background: none;
         }
     }
 
