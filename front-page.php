@@ -13,5 +13,6 @@ get_template_part_var('home/hero', [
 ]);
 
 get_template_part_var('home/how-we-work');
+get_template_part_var('home/case-studies');
 
 get_footer();

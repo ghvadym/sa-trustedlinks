@@ -1,35 +1,20 @@
 <?php
 
-//add_action('init', 'create_post_types');
+add_action('init', 'create_post_types');
 
 function create_post_types()
 {
-    /*create_post_type('blog', [
-        'menu_position' => 9,
-        'labels'        => [
-            'name'          => __('Blog', DOMAIN),
-            'singular_name' => __('Blog', DOMAIN),
-            'menu_name'     => __('Blog', DOMAIN)
+    create_post_type('case_study', [
+        'publicly_queryable' => false,
+        'menu_position'      => 9,
+        'menu_icon'          => 'dashicons-groups',
+        'supports'           => ['title', 'thumbnail'],
+        'labels'             => [
+            'name'          => __('Case Study', DOMAIN),
+            'singular_name' => __('Case Study', DOMAIN),
+            'menu_name'     => __('Case Studies', DOMAIN)
         ]
-    ]);*/
-
-    /*create_taxonomy('language', 'post', [
-        'labels' => [
-            'name'              => __('Language', DOMAIN),
-            'singular_name'     => __('Language', DOMAIN),
-            'search_items'      => __('Search Language', DOMAIN),
-            'all_items'         => __('All Languages', DOMAIN),
-            'view_item '        => __('View Language', DOMAIN),
-            'parent_item'       => __('Parent Language', DOMAIN),
-            'parent_item_colon' => __('Parent Language:', DOMAIN),
-            'edit_item'         => __('Edit Language', DOMAIN),
-            'update_item'       => __('Update Language', DOMAIN),
-            'add_new_item'      => __('Add New Language', DOMAIN),
-            'new_item_name'     => __('New Niche Language', DOMAIN),
-            'menu_name'         => __('Languages', DOMAIN),
-            'back_to_items'     => __('← Back to Languages', DOMAIN)
-        ],
-    ]);*/
+    ]);
 }
 
 
