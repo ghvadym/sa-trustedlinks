@@ -12,4 +12,6 @@ get_template_part_var('home/hero', [
     'fields' => $fields
 ]);
 
+get_template_part_var('home/how-we-work');
+
 get_footer();

@@ -34,12 +34,6 @@
         }
 
         li {
-            &.no-link {
-                a {
-                    pointer-events: none;
-                }
-            }
-
             a {
                 font-size: 15px;
                 font-weight: 600;
@@ -50,6 +44,10 @@
                 background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+
+                &[href='#'] {
+                    pointer-events: none;
+                }
             }
         }
     }

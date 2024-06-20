@@ -186,3 +186,94 @@
         }
     }
 }
+
+.how_we_work__wrap {
+    margin-top: 64px;
+}
+
+.how_we_work {
+    background-color: rgba(242, 242, 242, 1);
+}
+
+.how_we_work__title {
+    @include font-color-main;
+}
+
+.how_we_work__subtitle {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $color-font-dark;
+    max-width: 592px;
+}
+
+.how_we_work__slider {
+    margin: 0 -12px;
+}
+
+.card_planet__img {
+    position: absolute;
+    top: -20%;
+    z-index: 2;
+
+    img {
+        z-index: 2;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 0 0 70px 25px rgba(119, 76, 222, 1);
+    }
+}
+
+.card_planet {
+    max-width: 292px;
+    min-height: 412px;
+    width: 100%;
+    margin: 0 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: rgb(18, 18, 18);
+    display: flex;
+
+    &:nth-child(1), &:nth-child(2) {
+        .card_planet__img {
+            right: -40%;
+        }
+    }
+
+    &:nth-child(3), &:nth-child(4) {
+        .card_planet__img {
+            left: -40%;
+        }
+    }
+}
+
+.card_planet__body {
+    color: $color-font;
+    padding: 24px;
+    margin-top: auto;
+}
+
+.card_planet__title {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+    margin-bottom: 16px;
+}
+
+.card_planet__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
