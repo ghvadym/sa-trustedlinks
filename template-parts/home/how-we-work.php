@@ -27,24 +27,24 @@ if (empty($cards)) {
                             $imageUrl = wp_get_attachment_image_url($imageId, 'medium');
                         }
                         ?>
-                        <div class="card_planet swiper-slide">
-                            <div class="card_planet__body">
+                        <div class="card_simple swiper-slide">
+                            <div class="card_simple__body">
                                 <?php if (!empty($imageUrl)) { ?>
-                                    <div class="card_planet__img">
+                                    <div class="card_simple__img">
                                         <img src="<?php echo esc_url($imageUrl); ?>" alt="<?php echo get_the_title($imageId); ?>">
                                     </div>
                                 <?php } ?>
-                                <div class="card_planet__title">
+                                <div class="card_simple__title">
                                     <?php echo esc_html($title); ?>
                                 </div>
-                                <div class="card_planet__text">
+                                <div class="card_simple__text">
                                     <?php echo esc_html($text); ?>
                                 </div>
                             </div>
                         </div>
                     <?php } ?>
                 </div>
-<!--                <div class="swiper-pagination"></div>-->
+                <div class="how_we_work__pagination"></div>
             </div>
         </div>
     </div>

@@ -1,1 +1,1 @@
-(function(e){e(document).ready(function(){new Swiper(".how_we_work__slider",{slidesPerView:"auto",pagination:{el:".swiper-pagination"}})})})(jQuery);
+(function(e){e(document).ready(function(){new Swiper(".how_we_work__slider",{slidesPerView:"auto",pagination:{el:".how_we_work__pagination"}}),new Swiper(".pr_service__slider",{slidesPerView:"auto",pagination:{el:".pr_service__pagination"}})})})(jQuery);

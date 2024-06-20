@@ -1,0 +1,43 @@
+.pr_service__slider {
+    margin: 0 -12px;
+
+    .card_simple {
+        height: 594px;
+
+        &:not(.wide-card) {
+            max-width: 397px;
+
+            .card_simple__img {
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        &.wide-card {
+            max-width: 594px;
+
+            .card_simple__img {
+                width: 70%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .card_simple__img {
+        z-index: 1;
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    .card_simple__body {
+        position: relative;
+        z-index: 2;
+    }
+}

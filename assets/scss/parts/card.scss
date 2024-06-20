@@ -1,0 +1,30 @@
+.card_simple {
+    max-width: 292px;
+    min-height: 412px;
+    width: 100%;
+    margin: 0 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: rgb(18, 18, 18);
+    display: flex;
+}
+
+.card_simple__body {
+    color: $color-font;
+    padding: 24px;
+    margin-top: auto;
+}
+
+.card_simple__title {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+    margin-bottom: 16px;
+}
+
+.card_simple__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
