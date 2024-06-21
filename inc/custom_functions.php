@@ -21,3 +21,8 @@ function custom_get_page_title(): string
 
     return $title;
 }
+
+function text_spaces_control(string $string = ''): string
+{
+    return $string ? str_replace("\n", '<br>', $string) : '';
+}

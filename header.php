@@ -22,7 +22,7 @@
             <?php endif; ?>
             <div class="header__menu">
                 <?php if ($bgImg = acf_option('modal_window_bg')) { ?>
-                    <img src="<?php echo esc_url($bgImg); ?>" alt="Header menu background" class="header__menu_bg">
+                    <img src="<?php echo esc_url($bgImg); ?>" alt="Header menu background" class="header__menu_bg section_bg">
                 <?php } ?>
                 <?php wp_nav_menu([
                     'theme_location' => 'main_header',

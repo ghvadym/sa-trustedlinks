@@ -1,0 +1,99 @@
+.testimonials {
+    .head {
+        z-index: 1;
+        position: relative;
+
+        .subtitle {
+            color: $color-font;
+        }
+    }
+}
+
+.testimonial__card {
+    width: 398px;
+    background: linear-gradient(135deg, #262626 100%, #737373 100%);
+    transition: $transition;
+    border-radius: 16px;
+    overflow: hidden;
+
+    &.swiper-slide-active {
+        background: linear-gradient(148.73deg, #7059FF 1.16%, #7B41C4 99.16%);
+    }
+
+    @include response-max($mobile) {
+        width: 296px;
+    }
+}
+
+.testimonial__body {
+    padding: 24px 16px;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 32px;
+    }
+}
+
+.testimonial__text {
+    margin-bottom: 24px;
+    color: rgba(234, 234, 234, 1);
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 27px;
+
+    @include response-max($mobile) {
+        font-size: 15px;
+        line-height: 14px;
+    }
+}
+
+.testimonial__author {
+    display: flex;
+    column-gap: 10px;
+}
+
+.testimonial__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: $color-font-grey;
+    padding: 3px;
+
+    img {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    @include response-max($mobile) {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.testimonial__name {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+
+    span {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        color: $color-font-grey;
+        display: block;
+    }
+
+    @include response-max($mobile) {
+        font-size: 18px;
+        line-height: 22px;
+
+        span {
+            font-size: 12px;
+            line-height: 15px;
+            color: $color-font;
+        }
+    }
+}

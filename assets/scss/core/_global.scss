@@ -86,7 +86,8 @@ h2 {
     font-weight: 700;
 
     @media (max-width: $mobile) {
-        font-size: 22px;
+        font-size: 29px;
+        line-height: 35px;
     }
 }
 
@@ -110,6 +111,10 @@ h3 {
     line-height: 26px;
     color: $color-font-dark;
     margin-bottom: 64px;
+
+    @include response-max($mobile) {
+        margin-bottom: 32px;
+    }
 }
 
 img {
@@ -176,12 +181,22 @@ img {
     }
 }
 
+.head {
+    max-width: 630px;
+    text-align: center;
+    margin: 0 auto 64px;
+
+    @include response-max($mobile) {
+        margin-bottom: 32px;
+    }
+}
+
 section {
     padding: 128px 0;
     position: relative;
 
     @include response-max($laptop-landscape) {
-        padding: 32px 0;
+        padding: 64px 0;
     }
 }
 
@@ -409,7 +424,7 @@ section {
 .table {
     border-radius: 16px;
     width: 100%;
-    margin: 40px 0;
+    margin: 0 0 40px;
     box-shadow: 0 4px 16px 0 rgba(26, 3, 48, 0.25);
     background: linear-gradient(148.58deg, rgba(101, 101, 101, 0.2) 0%, rgba(37, 37, 37, 0.2) 100%);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -481,6 +496,68 @@ section {
 
             &:not(:last-child) {
                 padding-right: 10px;
+            }
+        }
+    }
+}
+
+.section_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-pagination-bullets {
+    display: flex;
+    justify-content: center;
+    margin: 64px 0 0;
+    column-gap: 16px;
+
+    @include response-max($mobile) {
+        margin-top: 32px;
+    }
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+
+    &.swiper-pagination-bullet-active {
+        background: linear-gradient(148.73deg, #7059FF 1.16%, #7B41C4 99.16%);
+    }
+
+    &:not(.swiper-pagination-bullet-active) {
+        background: linear-gradient(148.73deg, rgba(217, 217, 217, 1) 1.16%, rgba(115, 115, 115, 1) 99.16%);
+    }
+}
+
+.swiper__nav {
+    display: flex;
+    justify-content: center;
+    margin: 64px 0 0;
+    column-gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.swiper__nav_item {
+    width: 48px;
+    height: 48px;
+
+    svg {
+        transition: $transition;
+    }
+
+    @include pointer;
+
+    @include response-min($desktop) {
+        &:hover {
+            svg {
+                transform: scale(0.95);
+                opacity: 0.9;
             }
         }
     }

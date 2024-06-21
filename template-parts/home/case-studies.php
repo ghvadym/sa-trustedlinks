@@ -13,13 +13,13 @@ $caseStudies = get_field('case_studies');
 
 <section class="case_studies">
     <?php if (!empty($bgMainUrl)) { ?>
-        <img src="<?php echo esc_url($bgMainUrl); ?>" alt="<?php echo get_the_title($bgMainId); ?>" class="case_studies__bg_main">
+        <img src="<?php echo esc_url($bgMainUrl); ?>" alt="<?php echo get_the_title($bgMainId); ?>" class="section_bg case_studies__bg_main">
     <?php } ?>
     <?php if (!empty($bgBottomUrl)) { ?>
         <img src="<?php echo esc_url($bgBottomUrl); ?>" alt="<?php echo get_the_title($bgBottomId); ?>" class="case_studies__bg_bottom">
     <?php } ?>
     <div class="container">
-        <div class="case_studies__head">
+        <div class="head">
             <?php _get_field(get_field('case_studies_title'), 'title case_studies__title', 'h2'); ?>
             <?php _get_field(get_field('case_studies_subtitle'), 'subtitle case_studies__subtitle', 'p'); ?>
             <?php

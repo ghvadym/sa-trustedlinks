@@ -16,11 +16,11 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
     <div class="hero__bg">
         <?php if (wp_is_mobile()) { ?>
             <?php if ($bgUrl) { ?>
-                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_desk'])); ?>">
+                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main section_bg" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_desk'])); ?>">
             <?php } ?>
         <?php } else { ?>
             <?php if ($bgUrl) { ?>
-                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_mob'])); ?>">
+                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main section_bg" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_mob'])); ?>">
             <?php } ?>
         <?php } ?>
         <?php if ($earthUrl) { ?>

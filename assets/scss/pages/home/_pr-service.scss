@@ -1,5 +1,16 @@
+.pr_service {
+    .title, .subtitle {
+        padding-right: 32px;
+
+        @include response-max($mobile) {
+            text-align: center;
+        }
+    }
+}
+
 .pr_service__slider {
     margin: 0 -12px;
+    padding-right: 32px;
 
     .card_simple {
         height: 594px;
@@ -24,6 +35,18 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+            }
+        }
+
+        @include response-max($mobile) {
+            height: 394px;
+
+            &:not(.wide-card) {
+                max-width: 296px;
+            }
+
+            &.wide-card {
+                max-width: 394px;
             }
         }
     }

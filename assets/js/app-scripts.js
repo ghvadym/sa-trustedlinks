@@ -7,6 +7,31 @@
         const header = $('#header');
         const isDesktop = $(window).width() > 1024;
 
+        const testimonialsSlider = new Swiper('.testimonials__slider', {
+            slidesPerView : 'auto',
+            grabCursor    : true,
+            centeredSlides: true,
+            effect        : 'coverflow',
+            keyboard      : true,
+            spaceBetween  : 50,
+            loop: true,
+            // autoplay: {
+            //     delay: 2000,
+            //     disableOnInteraction: false,
+            // },
+            coverflowEffect: {
+                rotate      : 0,
+                stretch     : 0,
+                depth       : 10,
+                modifier    : 14,
+                slideShadows: false
+            },
+            navigation: {
+                nextEl: '.testimonials__button_next',
+                prevEl: '.testimonials__button_prev',
+            },
+        });
+
         if (header.length) {
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 50) {
