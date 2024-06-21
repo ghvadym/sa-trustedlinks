@@ -15,5 +15,8 @@ get_template_part_var('home/how-we-work');
 get_template_part_var('home/case-studies');
 get_template_part_var('home/pr-service');
 get_template_part_var('global/testimonials');
+get_template_part_var('global/pricing', [
+    'bg' => acf_option('pricing_bg')
+]);
 
 get_footer();

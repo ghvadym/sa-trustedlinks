@@ -21,7 +21,11 @@ $caseStudies = get_field('case_studies');
     <div class="container">
         <div class="head">
             <?php _get_field(get_field('case_studies_title'), 'title case_studies__title', 'h2'); ?>
-            <?php _get_field(get_field('case_studies_subtitle'), 'subtitle case_studies__subtitle', 'p'); ?>
+            <?php if ($subtitle = get_field('case_studies_subtitle')) { ?>
+                <p class="subtitle case_studies__subtitle">
+                    <?php echo text_spaces_control($subtitle); ?>
+                </p>
+            <?php } ?>
             <?php
             $btn = get_field('case_studies_link');
             if (!empty($btn)) { ?>

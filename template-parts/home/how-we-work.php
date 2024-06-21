@@ -6,11 +6,17 @@ if (empty($cards)) {
 }
 ?>
 
-<section class="how_we_work">
+<section class="how_we_work slider_section">
     <div class="container">
-        <?php _get_field(get_field('how_we_work_title'), 'title how_we_work__title', 'h2'); ?>
-        <?php _get_field(get_field('how_we_work_subtitle'), 'subtitle how_we_work__subtitle', 'p'); ?>
-        <div class="how_we_work__wrap">
+        <div class="head">
+            <?php _get_field(get_field('how_we_work_title'), 'title', 'h2'); ?>
+            <?php if ($subtitle = get_field('how_we_work_subtitle')) { ?>
+                <p class="subtitle">
+                    <?php echo text_spaces_control($subtitle); ?>
+                </p>
+            <?php } ?>
+        </div>
+        <div class="slider_wrapper">
             <div class="how_we_work__slider swiper">
                 <div class="swiper-wrapper">
                     <?php foreach ($cards as $card) {
@@ -22,6 +28,7 @@ if (empty($cards)) {
                         }
 
                         $imageId = $card['img'] ?? '';
+                        $imageUrl = '';
 
                         if ($imageId) {
                             $imageUrl = wp_get_attachment_image_url($imageId, 'medium');

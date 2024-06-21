@@ -14,7 +14,7 @@ body {
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
-    color: $color-font;
+    color: $color-light;
     font-weight: 400;
     font-size: 1.6rem;
     display: flex;
@@ -44,7 +44,7 @@ body {
 
 a {
     text-decoration: none;
-    color: $color-font;
+    color: $color-light;
     transition: $transition;
 }
 
@@ -103,13 +103,14 @@ h3 {
     @extend h2;
     margin-bottom: 8px;
     text-transform: uppercase;
+    color: $color-theme;
 }
 
 .subtitle {
     font-size: 19px;
     font-weight: 400;
     line-height: 26px;
-    color: $color-font-dark;
+    color: $color-dark-light;
     margin-bottom: 64px;
 
     @include response-max($mobile) {
@@ -185,6 +186,7 @@ img {
     max-width: 630px;
     text-align: center;
     margin: 0 auto 64px;
+    position: relative;
 
     @include response-max($mobile) {
         margin-bottom: 32px;
@@ -263,7 +265,7 @@ section {
     box-shadow: $box-shadow;
     display: inline-block;
     letter-spacing: 2px;
-    color: $color-font;
+    color: $color-light;
     font-size: 1.6rem;
     line-height: 1;
     white-space: nowrap;
@@ -301,7 +303,15 @@ section {
     @extend .btn;
 
     background: rgba(255, 255, 255, 1);
-    color: $color-font-main;
+    color: $color-theme;
+    font-weight: 600;
+}
+
+.btn_dark {
+    @extend .btn;
+
+    background: $color-dark;
+    color: $color-light;
     font-weight: 600;
 }
 
@@ -510,11 +520,41 @@ section {
     height: 100%;
 }
 
+.slider_wrapper {
+    .swiper-wrapper {
+        margin: 0 -12px;
+    }
+
+    .swiper {
+        @include response-max($laptop-landscape) {
+            padding-left: 32px;
+        }
+    }
+}
+
+.slider_section {
+    @include response-max($laptop-landscape) {
+        .container {
+            padding-right: 0;
+            padding-left: 0;
+
+            & > *:not(.slider_wrapper) {
+                padding: 0 32px;
+            }
+        }
+
+        .container-left {
+            padding-left: 0;
+        }
+    }
+}
+
 .swiper-pagination-bullets {
     display: flex;
     justify-content: center;
     margin: 64px 0 0;
     column-gap: 16px;
+    position: relative;
 
     @include response-max($mobile) {
         margin-top: 32px;
@@ -560,5 +600,17 @@ section {
                 opacity: 0.9;
             }
         }
+    }
+}
+
+.mob_ver {
+    @include response-min($desktop) {
+        display: none !important;
+    }
+}
+
+.desk_ver {
+    @include response-max($laptop-landscape) {
+        display: none !important;
     }
 }

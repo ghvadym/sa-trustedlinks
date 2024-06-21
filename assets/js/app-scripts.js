@@ -7,6 +7,14 @@
         const header = $('#header');
         const isDesktop = $(window).width() > 1024;
 
+        const pricingSlider = new Swiper('.pricing__slider', {
+            slidesPerView: 'auto',
+            navigation: {
+                nextEl: '.pricing__button_next',
+                prevEl: '.pricing__button_prev'
+            },
+        });
+
         const testimonialsSlider = new Swiper('.testimonials__slider', {
             slidesPerView : 'auto',
             grabCursor    : true,

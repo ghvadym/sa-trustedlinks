@@ -3,8 +3,8 @@
         z-index: 1;
         position: relative;
 
-        .subtitle {
-            color: $color-font;
+        .title, .subtitle {
+            color: $color-light;
         }
     }
 }
@@ -57,7 +57,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: $color-font-grey;
+    background: $color-grey;
     padding: 3px;
 
     img {
@@ -82,7 +82,7 @@
         font-size: 16px;
         font-weight: 500;
         line-height: 22px;
-        color: $color-font-grey;
+        color: $color-grey;
         display: block;
     }
 
@@ -93,7 +93,7 @@
         span {
             font-size: 12px;
             line-height: 15px;
-            color: $color-font;
+            color: $color-light;
         }
     }
 }

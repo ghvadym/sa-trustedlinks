@@ -21,11 +21,11 @@
 }
 
 .case_studies__title {
-    color: $color-font;
+    color: $color-light;
 }
 
 .case_studies__subtitle {
-    color: $color-font;
+    color: $color-light;
     margin-bottom: 32px;
 }
 
@@ -71,7 +71,7 @@
         font-size: 16px;
         font-weight: 300;
         line-height: 20px;
-        color: $color-font-dark;
+        color: $color-dark-light;
         padding: 8px 16px;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
@@ -83,5 +83,5 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 15px;
-    color: $color-font-grey;
+    color: $color-grey;
 }

@@ -45,9 +45,17 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
                     <?php echo $fields['hero_title']; ?>
                 </h1>
             <?php } ?>
-            <?php _get_field($fields['hero_text'] ?? '', 'hero__text'); ?>
+            <?php if ($fields['hero_text'] ?? '') { ?>
+                <p class="hero__text">
+                    <?php echo text_spaces_control($fields['hero_text']); ?>
+                </p>
+            <?php } ?>
             <?php _get_field($fields['hero_link_text'] ?? '', 'hero__btn btn_light'); ?>
-            <?php _get_field($fields['hero_subtitle'] ?? '', 'hero__subtitle'); ?>
+            <?php if ($fields['hero_subtitle'] ?? '') { ?>
+                <p class="hero__subtitle">
+                    <?php echo text_spaces_control($fields['hero_subtitle']); ?>
+                </p>
+            <?php } ?>
             <?php
             $partners = acf_option('partners');
             if (!empty($partners)) { ?>
