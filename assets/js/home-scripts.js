@@ -8,6 +8,14 @@
             },
         });
 
+        const servicesSlider = new Swiper('.services__slider', {
+            slidesPerView: 'auto',
+            pagination   : {
+                el       : '.services__pagination',
+                clickable: true
+            },
+        });
+
         const prServiceSlider = new Swiper('.pr_service__slider', {
             slidesPerView: 'auto',
             pagination   : {

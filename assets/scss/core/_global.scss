@@ -188,6 +188,12 @@ img {
     margin: 0 auto 64px;
     position: relative;
 
+    &.white-theme {
+        .title, .subtitle {
+            color: $color-light;
+        }
+    }
+
     @include response-max($mobile) {
         margin-bottom: 32px;
     }

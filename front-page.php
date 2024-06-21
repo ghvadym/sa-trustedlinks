@@ -18,5 +18,6 @@ get_template_part_var('global/testimonials');
 get_template_part_var('global/pricing', [
     'bg' => acf_option('pricing_bg')
 ]);
+get_template_part_var('home/services');
 
 get_footer();

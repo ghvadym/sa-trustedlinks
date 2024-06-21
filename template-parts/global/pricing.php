@@ -109,7 +109,7 @@ $ctaBtnText = acf_option('pricing_cta_btn_text');
             <div class="pricing__cta">
                 <div class="pricing__cta_body">
                     <div class="pricing__cta_title desk_ver">
-                        <?php echo esc_html($ctaTitle); ?>
+                        <?php echo strip_tags($ctaTitle); ?>
                     </div>
                     <div class="pricing__cta_title mob_ver">
                         <?php echo $ctaTitle; ?>
