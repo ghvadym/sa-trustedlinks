@@ -1,5 +1,9 @@
 <?php
-$cards = get_field('pr_service_items');
+if (empty($fields)) {
+    return;
+}
+
+$cards = $fields['pr_service_items'] ?? [];
 
 if (empty($cards)) {
     return;
@@ -7,13 +11,17 @@ if (empty($cards)) {
 ?>
 
 <section class="pr_service slider_section">
+    <div class="container">
+        <div class="head">
+            <?php _get_field($fields['pr_service_title'] ?? '', 'title', 'h2'); ?>
+            <?php if ($subtitle = $fields['pr_service_subtitle'] ?? '') { ?>
+                <p class="subtitle">
+                    <?php echo text_spaces_control($subtitle); ?>
+                </p>
+            <?php } ?>
+        </div>
+    </div>
     <div class="container-left">
-        <?php _get_field(get_field('pr_service_title'), 'title', 'h2'); ?>
-        <?php if ($subtitle = get_field('pr_service_subtitle')) { ?>
-            <p class="subtitle">
-                <?php echo text_spaces_control($subtitle); ?>
-            </p>
-        <?php } ?>
         <div class="slider_wrapper">
             <div class="pr_service__slider swiper">
                 <div class="swiper-wrapper">

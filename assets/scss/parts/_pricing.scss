@@ -6,6 +6,7 @@
 
 .pricing_item {
     max-width: 292px;
+    height: auto;
     margin: 0 12px;
     background: linear-gradient(148.73deg, rgba(217, 217, 217, 0.2) 1.16%, rgba(115, 115, 115, 0.2) 99.16%);
     border-radius: 16px;
@@ -40,6 +41,9 @@
 
 .pricing_item_body {
     padding: 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .pricing_item__name {
@@ -125,6 +129,7 @@
     font-size: 15px;
     font-weight: 600;
     line-height: 18.15px;
+    margin-top: auto;
     @include font-color-main;
 }
 

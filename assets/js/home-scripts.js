@@ -23,5 +23,13 @@
                 clickable: true
             },
         });
+
+        const blogSlider = new Swiper('.blog__slider', {
+            slidesPerView: 'auto',
+            pagination   : {
+                el       : '.blog__pagination',
+                clickable: true
+            },
+        });
     });
 })(jQuery);

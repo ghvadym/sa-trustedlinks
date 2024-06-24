@@ -18,7 +18,7 @@ $ctaBtnText = acf_option('pricing_cta_btn_text');
     <?php if (!empty($bgUrl)) { ?>
         <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bg); ?>" class="section_bg">
     <?php } ?>
-    <div class="container-left">
+    <div class="container">
         <div class="head">
             <?php _get_field(acf_option('pricing_title'), 'title', 'h2'); ?>
             <?php if ($subtitle = acf_option('pricing_subtitle')) { ?>
@@ -27,6 +27,8 @@ $ctaBtnText = acf_option('pricing_cta_btn_text');
                 </p>
             <?php } ?>
         </div>
+    </div>
+    <div class="container-left">
         <div class="slider_wrapper">
             <div class="pricing__slider swiper">
                 <div class="swiper-wrapper">

@@ -11,6 +11,7 @@ $author_avatar = get_avatar_url($author_id);
 
 <div class="article<?php echo !empty($full_card_info) ? ' full-card' : ''; ?><?php echo !empty($slider) ? ' swiper-slide' : ''; ?>">
     <div class="article__body">
+
         <a href="<?php echo get_the_permalink($post); ?>"
            class="article__img<?php echo empty($full_card_info) ? ' cropped-img' : ''; ?>">
             <?php echo $thumbnail; ?>

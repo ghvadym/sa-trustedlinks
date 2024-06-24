@@ -1,14 +1,18 @@
 <?php
-$bgMainId = get_field('case_studies_image_bg');
+if (empty($fields)) {
+    return;
+}
+
+$bgMainId = $fields['case_studies_image_bg'] ?? '';
 if ($bgMainId) {
     $bgMainUrl = wp_get_attachment_image_url($bgMainId, 'large');
 }
-$bgBottomId = get_field('case_studies_image_bottom');
+$bgBottomId = $fields['case_studies_image_bottom'] ?? '';
 if ($bgBottomId) {
     $bgBottomUrl = wp_get_attachment_image_url($bgBottomId, 'large');
 }
 
-$caseStudies = get_field('case_studies');
+$caseStudies = $fields['case_studies'] ?? '';
 ?>
 
 <section class="case_studies">
@@ -20,14 +24,14 @@ $caseStudies = get_field('case_studies');
     <?php } ?>
     <div class="container">
         <div class="head">
-            <?php _get_field(get_field('case_studies_title'), 'title case_studies__title', 'h2'); ?>
-            <?php if ($subtitle = get_field('case_studies_subtitle')) { ?>
+            <?php _get_field($fields['case_studies_title'] ?? '', 'title case_studies__title', 'h2'); ?>
+            <?php if ($subtitle = $fields['case_studies_subtitle'] ?? '') { ?>
                 <p class="subtitle case_studies__subtitle">
                     <?php echo text_spaces_control($subtitle); ?>
                 </p>
             <?php } ?>
             <?php
-            $btn = get_field('case_studies_link');
+            $btn = $fields['case_studies_link'] ?? '';
             if (!empty($btn)) { ?>
                 <a href="<?php echo esc_url($btn['url'] ?? ''); ?>"
                    target="<?php echo esc_attr($btn['target'] ?? '_self'); ?>"

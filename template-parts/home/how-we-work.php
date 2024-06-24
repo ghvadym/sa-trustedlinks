@@ -1,5 +1,9 @@
 <?php
-$cards = get_field('how_we_work_cards');
+if (empty($fields)) {
+    return;
+}
+
+$cards = $fields['how_we_work_cards'] ?? [];
 
 if (empty($cards)) {
     return;
@@ -9,8 +13,8 @@ if (empty($cards)) {
 <section class="how_we_work slider_section">
     <div class="container">
         <div class="head">
-            <?php _get_field(get_field('how_we_work_title'), 'title', 'h2'); ?>
-            <?php if ($subtitle = get_field('how_we_work_subtitle')) { ?>
+            <?php _get_field($fields['how_we_work_title'] ?? '', 'title', 'h2'); ?>
+            <?php if ($subtitle = $fields['how_we_work_subtitle'] ?? '') { ?>
                 <p class="subtitle">
                     <?php echo text_spaces_control($subtitle); ?>
                 </p>

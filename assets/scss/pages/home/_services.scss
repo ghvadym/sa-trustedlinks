@@ -2,7 +2,7 @@
     .card_simple {
         background: $color-light;
 
-        &:not(.full-image) {
+        &:not(.full_image) {
             .card_simple__title, .card_simple__text {
                 color: $color-dark-light;
             }

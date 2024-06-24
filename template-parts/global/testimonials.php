@@ -1,11 +1,11 @@
 <?php
-$testimonials = get_field('testimonials', 'options');
+$testimonials = acf_option('testimonials');
 
 if (empty($testimonials)) {
     return;
 }
 
-$bgId = get_field('testimonials_bg', 'options');
+$bgId = acf_option('testimonials_bg');
 if ($bgId) {
     $bgUrl = wp_get_attachment_image_url($bgId, 'large');
 }

@@ -1,11 +1,15 @@
 <?php
-$services = get_field('services_list');
+if (empty($fields)) {
+    return;
+}
+
+$services = $fields['services_list'] ?? '';
 
 if (empty($services)) {
     return;
 }
 
-$bgId = get_field('services_img');
+$bgId = $fields['services_img'] ?? '';
 if ($bgId) {
     $bgUrl = wp_get_attachment_image_url($bgId, 'large');
 }
@@ -18,8 +22,8 @@ if ($bgId) {
     <?php } ?>
     <div class="container">
         <div class="head white-theme">
-            <?php _get_field(get_field('services_title'), 'title', 'h2'); ?>
-            <?php if ($subtitle = get_field('services_subtitle')) { ?>
+            <?php _get_field($fields['services_title'] ?? '', 'title', 'h2'); ?>
+            <?php if ($subtitle = $fields['services_subtitle'] ?? '') { ?>
                 <p class="subtitle">
                     <?php echo text_spaces_control($subtitle); ?>
                 </p>
@@ -37,7 +41,7 @@ if ($bgId) {
                         $imgUrl = wp_get_attachment_image_url($imgId, 'medium');
                     }
                     ?>
-                    <div class="card_simple swiper-slide<?php echo !empty($service['is_full_image']) ? ' full-image' : ''; ?>">
+                    <div class="card_simple swiper-slide<?php echo !empty($service['is_full_image']) ? ' full_image' : ''; ?>">
                         <?php if (!empty($imgUrl)) { ?>
                             <div class="card_simple__img">
                                 <img src="<?php echo esc_url($imgUrl); ?>" alt="<?php echo get_the_title($imgId); ?>">
