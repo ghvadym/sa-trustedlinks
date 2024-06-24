@@ -6,7 +6,7 @@
     z-index: 10;
 
     .container {
-        padding: 0 16px;
+        max-width: 1430px;
     }
 
     a {
@@ -47,9 +47,8 @@
 }
 
 [id=header]._scrolled .header__row {
-    background: rgba(1, 0, 8, 0.1);
-    background: linear-gradient(148.58deg, rgb(101 101 101 / 60%) 0%, rgb(37 37 37 / 60%) 100%);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(149deg, rgba(101, 101, 101, 0.30) 0%, rgba(37, 37, 37, 0.30) 100%);
+    backdrop-filter: blur(16px);
 }
 
 .header__menu {
@@ -103,10 +102,10 @@
 
     @include response-max($header-responsive) {
         display: none;
-        padding: 119px 15px 50px 15px;
+        padding: 160px 15px 50px 15px;
         position: fixed;
-        left: 0;
-        top: 0;
+        left: -16px;
+        top: -25px;
         z-index: 10;
         width: 100%;
         height: 100%;
@@ -189,11 +188,6 @@
         .header__menu {
             display: block;
             animation: fadeId $transition;
-        }
-
-        .header__row {
-            backdrop-filter: none;
-            background: none;
         }
     }
 
