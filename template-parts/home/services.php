@@ -12,7 +12,7 @@ if ($bgId) {
 
 ?>
 
-<section class="services">
+<section class="services slider_section">
     <?php if (!empty($bgUrl)) { ?>
         <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bgId); ?>" class="section_bg">
     <?php } ?>
@@ -38,12 +38,12 @@ if ($bgId) {
                     }
                     ?>
                     <div class="card_simple swiper-slide<?php echo !empty($service['is_full_image']) ? ' full-image' : ''; ?>">
+                        <?php if (!empty($imgUrl)) { ?>
+                            <div class="card_simple__img">
+                                <img src="<?php echo esc_url($imgUrl); ?>" alt="<?php echo get_the_title($imgId); ?>">
+                            </div>
+                        <?php } ?>
                         <div class="card_simple__body">
-                            <?php if (!empty($imgUrl)) { ?>
-                                <div class="card_simple__img">
-                                    <img src="<?php echo esc_url($imgUrl); ?>" alt="<?php echo get_the_title($imgId); ?>">
-                                </div>
-                            <?php } ?>
                             <div class="card_simple__title">
                                 <?php echo esc_html($title); ?>
                             </div>

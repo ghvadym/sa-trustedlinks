@@ -38,4 +38,11 @@
             }
         }   
     }
+
+    @include response-min($desktop) {
+        .head {
+            text-align: left;
+            margin-left: 0;
+        }
+    }
 }
