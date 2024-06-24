@@ -188,14 +188,14 @@ img {
     margin: 0 auto 64px;
     position: relative;
 
-    &.white-theme {
-        .title, .subtitle {
-            color: $color-light;
-        }
-    }
-
     @include response-max($mobile) {
         margin-bottom: 32px;
+    }
+}
+
+.white-theme {
+    .title, .subtitle {
+        color: $color-light;
     }
 }
 
@@ -622,5 +622,31 @@ section {
 .desk_ver {
     @include response-max($laptop-landscape) {
         display: none !important;
+    }
+}
+
+section.hero {
+    position: relative;
+    background-color: #000;
+    min-height: 400px;
+
+    .title {
+        font-size: 60px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+
+        span {
+            @include font-style-transparent;
+        }
+    }
+
+    .hero__body {
+        position: relative;
+        padding: 152px 0 74px;
+
+        @include response-min($laptop-landscape) {
+            max-width: 714px;
+        }
     }
 }

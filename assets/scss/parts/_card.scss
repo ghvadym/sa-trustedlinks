@@ -32,6 +32,10 @@
                 background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 58.78%, rgba(0, 0, 0, 0.70) 100%);
             }
         }
+
+        .card_simple__body {
+            margin-top: auto;
+        }
     }
 }
 
@@ -113,10 +117,8 @@
 @include response-min($laptop-landscape) {
     .card_right_content {
         flex-direction: row;
-        max-width: 818px;
 
         .card_simple__img {
-            max-width: 500px;
             height: auto;
         }
 
@@ -130,13 +132,6 @@
         .card_simple__date {
             margin-top: auto;
             text-align: right;
-        }
-
-        .card_simple__cat {
-            span {
-                color: $color-dark;
-                background-color: $color-light;
-            }
         }
     }
 }

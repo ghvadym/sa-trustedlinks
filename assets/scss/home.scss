@@ -8,3 +8,22 @@
 @import "pages/home/case-studies";
 @import "pages/home/pr-service";
 @import "pages/home/services";
+
+
+@include response-min($laptop-landscape) {
+    .card_right_content {
+        max-width: 818px;
+        min-height: 412px;
+
+        .card_simple__img {
+            max-width: 500px;
+        }
+
+        .card_simple__cat {
+            span {
+                color: $color-dark;
+                background-color: $color-light;
+            }
+        }
+    }
+}
