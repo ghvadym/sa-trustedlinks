@@ -539,6 +539,10 @@ section {
 }
 
 .slider_section {
+    .card_simple {
+        height: 100%;
+    }
+
     @include response-max($laptop-landscape) {
         .container {
             padding-right: 0;

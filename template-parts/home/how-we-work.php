@@ -39,12 +39,12 @@ if (empty($cards)) {
                         }
                         ?>
                         <div class="card_simple swiper-slide">
+                            <?php if (!empty($imageUrl)) { ?>
+                                <div class="card_simple__img">
+                                    <img src="<?php echo esc_url($imageUrl); ?>" alt="<?php echo get_the_title($imageId); ?>">
+                                </div>
+                            <?php } ?>
                             <div class="card_simple__body">
-                                <?php if (!empty($imageUrl)) { ?>
-                                    <div class="card_simple__img">
-                                        <img src="<?php echo esc_url($imageUrl); ?>" alt="<?php echo get_the_title($imageId); ?>">
-                                    </div>
-                                <?php } ?>
                                 <div class="card_simple__title">
                                     <?php echo esc_html($title); ?>
                                 </div>

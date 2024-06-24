@@ -1,6 +1,10 @@
 .how_we_work {
     background-color: rgba(242, 242, 242, 1);
 
+    .card_simple__body {
+        margin-top: auto;
+    }
+
     .card_simple__img {
         position: absolute;
         top: -20%;

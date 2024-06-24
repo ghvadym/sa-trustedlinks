@@ -2,7 +2,6 @@
     max-width: 292px;
     min-height: 412px;
     width: 100%;
-    height: auto;
     margin: 0 12px;
     border-radius: 16px;
     overflow: hidden;
@@ -39,6 +38,8 @@
 .card_simple__body {
     color: $color-light;
     padding: 16px 24px;
+    position: relative;
+    z-index: 2;
 }
 
 .card_simple__img {
@@ -53,6 +54,11 @@
     line-height: 34px;
     margin-bottom: 16px;
     position: relative;
+
+    @include response-max($laptop-portrait) {
+        font-size: 26px;
+        line-height: 30px
+    }
 }
 
 .card_simple__text {
@@ -72,6 +78,7 @@
     margin-bottom: 16px;
 
     span {
+        position: relative;
         display: inline-block;
         font-size: 16px;
         font-style: normal;
@@ -89,6 +96,20 @@
     color: $color-light;
 }
 
+.blog_section {
+    .card_simple {
+        height: auto;
+    }
+
+    .card_simple__img {
+        height: 226px;
+
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
 @include response-min($laptop-landscape) {
     .card_right_content {
         flex-direction: row;
@@ -96,6 +117,7 @@
 
         .card_simple__img {
             max-width: 500px;
+            height: auto;
         }
 
         .card_simple__body {
@@ -115,16 +137,6 @@
                 color: $color-dark;
                 background-color: $color-light;
             }
-        }
-    }
-}
-
-.blog_section {
-    .card_simple__img {
-        height: 226px;
-
-        img {
-            object-fit: cover;
         }
     }
 }
