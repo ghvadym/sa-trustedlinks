@@ -1,0 +1,83 @@
+.cta {
+    background-color: $color-dark;
+    padding-bottom: 0;
+}
+
+.cta__body {
+    position: relative;
+    display: flex;
+    gap: 32px;
+    padding: 50px 38px;
+    border-radius: 16px;
+    background: linear-gradient(105deg, #7059FF 22.14%, #7B41C4 89.55%), #121212;
+
+    @include response-max($laptop-landscape - 1) {
+        flex-direction: column-reverse;
+    }
+
+    @include response-max($laptop-landscape) {
+        padding: 32px 16px 0;
+    }
+}
+
+.cta__img {
+    @include response-min($laptop-landscape) {
+        width: 50%;
+
+        img {
+            max-width: 398px;
+            height: auto;
+            object-fit: contain;
+            object-position: bottom;
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            transform: translateX(-50%);
+        }
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        max-width: 254px;
+        margin: 0 auto;
+    }
+}
+
+.cta__title {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    span {
+        @include font-style-transparent;
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        font-size: 29px;
+        margin-bottom: 16px;
+    }
+}
+
+.cta__content {
+    @include response-min($laptop-landscape) {
+        width: 50%;
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        text-align: center;
+    }
+}
+
+.cta__text {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    @include response-max($laptop-landscape - 1) {
+        font-size: 15px;
+        line-height: 14px;
+    }
+}
+
+.cta__btn {
+    margin-top: 32px;
+}

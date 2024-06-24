@@ -117,9 +117,7 @@
     text-transform: uppercase;
 
     span {
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #fff;
-        color: transparent;
+        @include font-style-transparent;
     }
 
     @include response-max($laptop-portrait) {

@@ -1,5 +1,6 @@
 <?php
 wp_footer();
+get_template_part_var('global/cta');
 ?>
 
 </main>
