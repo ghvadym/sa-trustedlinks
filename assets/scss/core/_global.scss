@@ -548,7 +548,7 @@ section {
 
 .slider_section {
     .card_simple {
-        height: 100%;
+        height: auto;
     }
 
     @include response-max($laptop-landscape) {

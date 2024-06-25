@@ -1,24 +1,32 @@
 <?php
-
+/*
+ * Template Name: Blog
+ */
 get_header();
 ?>
 
-<?php if (have_posts()): ?>
-
-    <section class="section">
+    <section class="hero">
         <div class="container">
-            <div class="row">
-                <?php while (have_posts()): the_post(); ?>
-                    <div class="col-12">
-                        <?php the_content(); ?>
-                    </div>
-                <?php endwhile; ?>
-            </div>
+            <h1 class="title">
+                <?php echo single_term_title(); ?>
+            </h1>
+        </div>
+    </section>
+    <section class="archive">
+        <div class="container">
+            <?php if (have_posts()) { ?>
+                <div class="archive__posts">
+                    <?php while (have_posts()) {
+                        the_post();
+                        get_template_part_var('cards/blog-card', [
+                            'post' => get_post()
+                        ]);
+                    } ?>
+                </div>
+            <?php } ?>
+            <?php get_template_part_var('global/pagination'); ?>
         </div>
     </section>
 
-    <?php
-    wp_reset_postdata();
-endif;
-
+<?php
 get_footer();

@@ -19,6 +19,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
 }
 
 .card_simple__img {
@@ -121,12 +122,6 @@
 
 .card_simple {
     &.full_image {
-        .card_simple__body {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
         .card_simple__title {
             margin-top: auto;
         }

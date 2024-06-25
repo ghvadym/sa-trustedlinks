@@ -9,14 +9,14 @@ foreach ($posts as $post) {
     $cardClass = '';
 
     if ($isMob) {
-        $cardClass = ' full_image';
+        $cardClass = 'full_image';
     } else {
         if ($i === 1) {
-            $cardClass = ' card_right_content';
+            $cardClass = 'card_right_content';
         }
 
         if ($i === 2) {
-            $cardClass = ' full_image';
+            $cardClass = 'full_image';
         }
     }
 

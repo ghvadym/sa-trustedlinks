@@ -6,6 +6,12 @@
     background-color: $color-dark;
 }
 
+.archive {
+   .hero {
+       padding-bottom: 30px;
+   }
+}
+
 .hero__bg_img {
     position: absolute;
     max-height: 100%;
@@ -235,4 +241,29 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.archive__posts {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+
+    .card_simple {
+        margin: 0;
+        max-width: 100%;
+        background: $color-dark-light;
+    }
+
+    .card_simple__img {
+        height: 260px;
+        flex-shrink: 0;
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include response-max($mobile) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
