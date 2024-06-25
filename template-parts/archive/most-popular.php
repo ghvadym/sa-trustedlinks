@@ -13,7 +13,7 @@ $i = 1;
 $postsPerIteration = 4;
 ?>
 
-<section class="most_popular slider_section">
+<section class="most_popular slider_section bg_light">
     <div class="container">
         <?php _get_field($fields['most_popular_title'] ?? '', 'title most_popular__title', 'h2'); ?>
         <div class="slider_wrapper">
@@ -43,7 +43,7 @@ $postsPerIteration = 4;
                                             <?php } ?>
                                             <?php if ($timeToRead) { ?>
                                                 <div class="card_simple__time">
-                                                    <?php echo esc_html($timeToRead); ?>
+                                                    <?php echo time_to_read($timeToRead); ?>
                                                 </div>
                                             <?php } ?>
                                         </div>
@@ -77,7 +77,7 @@ $postsPerIteration = 4;
                                             <?php } ?>
                                             <?php if ($timeToRead) { ?>
                                                 <div class="card_simple__time">
-                                                    <?php echo esc_html($timeToRead); ?>
+                                                    <?php echo time_to_read($timeToRead); ?>
                                                 </div>
                                             <?php } ?>
                                         </div>

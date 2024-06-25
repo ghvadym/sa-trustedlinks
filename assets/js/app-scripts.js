@@ -1,7 +1,7 @@
 (function ($) {
     $(document).ready(function () {
-        const ajax = sa_ajax.ajaxurl;
-        const nonce = sa_ajax.nonce;
+        const ajax = tl_ajax.ajaxurl;
+        const nonce = tl_ajax.nonce;
         const burgerOpen = $('.header_burger_icon');
         const burgerClose = $('.header_close_icon');
         const header = $('#header');

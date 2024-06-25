@@ -21,7 +21,7 @@ if ($bgId) {
         <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bgId); ?>" class="section_bg">
     <?php } ?>
     <div class="container">
-        <div class="head white-theme">
+        <div class="head white_theme">
             <?php _get_field($fields['services_title'] ?? '', 'title', 'h2'); ?>
             <?php if ($subtitle = $fields['services_subtitle'] ?? '') { ?>
                 <p class="subtitle">

@@ -171,3 +171,11 @@
     -webkit-text-stroke-color: #fff;
     color: transparent;
 }
+
+@mixin hide-scrollbar()
+{
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}

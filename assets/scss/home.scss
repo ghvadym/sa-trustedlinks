@@ -27,3 +27,14 @@
         }
     }
 }
+
+.card_simple {
+    &.full_image {
+        .card_simple__cat {
+            span {
+                color: $color-light;
+                background-color: $color-dark;
+            }
+        }
+    }
+}

@@ -61,7 +61,7 @@ if (empty($posts)) {
                                     <?php } ?>
                                     <?php if ($timeToRead) { ?>
                                         <div class="card_simple__time">
-                                            <?php echo esc_html($timeToRead); ?>
+                                            <?php echo time_to_read($timeToRead); ?>
                                         </div>
                                     <?php } ?>
                                 </div>

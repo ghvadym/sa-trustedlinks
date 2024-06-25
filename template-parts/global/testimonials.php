@@ -16,7 +16,7 @@ if ($bgId) {
     <?php if (!empty($bgUrl)) { ?>
         <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bgId); ?>" class="section_bg">
     <?php } ?>
-    <div class="head white-theme">
+    <div class="head white_theme">
         <?php _get_field(acf_option('testimonials_title'), 'title', 'h2'); ?>
         <?php if ($subtitle = acf_option('testimonials_subtitle')) { ?>
             <p class="subtitle">

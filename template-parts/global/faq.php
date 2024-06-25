@@ -34,7 +34,7 @@ if (file_exists(get_template_directory().$bgMobPath)) {
         <img src="<?php echo esc_url($bgUrlMob); ?>" alt="<?php echo get_the_title($bgMob); ?>" class="section_bg faq_bg_mob">
     <?php } ?>
     <div class="container">
-        <div class="head white-theme">
+        <div class="head white_theme">
             <?php _get_field($fields['faq_title'] ?? '', 'title', 'h2'); ?>
             <?php if ($subtitle = $fields['faq_subtitle'] ?? '') { ?>
                 <p class="subtitle">

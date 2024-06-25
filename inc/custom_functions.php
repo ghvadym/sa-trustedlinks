@@ -26,3 +26,12 @@ function text_spaces_control(string $string = ''): string
 {
     return $string ? str_replace("\n", '<br>', $string) : '';
 }
+
+function time_to_read($time = ''): string
+{
+    if (!$time) {
+        return '';
+    }
+
+    return sprintf('%s min', $time);
+}

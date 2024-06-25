@@ -21,16 +21,8 @@ body {
     flex-direction: column;
     font-family: 'Inter', sans-serif;
 
-    &:not(.home) {
-        section {
-            &:first-of-type {
-                padding-top: 0;
-            }
-        }
-    }
-
     &.home {
-        background-color: rgba(242, 242, 242, 1);
+        background-color: $color-bg-light;
     }
 
     &:not(.home) {
@@ -193,10 +185,14 @@ img {
     }
 }
 
-.white-theme {
+.white_theme {
     .title, .subtitle {
         color: $color-light;
     }
+}
+
+.bg_light {
+    background-color: $color-bg-light;
 }
 
 section {
@@ -264,6 +260,18 @@ section {
     z-index: 6;
     backdrop-filter: blur(2px);
     min-height: 500px;
+}
+
+._spinner:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url('../img/preloader.gif') center / contain no-repeat;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
 }
 
 .btn {
@@ -614,13 +622,13 @@ section {
 }
 
 .mob_ver {
-    @include response-min($desktop) {
+    @include response-min($laptop-landscape) {
         display: none !important;
     }
 }
 
 .desk_ver {
-    @include response-max($laptop-landscape) {
+    @include response-max($laptop-landscape - 1) {
         display: none !important;
     }
 }
@@ -628,7 +636,6 @@ section {
 section.hero {
     position: relative;
     background-color: #000;
-    min-height: 400px;
 
     .title {
         font-size: 60px;
@@ -639,14 +646,40 @@ section.hero {
         span {
             @include font-style-transparent;
         }
+
+        @include response-max($laptop-portrait) {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+    }
+
+    .subtitle {
+        font-size: 19px;
+        line-height: 1.4;
+        margin-bottom: 0;
+
+        @include response-max($laptop-portrait) {
+            font-size: 15px;
+        }
     }
 
     .hero__body {
         position: relative;
-        padding: 152px 0 74px;
+        padding: 60px 0 0;
 
         @include response-min($laptop-landscape) {
             max-width: 714px;
         }
+
+        @include response-max($laptop-portrait) {
+            text-align: center;
+        }
     }
+}
+
+.card_simple__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
 }

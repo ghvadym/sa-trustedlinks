@@ -10,7 +10,7 @@ if (empty($cards)) {
 }
 ?>
 
-<section class="how_we_work slider_section">
+<section class="how_we_work slider_section bg_light">
     <div class="container">
         <div class="head">
             <?php _get_field($fields['how_we_work_title'] ?? '', 'title', 'h2'); ?>
