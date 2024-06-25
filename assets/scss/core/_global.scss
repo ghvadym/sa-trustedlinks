@@ -15,7 +15,8 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     color: $color-light;
-    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
     font-size: 1.6rem;
     display: flex;
     flex-direction: column;
@@ -55,13 +56,13 @@ h3,
 .bold {
     margin: 0 0 15px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: normal;
     letter-spacing: 2px;
 }
 
 h1 {
     font-size: 70px;
-    line-height: 77px;
+    line-height: normal;
     letter-spacing: 0.02em;
     margin-bottom: 35px;
 
@@ -74,7 +75,7 @@ h1 {
 
 h2 {
     font-size: 50px;
-    line-height: 60px;
+    line-height: normal;
     font-weight: 700;
 
     @media (max-width: $mobile) {
@@ -101,7 +102,7 @@ h3 {
 .subtitle {
     font-size: 19px;
     font-weight: 400;
-    line-height: 26px;
+    line-height: normal;
     color: $color-dark-light;
     margin-bottom: 64px;
 
@@ -200,7 +201,9 @@ section {
     position: relative;
 
     @include response-max($laptop-landscape) {
-        padding: 64px 0;
+        &:not(:first-child) {
+            padding: 64px 0;
+        }
     }
 }
 
@@ -405,23 +408,6 @@ section {
 
 .text_block {
     @include text-block;
-}
-
-.thumbnail {
-    aspect-ratio: 2.6 / 1;
-    overflow: hidden;
-    border-radius: 12px;
-    margin-bottom: 32px;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    @include response-max($mobile) {
-        display: none;
-    }
 }
 
 .table__wrap {
@@ -682,4 +668,45 @@ section.hero {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 16px;
+}
+
+.pagination-container {
+    margin: 50px 0 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    font-size: 22px;
+
+    .next, .prev {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        border-radius: 50%;
+        background-color: $color-bg-light;
+        transition: $transition;
+
+        svg {
+            width: 15px;
+            height: 15px;
+            margin: auto;
+        }
+    }
+
+    a {
+        transition: $transition;
+
+        @include response-min($desktop) {
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+    
+    .current {
+        text-decoration: underline;
+    }
 }

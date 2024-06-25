@@ -15,6 +15,14 @@
             },
         });
 
+        const similarPostsSlider = new Swiper('.similar_posts__slider', {
+            slidesPerView: 'auto',
+            pagination   : {
+                el       : '.similar_posts__pagination',
+                clickable: true
+            },
+        });
+
         const testimonialsSlider = new Swiper('.testimonials__slider', {
             slidesPerView : 'auto',
             grabCursor    : true,

@@ -23,6 +23,8 @@
 }
 
 .card_simple__img {
+    flex-shrink: 0;
+
     img {
         object-fit: cover;
     }
@@ -67,6 +69,13 @@
         color: $color-dark;
         background-color: $color-light;
         border-radius: 32px;
+        transition: $transition;
+    }
+
+    @include response-min($desktop) {
+        &:hover {
+            opacity: 0.7;
+        }
     }
 }
 
@@ -154,6 +163,30 @@
 
         .card_simple__date {
             margin-top: 0;
+        }
+    }
+
+    &.white_bg {
+        background: #E3E3E3;
+        backdrop-filter: blur(43.5px);
+
+        .card_simple__title {
+            color: $color-dark;
+        }
+
+        .card_simple__time {
+            color: $color-dark-light;
+        }
+
+        .card_simple__date {
+            color: $color-dark-light;
+        }
+
+        .card_simple__cat {
+            span {
+                color: $color-light;
+                background-color: $color-dark;
+            }
         }
     }
 }

@@ -20,9 +20,9 @@ $url = get_the_permalink($post);
     <div class="card_simple__body">
         <div class="card_simple__head">
             <?php if (!empty($term)) { ?>
-                <div class="card_simple__cat">
+                <a href="<?php echo get_term_link($term->term_id); ?>" class="card_simple__cat">
                     <span><?php echo esc_html($term->name); ?></span>
-                </div>
+                </a>
             <?php } ?>
             <?php if ($timeToRead) { ?>
                 <div class="card_simple__time">

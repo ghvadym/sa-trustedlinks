@@ -54,23 +54,12 @@
     .card_simple {
         max-width: none;
         width: 100%;
-        background: #E3E3E3;
-        backdrop-filter: blur(43.5px);
         min-height: auto;
     }
 
     .card_simple__title {
         font-size: 24px;
         font-weight: 500;
-        color: $color-dark;
-    }
-
-    .card_simple__time {
-        color: $color-dark-light;
-    }
-
-    .card_simple__date {
-        color: $color-dark-light;
     }
 
     .card_simple__img {
@@ -79,6 +68,12 @@
 
     .card_simple__body {
         flex: 1 1 50%;
+    }
+
+    .card_simple__cat {
+        span {
+            padding: 4px 8px;
+        }
     }
 }
 

@@ -36,7 +36,7 @@ $postsPerIteration = 4;
 
                                 get_template_part_var('cards/blog-card', [
                                     'post'         => $post,
-                                    'card_classes' => 'card_right_content',
+                                    'card_classes' => 'white_bg card_right_content',
                                 ]);
 
                                 if ($i % 4 === 0) { ?>
