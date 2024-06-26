@@ -201,8 +201,10 @@ section {
     position: relative;
 
     @include response-max($laptop-landscape) {
-        &:not(:first-child) {
-            padding: 64px 0;
+        padding: 64px 0;
+
+        &:first-child {
+            padding-top: 128px;
         }
     }
 }
@@ -561,7 +563,7 @@ section {
     position: relative;
 
     @include response-max($mobile) {
-        margin-top: 32px;
+        margin-top: 50px;
     }
 }
 
@@ -708,5 +710,34 @@ section.hero {
     
     .current {
         text-decoration: underline;
+    }
+}
+
+.copy_url {
+    position: relative;
+    @include pointer;
+
+    span {
+        opacity: 0;
+        transition: $transition;
+        position: absolute;
+        left: 50%;
+        top: calc(100% + 3px);
+        transform: translateX(-50%);
+        background-color: $color-light;
+        border-radius: 3px;
+        padding: 3px 6px;
+        color: $color-dark;
+        text-transform: uppercase;
+        font-size: 12px;
+        z-index: 1;
+    }
+
+    &.active {
+        pointer-events: none;
+
+        span {
+            opacity: 1;
+        }
     }
 }

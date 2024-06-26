@@ -15,6 +15,23 @@ function create_post_types()
             'menu_name'     => __('Case Studies', DOMAIN)
         ]
     ]);
+
+    create_post_type('social', [
+        'publicly_queryable' => false,
+        'menu_position'      => 10,
+        'menu_icon'          => 'dashicons-share',
+        'supports'           => ['title', 'thumbnail'],
+        'labels'             => [
+            'name'          => __('Socials', DOMAIN),
+            'singular_name' => __('Social', DOMAIN),
+            'add_new'       => __('Add New Social', DOMAIN),
+            'add_new_item'  => __('Add New Social', DOMAIN),
+            'view_item'     => __('View Social', DOMAIN),
+            'search_items'  => __('Find Social', DOMAIN),
+            'not_found'     => __('Social isn\'t found', DOMAIN),
+            'menu_name'     => __('Social', DOMAIN)
+        ]
+    ]);
 }
 
 

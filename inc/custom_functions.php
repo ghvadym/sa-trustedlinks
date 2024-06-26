@@ -35,3 +35,17 @@ function time_to_read($time = ''): string
 
     return sprintf('%s min', $time);
 }
+
+function socials_share_links($name): string
+{
+    switch ($name) {
+        case 'X':
+            return 'https://twitter.com/share?url=[link]&text=[title]';
+        case 'Facebook':
+            return 'https://www.facebook.com/sharer/sharer.php?u=[link]';
+        case 'Linkedin':
+            return 'https://www.linkedin.com/sharing/share-offsite/?url=[link]';
+    }
+
+    return '';
+}
