@@ -1,6 +1,8 @@
 <?php
 wp_footer();
-get_template_part_var('global/cta');
+if (!is_page_template('templates/about-us.php')) {
+    get_template_part_var('global/cta');
+}
 ?>
 
 </main>

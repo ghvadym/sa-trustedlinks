@@ -88,20 +88,6 @@ section.single {
     }
 }
 
-.similar_posts {
-    padding-top: 0;
-
-    .card_simple {
-        max-width: 397px;
-        min-height: 499px;
-        background: linear-gradient(125deg, #F3F3F3 0%, #EFEFEF 100%);
-    }
-
-    .card_simple__img {
-        height: 260px;
-    }
-}
-
 .text_block {
     padding-bottom: 63px;
     margin-bottom: 32px;
@@ -145,15 +131,6 @@ section.single {
     }
 }
 
-.similar_posts__title {
-    text-align: center;
-    color: #EBEBF0;
-    font-size: 52px;
-    text-transform: uppercase;
-    margin-bottom: 64px;
-
-    @include response-max($laptop-portrait) {
-        font-size: 29px;
-        margin-bottom: 24px;
-    }
+.similar_posts {
+    padding-top: 0;
 }

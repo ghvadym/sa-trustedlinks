@@ -87,38 +87,10 @@ $similarPosts = _get_posts($similarPostsArgs);
     </div>
 </section>
 
-<?php if ($similarPosts) { ?>
-    <section class="similar_posts slider_section">
-        <div class="container">
-            <h2 class="title similar_posts__title">
-                <?php _e('You may also be interested', DOMAIN); ?>
-            </h2>
-            <div class="slider_wrapper">
-                <div class="similar_posts__slider swiper">
-                    <div class="swiper-wrapper">
-                        <?php $i = 1;
-                        foreach ($similarPosts as $post) {
-                            $cardClasses = 'swiper-slide';
-
-                            if ($i === 3) {
-                                $cardClasses .= ' full_image';
-                            } else {
-                                $cardClasses .= ' white_bg';
-                            }
-
-                            get_template_part_var('cards/blog-card', [
-                                'post'         => $post,
-                                'card_classes' => $cardClasses,
-                            ]);
-                            $i++;
-                        } ?>
-                    </div>
-                </div>
-            </div>
-            <div class="similar_posts__pagination"></div>
-        </div>
-    </section>
-<?php } ?>
-
 <?php
+
+get_template_part_var('global/recommended-posts', [
+    'posts' => $similarPosts
+]);
+
 get_footer();
