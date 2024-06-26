@@ -1,0 +1,45 @@
+//Core
+@import "core/variables";
+@import "core/mixins";
+
+section.hero {
+    padding: 200px 0 245px;
+
+    @include response-max($laptop-landscape - 1) {
+        padding-bottom: 0;
+    }
+
+    .hero__body {
+        max-width: 700px;
+    }
+
+    .subtitle {
+        margin-bottom: 32px;
+    }
+
+    .about_us__img {
+        object-fit: contain;
+        object-position: bottom;
+
+        @include response-min($laptop-landscape) {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            max-width: 627px;
+        }
+
+        @include response-max($laptop-landscape - 1) {
+            display: block;
+            margin: 15px auto -5px;
+            position: relative;
+        }
+
+        @include response-max($mobile) {
+            max-width: calc(100% - 64px);
+        }
+    }
+}
+
+@include response-max($laptop-landscape - 1) {
+
+}
