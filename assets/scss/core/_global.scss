@@ -95,6 +95,10 @@ h3 {
     margin-bottom: 8px;
     text-transform: uppercase;
     color: $color-theme;
+
+    span {
+        @include font-style-transparent;
+    }
 }
 
 .subtitle {
@@ -106,6 +110,7 @@ h3 {
 
     @include response-max($mobile) {
         margin-bottom: 32px;
+        font-size: 15px;
     }
 }
 
@@ -171,6 +176,11 @@ img {
     @include response-min(1363px) {
         margin-left: calc((100% - 1362px) / 2);
     }
+}
+
+.no-container {
+    width: 100%;
+    padding: 0 32px;
 }
 
 .head {
@@ -628,10 +638,6 @@ section.hero {
         font-weight: 700;
         text-transform: uppercase;
         margin-bottom: 32px;
-
-        span {
-            @include font-style-transparent;
-        }
 
         @include response-max($laptop-portrait) {
             font-size: 32px;
