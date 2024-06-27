@@ -76,6 +76,31 @@
             });
         }
 
+        /* Modal Window */
+        const modalWindow = $('.modal_window');
+        const openModalWindowBtn = $('.popup_open');
+        const inputPlan = $(".contact-form input[name='plan']");
+        if (openModalWindowBtn.length && modalWindow.length) {
+            $(document).on('click', '.popup_open', function () {
+                const plan = $(this).attr('data-plan');
+                $(modalWindow).addClass('active-popup');
+                if (inputPlan.length) {
+                    $(inputPlan).val(plan);
+                }
+            });
+        }
+
+        const modalWindowBg = $('.modal_window__bg');
+        const modalWindowCloseIcon = $('.modal_window__icon_close');
+        if ((modalWindowBg.length || modalWindowCloseIcon.length) && modalWindow.length) {
+            $(document).on('click', '.modal_window__bg, .modal_window__icon_close', function () {
+                $(modalWindow).removeClass('active-popup');
+                if (inputPlan.length) {
+                    $(inputPlan).val('');
+                }
+            });
+        }
+
         const copy = $('.copy_url');
         if (copy.length) {
             $(document).on('click', '.copy_url', function () {

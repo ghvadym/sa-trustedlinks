@@ -3,6 +3,8 @@ wp_footer();
 if (!is_page_template('templates/about-us.php')) {
     get_template_part_var('global/cta');
 }
+
+get_template_part_var('global/contact-form-popup');
 ?>
 
 </main>
