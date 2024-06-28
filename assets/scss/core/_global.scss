@@ -644,6 +644,10 @@ section {
     column-gap: 24px;
     position: relative;
     z-index: 1;
+
+    @include response-max($laptop-landscape - 1) {
+        margin-top: 44px;
+    }
 }
 
 .swiper__nav_item {

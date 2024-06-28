@@ -2,6 +2,10 @@
     .section_bg {
         object-position: top left;
     }
+
+    @include response-min($laptop-landscape) {
+        padding-bottom: 200px;
+    }
 }
 
 .faq__list {

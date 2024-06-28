@@ -14,7 +14,9 @@
 
     &.pricing-highlighted {
         background: linear-gradient(170.37deg, #7059FF 0%, #7B41C4 100%);
+    }
 
+    &.pricing-highlighted, &.white_theme {
         .pricing_item__name {
             span {
                 color: $color-dark;

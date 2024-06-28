@@ -29,9 +29,8 @@ if (file_exists(get_template_directory().$bgMobPath)) {
     <?php if (!empty($bgUrl)) { ?>
         <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bg); ?>" class="section_bg faq_bg_desk">
     <?php } ?>
-
     <?php if (!empty($bgUrlMob)) { ?>
-        <img src="<?php echo esc_url($bgUrlMob); ?>" alt="<?php echo get_the_title($bgMob); ?>" class="section_bg faq_bg_mob">
+        <img src="<?php echo esc_url($bgUrlMob); ?>" alt="Faq mobile background" class="section_bg faq_bg_mob">
     <?php } ?>
     <div class="container">
         <div class="head white_theme">

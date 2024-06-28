@@ -43,6 +43,10 @@ function wp_enqueue_scripts_call()
     if (is_page_template('templates/case-studies.php')) {
         wp_enqueue_style('case-studies-styles', TAI_THEME_URL . '/dest/css/case-studies.css');
     }
+
+    if (is_page_template('templates/pricing.php')) {
+        wp_enqueue_style('case-studies-styles', TAI_THEME_URL . '/dest/css/pricing.css');
+    }
 }
 
 add_action('after_setup_theme', 'after_setup_theme_call');

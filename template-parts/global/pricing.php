@@ -12,6 +12,8 @@ if (!empty($bg)) {
 
 $ctaTitle = acf_option('pricing_cta_title');
 $ctaBtnText = acf_option('pricing_cta_btn_text');
+$lightArrows = !empty($light_arrows) ? '-light' : '';
+$lightTheme = !empty($light_theme) ? ' white_theme' : '';
 ?>
 
 <section class="pricing slider_section">
@@ -19,9 +21,9 @@ $ctaBtnText = acf_option('pricing_cta_btn_text');
         <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bg); ?>" class="section_bg">
     <?php } ?>
     <div class="container">
-        <div class="head">
-            <?php _get_field(acf_option('pricing_title'), 'title', 'h2'); ?>
-            <?php if ($subtitle = acf_option('pricing_subtitle')) { ?>
+        <div class="head<?php echo $lightTheme; ?>">
+            <?php _get_field($title ?? '', 'title', 'h2'); ?>
+            <?php if (!empty($subtitle)) { ?>
                 <p class="subtitle">
                     <?php echo text_spaces_control($subtitle); ?>
                 </p>
@@ -47,7 +49,7 @@ $ctaBtnText = acf_option('pricing_cta_btn_text');
                             $imgUrl = wp_get_attachment_image_url($imgId, 'medium');
                         }
                         ?>
-                        <div class="pricing_item swiper-slide<?php echo !empty($card['is_highlighted']) ? ' pricing-highlighted' : ''; ?>">
+                        <div class="pricing_item swiper-slide<?php echo !empty($card['is_highlighted']) ? ' pricing-highlighted' : ''; ?><?php echo $lightTheme; ?>">
                             <div class="pricing_item_body">
                                 <div class="pricing_item__name">
                                     <?php if ($name) { ?>
@@ -103,10 +105,10 @@ $ctaBtnText = acf_option('pricing_cta_btn_text');
     <div class="container">
         <div class="swiper__nav">
             <div class="swiper__nav_item pricing__button_prev">
-                <?php get_svg('slider-arrow-light-left'); ?>
+                <?php get_svg("slider-arrow$lightArrows-left"); ?>
             </div>
             <div class="swiper__nav_item pricing__button_next">
-                <?php get_svg('slider-arrow-light-right'); ?>
+                <?php get_svg("slider-arrow$lightArrows-right"); ?>
             </div>
         </div>
         <?php if ($ctaTitle && $ctaBtnText) { ?>

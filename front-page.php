@@ -22,7 +22,10 @@ get_template_part_var('home/pr-service', [
 ]);
 get_template_part_var('global/testimonials');
 get_template_part_var('global/pricing', [
-    'bg' => acf_option('pricing_bg')
+    'bg'           => acf_option('pricing_bg'),
+    'light_arrows' => true,
+    'title'        => $fields['pricing_title'] ?? '',
+    'subtitle'     => $fields['pricing_subtitle'] ?? ''
 ]);
 get_template_part_var('home/services', [
     'fields' => $fields
