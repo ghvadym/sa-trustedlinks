@@ -40,7 +40,7 @@
             $(document).on('click', '.recent_posts__close', function () {
                 $(resetFilter).hide();
                 $(blogTabs).removeClass('active-cat');
-                $(btnViewAll).show();
+                $(btnViewAll).hide();
                 postsFilter();
             });
         }

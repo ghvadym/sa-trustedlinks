@@ -22,9 +22,6 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
                 <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main section_bg" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_mob'])); ?>">
             <?php } ?>
         <?php } ?>
-        <?php if ($earthUrl) { ?>
-            <img src="<?php echo esc_url($earthUrl); ?>" class="hero__bg_earth" alt="<?php echo esc_attr(get_the_title($fields['hero_earth'])); ?>">
-        <?php } ?>
         <?php if ($spacemanUrl) { ?>
             <img src="<?php echo esc_url($spacemanUrl); ?>" class="hero__bg_spaceman" alt="<?php echo esc_attr(get_the_title($fields['hero_spaceman'])); ?>">
         <?php } ?>
@@ -36,6 +33,9 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
             <?php } ?>
             <?php if ($flyRightImbUrl) { ?>
                 <img src="<?php echo esc_url($flyRightImbUrl); ?>" class="hero__bg_fly_right" alt="<?php echo esc_attr(get_the_title($fields['hero_fly_img_right'])); ?>">
+            <?php } ?>
+            <?php if ($earthUrl) { ?>
+                <img src="<?php echo esc_url($earthUrl); ?>" class="hero__bg_earth" alt="<?php echo esc_attr(get_the_title($fields['hero_earth'])); ?>">
             <?php } ?>
         </div>
         <div class="hero__content">
@@ -49,7 +49,7 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
                     <?php echo text_spaces_control($fields['hero_text']); ?>
                 </p>
             <?php } ?>
-            <?php _get_field($fields['hero_link_text'] ?? '', 'hero__btn btn_light'); ?>
+            <?php _get_field($fields['hero_link_text'] ?? '', 'hero__btn btn_light popup_open'); ?>
             <?php if ($fields['hero_subtitle'] ?? '') { ?>
                 <p class="hero__subtitle">
                     <?php echo text_spaces_control($fields['hero_subtitle']); ?>

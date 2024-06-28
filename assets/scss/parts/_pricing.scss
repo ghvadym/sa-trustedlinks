@@ -8,12 +8,18 @@
     max-width: 292px;
     height: auto;
     margin: 0 12px;
-    background: linear-gradient(148.73deg, rgba(217, 217, 217, 0.2) 1.16%, rgba(115, 115, 115, 0.2) 99.16%);
+    border: 1px solid #737373;
+    background: linear-gradient(149deg, rgba(217, 217, 217, 0.20) 1.16%, rgba(115, 115, 115, 0.20) 99.16%);
+    backdrop-filter: blur(12px);
     border-radius: 16px;
-    backdrop-filter: blur(4px);
 
     &.pricing-highlighted {
         background: linear-gradient(170.37deg, #7059FF 0%, #7B41C4 100%);
+    }
+
+    &.white_theme {
+        border: 1px solid #313131;
+        background: linear-gradient(149deg, rgba(217, 217, 217, 0.20) 1.16%, rgba(115, 115, 115, 0.20) 99.16%);
     }
 
     &.pricing-highlighted, &.white_theme {

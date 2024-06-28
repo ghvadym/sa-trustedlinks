@@ -23,30 +23,35 @@
             },
         });
 
-        const testimonialsSlider = new Swiper('.testimonials__slider', {
+        const testimonialsSliderArgs = {
             slidesPerView : 'auto',
-            grabCursor    : true,
-            centeredSlides: true,
-            effect        : 'coverflow',
-            keyboard      : true,
-            spaceBetween  : 50,
-            loop: true,
-            // autoplay: {
-            //     delay: 2000,
-            //     disableOnInteraction: false,
-            // },
-            coverflowEffect: {
-                rotate      : 0,
-                stretch     : 0,
-                depth       : 10,
-                modifier    : 14,
-                slideShadows: false
-            },
             navigation: {
                 nextEl: '.testimonials__button_next',
-                prevEl: '.testimonials__button_prev',
-            },
-        });
+                prevEl: '.testimonials__button_prev'
+            }
+        };
+
+        if (isDesktop) {
+            testimonialsSliderArgs.centeredSlides = true;
+            // testimonialsSliderArgs.spaceBetween = 50;
+            testimonialsSliderArgs.keyboard = true;
+            testimonialsSliderArgs.grabCursor = true;
+            // testimonialsSliderArgs.effect = 'coverflow';
+            testimonialsSliderArgs.loop = true;
+            testimonialsSliderArgs.autoplay = {
+                delay: 3000,
+                disableOnInteraction: false
+            };
+            // testimonialsSliderArgs.coverflowEffect = {
+            //     rotate      : 0,
+            //     stretch     : 0,
+            //     depth       : 10,
+            //     modifier    : 12,
+            //     slideShadows: false
+            // };
+        }
+
+        const testimonialsSlider = new Swiper('.testimonials__slider', testimonialsSliderArgs);
 
         if (header.length) {
             $(window).scroll(function () {

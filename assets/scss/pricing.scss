@@ -2,6 +2,12 @@
 @import "core/variables";
 @import "core/mixins";
 
+section.pricing {
+    @include response-min($desktop) {
+        padding-top: 200px;
+    }
+}
+
 .pricing_blocks__list {
     position: relative;
 

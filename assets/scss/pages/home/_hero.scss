@@ -11,6 +11,17 @@
             height: 100%;
         }
     }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 425px;
+        background: linear-gradient(0deg, #121212 0%, rgba(18, 18, 18, 0.00) 100%);
+        z-index: 1;
+    }
 }
 
 .hero__content {
@@ -22,6 +33,10 @@
 
     & > *:not(:last-child) {
         margin-bottom: 32px;
+
+        @include response-max($laptop-portrait) {
+            margin-bottom: 16px;
+        }
     }
 
     @include response-max($laptop-portrait) {
@@ -29,6 +44,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 90px;
     }
 
     @include response-max($mobile) {
@@ -44,66 +60,71 @@
         height: auto;
         object-fit: contain;
     }
-}
 
-.hero__bg_earth {
-    max-width: 1200px;
-    position: absolute;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -27%;
-    z-index: 1;
-    object-fit: contain;
+    .hero__bg_earth {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        z-index: 1;
+        object-fit: cover;
 
-    @include response-max($laptop-portrait) {
-        bottom: -50px;
+        @include response-min($laptop-landscape) {
+            transform: translateY(55%);
+            bottom: 0;
+        }
+
+        @include response-max($laptop-landscape - 1) {
+            bottom: 85px;
+        }
+    }
+
+    .hero__bg_fly_left {
+        @include response-min($header-responsive + 1) {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            width: 150px;
+            height: 125px;
+            object-fit: contain;
+        }
+
+        @include response-max($header-responsive) {
+            display: none;
+        }
+    }
+
+    .hero__bg_fly_right {
+        @include response-min($header-responsive + 1) {
+            position: absolute;
+            right: 20px;
+            top: 100px;
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        @include response-max($header-responsive) {
+            display: none;
+        }
     }
 }
 
 .hero__bg_spaceman {
     position: absolute;
-    max-height: 84vh;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -38px;
+    top: 50px;
     z-index: 2;
-    object-fit: contain;
+    width: 992px;
+    height: 1084px;
 
-    @include response-max($laptop-portrait) {
+    @include response-max($laptop-landscape - 1) {
         bottom: unset;
-        top: 25px;
-        max-width: 80vw;
-    }
-}
-
-.hero__bg_fly_left {
-    @include response-min($header-responsive + 1) {
-        position: absolute;
-        left: 76px;
-        top: 5vh;
-        width: 150px;
-        height: 125px;
-        object-fit: contain;
-    }
-
-    @include response-max($header-responsive) {
-        display: none;
-    }
-}
-
-.hero__bg_fly_right {
-    @include response-min($header-responsive + 1) {
-        position: absolute;
-        right: 53px;
-        top: 20vh;
-        width: 150px;
-        height: 150px;
-        object-fit: contain;
-    }
-
-    @include response-max($header-responsive) {
-        display: none;
+        top: 65px;
+        min-width: 487px;
+        height: 483px;
+        transform: translateX(-50%);
+        left: 50%;
     }
 }
 
@@ -123,7 +144,8 @@
     @include response-max($laptop-portrait) {
         font-size: 32px;
         line-height: 38px;
-        margin-bottom: 16px;
+        margin-bottom: 16px !important;
+        letter-spacing: -2px;
     }
 }
 
@@ -137,6 +159,7 @@
 
     @include response-max($laptop-portrait) {
         font-size: 15px;
+        margin-bottom: 32px !important;
     }
 }
 

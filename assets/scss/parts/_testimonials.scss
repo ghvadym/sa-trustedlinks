@@ -5,15 +5,27 @@
     }
 }
 
+.testimonials__slider {
+    .swiper-wrapper {
+        align-items: center;
+    }
+
+    @include response-max($laptop-landscape) {
+        padding: 0 0 0 32px;
+    }
+}
+
 .testimonial__card {
     width: 398px;
     background: linear-gradient(135deg, #262626 100%, #737373 100%);
     transition: $transition;
     border-radius: 16px;
     overflow: hidden;
+    margin: 0 12px;
 
     &.swiper-slide-active {
         background: linear-gradient(148.73deg, #7059FF 1.16%, #7B41C4 99.16%);
+        zoom: 1.2;
     }
 
     @include response-max($mobile) {
@@ -40,7 +52,7 @@
 
     @include response-max($mobile) {
         font-size: 15px;
-        line-height: 14px;
+        line-height: 20px;
     }
 }
 

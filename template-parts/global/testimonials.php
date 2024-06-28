@@ -12,7 +12,7 @@ if ($bgId) {
 
 ?>
 
-<section class="testimonials">
+<section class="testimonials slider_section">
     <?php if (!empty($bgUrl)) { ?>
         <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bgId); ?>" class="section_bg">
     <?php } ?>

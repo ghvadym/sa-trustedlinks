@@ -18,9 +18,7 @@ if (empty($posts)) {
 ?>
 <section class="similar_posts slider_section">
     <div class="container">
-        <h2 class="title similar_posts__title">
-            <?php _get_field(acf_option('recent_posts_title'), 'title similar_posts__title', 'h2'); ?>
-        </h2>
+        <?php _get_field(acf_option('recent_posts_title'), 'title similar_posts__title', 'h2'); ?>
         <div class="slider_wrapper">
             <div class="similar_posts__slider swiper">
                 <div class="swiper-wrapper">
@@ -31,7 +29,7 @@ if (empty($posts)) {
                         if (wp_is_mobile()) {
                             $cardClasses .= ' full_image';
                         } else {
-                            if ($i === 3) {
+                            if ($i % 3 === 0) {
                                 $cardClasses .= ' full_image';
                             } else {
                                 $cardClasses .= ' white_bg';

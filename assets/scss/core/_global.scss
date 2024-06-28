@@ -163,7 +163,7 @@ img {
 }
 
 .container {
-    max-width: 1362px;
+    max-width: 1306px;
     width: 100%;
     margin: 0 auto;
     padding: 0 32px;
@@ -174,7 +174,7 @@ img {
     width: 100%;
 
     @include response-min(1363px) {
-        margin-left: calc((100% - 1362px) / 2);
+        margin-left: calc((100% - 1306px) / 2);
     }
 }
 
@@ -579,11 +579,11 @@ section {
     height: 100%;
 }
 
-.slider_wrapper {
-    .swiper-wrapper {
-        margin: 0 -12px;
-    }
+.swiper-wrapper {
+    margin: 0 -12px;
+}
 
+.slider_wrapper {
     .swiper {
         @include response-max($laptop-landscape) {
             padding-left: 32px;
@@ -603,6 +603,10 @@ section {
 
             & > *:not(.slider_wrapper) {
                 padding: 0 32px;
+            }
+
+            .swiper {
+                padding-right: 0 !important;
             }
         }
 
@@ -811,7 +815,7 @@ section.hero {
 
     @include response-min($laptop-portrait) {
         .card_simple {
-            max-width: 397px;
+            max-width: 390px;
             min-height: 499px;
         }
     }
