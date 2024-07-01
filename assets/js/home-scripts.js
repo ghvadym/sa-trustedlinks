@@ -20,6 +20,7 @@
 
         const prServiceSlider = new Swiper('.pr_service__slider', {
             slidesPerView: 'auto',
+            loop         : true,
             pagination   : {
                 el       : '.pr_service__pagination',
                 clickable: true

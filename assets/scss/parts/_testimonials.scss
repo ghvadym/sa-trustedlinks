@@ -10,13 +10,19 @@
         align-items: center;
     }
 
-    @include response-max($laptop-landscape) {
+    @include response-min($laptop-landscape) {
+        height: 340px;
+        padding: 0;
+    }
+
+    @include response-max($laptop-landscape - 1) {
         padding: 0 0 0 32px;
     }
 }
 
 .testimonial__card {
     width: 292px;
+    height: auto;
     background: linear-gradient(135deg, #262626 100%, #737373 100%);
     transition: $transition;
     border-radius: 16px;
@@ -25,29 +31,30 @@
 
     &.swiper-slide-active {
         background: linear-gradient(148.73deg, #7059FF 1.16%, #7B41C4 99.16%);
+        zoom: 1.2;
+    }
 
-        @include response-min($desktop) {
-            zoom: 1.2;
-        }
+    @include response-max($mobile) {
+        width: 296px;
     }
 }
 
 .testimonial__body {
-    padding: 24px 16px;
+    padding: 16px 16px 32px;
 
     svg {
-        width: 20px;
-        height: 20px;
-        margin-bottom: 32px;
+        width: 13px;
+        height: 13px;
+        margin-bottom: 16px;
     }
 }
 
 .testimonial__text {
     margin-bottom: 24px;
     color: rgba(234, 234, 234, 1);
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 300;
-    line-height: 27px;
+    line-height: 1.4;
 
     @include response-max($mobile) {
         font-size: 15px;
@@ -57,15 +64,15 @@
 
 .testimonial__author {
     display: flex;
-    column-gap: 10px;
+    column-gap: 8px;
 }
 
 .testimonial__img {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background: $color-grey;
-    padding: 3px;
+    padding: 2px;
 
     img {
         border-radius: 50%;
@@ -73,22 +80,14 @@
         width: 100%;
         height: 100%;
     }
-
-    @include response-max($mobile) {
-        width: 35px;
-        height: 35px;
-    }
 }
 
 .testimonial__name {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 29px;
+    font-size: 16px;
+    font-weight: 400;
 
     span {
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 22px;
+        font-size: 14px;
         color: $color-grey;
         display: block;
     }

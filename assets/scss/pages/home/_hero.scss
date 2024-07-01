@@ -138,14 +138,14 @@
     position: absolute;
     animation: shining 3s infinite;
     width: auto;
-    height: 50%;
+    height: 56%;
     z-index: 2;
     object-fit: contain;
     top: 54%;
 }
 
 .hero__spaceman_cable_left {
-    left: -25%;
+    left: -29%;
 
     @include response-max($laptop-landscape - 1) {
         left: 10%;
@@ -154,7 +154,7 @@
 
 .hero__spaceman_cable_right {
     left: 89.5%;
-    top: 53.5%;
+    top: 53%;
 
     @include response-max($laptop-landscape - 1) {
         left: 72.5%;

@@ -35,9 +35,8 @@
             },
         });
 
-        let testimonialsSliderArgs = {
+        const testimonialsSliderArgs = {
             slidesPerView : 'auto',
-            allowTouchMove: true,
             navigation: {
                 nextEl: '.testimonials__button_next',
                 prevEl: '.testimonials__button_prev'
@@ -49,8 +48,7 @@
             testimonialsSliderArgs.keyboard = true;
             testimonialsSliderArgs.grabCursor = true;
             testimonialsSliderArgs.loop = true;
-            testimonialsSliderArgs.pauseOnMouseEnter = true;
-            testimonialsSliderArgs.disableOnInteraction = true;
+
             testimonialsSliderArgs.autoplay = {
                 delay: 3000,
                 disableOnInteraction: false

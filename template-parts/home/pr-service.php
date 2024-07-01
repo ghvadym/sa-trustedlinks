@@ -53,8 +53,10 @@ if (empty($cards)) {
                         </div>
                     <?php } ?>
                 </div>
-                <div class="pr_service__pagination"></div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <div class="pr_service__pagination"></div>
     </div>
 </section>

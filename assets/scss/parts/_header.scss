@@ -69,6 +69,8 @@
             margin-bottom: 0;
 
             &.menu-item-btn {
+                padding-bottom: 0;
+
                 @include response-min($header-responsive) {
                     margin-left: auto;
                     height: 48px;
