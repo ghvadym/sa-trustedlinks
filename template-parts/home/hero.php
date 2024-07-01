@@ -3,12 +3,12 @@ if (empty($fields)) {
     return;
 }
 
-$bgUrl = !empty($fields['hero_bg_desk']) ? wp_get_attachment_image_url($fields['hero_bg_desk'], 'large') : '';
-$bgMobUrl = !empty($fields['hero_bg_mob']) ? wp_get_attachment_image_url($fields['hero_bg_mob'], 'large') : '';
-$earthUrl = !empty($fields['hero_earth']) ? wp_get_attachment_image_url($fields['hero_earth'], 'large') : '';
-$flyLeftImbUrl = !empty($fields['hero_fly_img_left']) ? wp_get_attachment_image_url($fields['hero_fly_img_left'], 'large') : '';
-$flyRightImbUrl = !empty($fields['hero_fly_img_right']) ? wp_get_attachment_image_url($fields['hero_fly_img_right'], 'large') : '';
-$spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($fields['hero_spaceman'], 'large') : '';
+$bgUrl = !empty($fields['hero_bg_desk']) ? wp_get_attachment_image_url($fields['hero_bg_desk'], 'full') : '';
+$bgMobUrl = !empty($fields['hero_bg_mob']) ? wp_get_attachment_image_url($fields['hero_bg_mob'], 'full') : '';
+$earthUrl = !empty($fields['hero_earth']) ? wp_get_attachment_image_url($fields['hero_earth'], 'full') : '';
+$flyLeftImbUrl = !empty($fields['hero_fly_img_left']) ? wp_get_attachment_image_url($fields['hero_fly_img_left'], 'full') : '';
+$flyRightImbUrl = !empty($fields['hero_fly_img_right']) ? wp_get_attachment_image_url($fields['hero_fly_img_right'], 'full') : '';
+$spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($fields['hero_spaceman'], 'full') : '';
 ?>
 
 <section class="hero_section">

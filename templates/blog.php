@@ -7,12 +7,12 @@ $fields = get_fields();
 
 $bg = $fields['hero_image'] ?? '';
 if ($bg) {
-    $bgUrl = wp_get_attachment_image_url($bg, 'large');
+    $bgUrl = wp_get_attachment_image_url($bg, 'full');
 }
 
 $bgMob = $fields['hero_image_mob'] ?? '';
 if ($bgMob) {
-    $bgMobUrl = wp_get_attachment_image_url($bgMob, 'large');
+    $bgMobUrl = wp_get_attachment_image_url($bgMob, 'full');
 }
 ?>
 

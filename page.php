@@ -21,7 +21,7 @@ $contents = get_field('content', $post->ID);
                     $text = $content['text'] ?? '';
 
                     if ($imgId) {
-                        $imgUrl = wp_get_attachment_image_url($imgId, 'large');
+                        $imgUrl = wp_get_attachment_image_url($imgId, 'full');
                         $label = get_post_meta($imgId, '_wp_attachment_image_alt', true);
                     }
                     ?>

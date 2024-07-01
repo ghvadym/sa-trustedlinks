@@ -3,8 +3,8 @@ if (empty($fields)) {
     return;
 }
 
-$bgUrl = !empty($fields['mission_bg_img']) ? wp_get_attachment_image_url($fields['mission_bg_img'], 'large') : '';
-$imgUrl = !empty($fields['mission_img']) ? wp_get_attachment_image_url($fields['mission_img'], 'large') : '';
+$bgUrl = !empty($fields['mission_bg_img']) ? wp_get_attachment_image_url($fields['mission_bg_img'], 'full') : '';
+$imgUrl = !empty($fields['mission_img']) ? wp_get_attachment_image_url($fields['mission_img'], 'full') : '';
 ?>
 
 <section class="mission">

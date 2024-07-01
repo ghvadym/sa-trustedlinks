@@ -5,11 +5,11 @@ if (empty($fields)) {
 
 $bgMainId = $fields['case_studies_image_bg'] ?? '';
 if ($bgMainId) {
-    $bgMainUrl = wp_get_attachment_image_url($bgMainId, 'large');
+    $bgMainUrl = wp_get_attachment_image_url($bgMainId, 'full');
 }
 $bgBottomId = $fields['case_studies_image_bottom'] ?? '';
 if ($bgBottomId) {
-    $bgBottomUrl = wp_get_attachment_image_url($bgBottomId, 'large');
+    $bgBottomUrl = wp_get_attachment_image_url($bgBottomId, 'full');
 }
 
 $caseStudies = $fields['case_studies'] ?? '';

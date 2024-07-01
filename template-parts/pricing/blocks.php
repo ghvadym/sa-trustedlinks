@@ -31,7 +31,7 @@ if (empty($blocks)) {
                 $text = $block['text'] ?? '';
 
                 if ($imgId) {
-                    $imgUrl = wp_get_attachment_image_url($imgId, 'large');
+                    $imgUrl = wp_get_attachment_image_url($imgId, 'full');
                 }
                 ?>
                 <div class="pricing_block">

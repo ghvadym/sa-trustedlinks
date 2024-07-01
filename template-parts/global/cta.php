@@ -7,7 +7,7 @@ $btnText = $cta['button_text'] ?? '';
 $imgId = $cta['img'] ?? '';
 
 if ($imgId) {
-    $imgUrl = wp_get_attachment_image_url($imgId, 'large');
+    $imgUrl = wp_get_attachment_image_url($imgId, 'full');
 }
 ?>
 

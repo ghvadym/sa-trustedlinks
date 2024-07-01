@@ -3,8 +3,8 @@ if (empty($fields) || empty($post)) {
     return;
 }
 
-$bgUrl = !empty($fields['hero_img_bg']) ? wp_get_attachment_image_url($fields['hero_img_bg'], 'large') : '';
-$imgSpacemanUrl = !empty($fields['hero_img_spaceman']) ? wp_get_attachment_image_url($fields['hero_img_spaceman'], 'large') : '';
+$bgUrl = !empty($fields['hero_img_bg']) ? wp_get_attachment_image_url($fields['hero_img_bg'], 'full') : '';
+$imgSpacemanUrl = !empty($fields['hero_img_spaceman']) ? wp_get_attachment_image_url($fields['hero_img_spaceman'], 'full') : '';
 ?>
 
 <section class="hero">

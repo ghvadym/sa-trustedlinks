@@ -7,7 +7,7 @@ if (empty($testimonials)) {
 
 $bgId = acf_option('testimonials_bg');
 if ($bgId) {
-    $bgUrl = wp_get_attachment_image_url($bgId, 'large');
+    $bgUrl = wp_get_attachment_image_url($bgId, 'full');
 }
 
 ?>

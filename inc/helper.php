@@ -162,7 +162,7 @@ function cut_str(string $text, int $limit = 100)
     echo strlen($clear_text) > $limit ? mb_substr($clear_text, 0, $limit, 'utf-8') . '...' : $clear_text;
 }
 
-function get_thumbnail_url(int $post_id = 0, string $size = 'large'): string
+function get_thumbnail_url(int $post_id = 0, string $size = 'full'): string
 {
     if (!$post_id) {
         $post_id = get_the_ID();
@@ -192,7 +192,7 @@ function img_url(string $image_name = '', bool $show = true)
     }
 }
 
-function get_thumbnail_html(int $post_id = 0, string $label = '', string $size = 'large'): string
+function get_thumbnail_html(int $post_id = 0, string $label = '', string $size = 'full'): string
 {
     if (!$post_id) {
         return '';

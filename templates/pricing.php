@@ -16,7 +16,7 @@ get_template_part_var('global/pricing', [
 
 get_template_part_var('pricing/blocks', [
     'fields' => $fields,
-    'bgUrl'  => get_the_post_thumbnail_url($post->ID, 'large')
+    'bgUrl'  => get_the_post_thumbnail_url($post->ID, 'full')
 ]);
 
 get_template_part_var('global/testimonials');

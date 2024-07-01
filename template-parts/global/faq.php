@@ -16,7 +16,7 @@ if ($faqListItems > 1) {
 
 $bg = $fields['faq_bg_img'] ?? 0;
 if (!empty($bg)) {
-    $bgUrl = wp_get_attachment_image_url($bg, 'large');
+    $bgUrl = wp_get_attachment_image_url($bg, 'full');
 }
 
 $bgMobPath = '/dest/img/FAQ Block Mob.png';

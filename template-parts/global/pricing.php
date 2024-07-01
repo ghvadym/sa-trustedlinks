@@ -7,7 +7,7 @@ if (empty($cards)) {
 }
 
 if (!empty($bg)) {
-    $bgUrl = wp_get_attachment_image_url($bg, 'large');
+    $bgUrl = wp_get_attachment_image_url($bg, 'full');
 }
 
 $ctaTitle = acf_option('pricing_cta_title');
@@ -67,7 +67,7 @@ $lightTheme = !empty($light_theme) ? ' white_theme' : '';
                                         <?php } ?>
                                     </div>
                                 <?php } ?>
-                                <div class="pricing_item__btn popup_open<?php echo !empty($card['is_highlighted']) ? ' btn_light' : ' btn_dark'; ?>" data-plan="<?php esc_attr($name); ?>">
+                                <div class="pricing_item__btn popup_open<?php echo !empty($card['is_highlighted']) ? ' btn_light' : ' btn_dark'; ?>" data-plan="<?php echo esc_attr($name); ?>">
                                     <?php echo $btn_title ? esc_html($btn_title) : __('Let’s Work', DOMAIN); ?>
                                 </div>
                                 <?php if ($value) { ?>
@@ -92,7 +92,7 @@ $lightTheme = !empty($light_theme) ? ' white_theme' : '';
                                         <?php } ?>
                                     </ul>
                                 <?php } ?>
-                                <div class="pricing_item__link popup_open" data-plan="<?php esc_attr($name); ?>">
+                                <div class="pricing_item__link popup_open" data-plan="<?php echo esc_attr($name); ?>">
                                     <?php _e('Learn more', DOMAIN); ?>
                                 </div>
                             </div>

@@ -7,7 +7,7 @@ get_header();
 $post = get_post();
 $fields = get_fields($post->ID);
 
-$bgUrl = !empty($fields['bg_img']) ? wp_get_attachment_image_url($fields['bg_img'], 'large') : '';
+$bgUrl = !empty($fields['bg_img']) ? wp_get_attachment_image_url($fields['bg_img'], 'full') : '';
 $contentItems = $fields['content_blocks'] ?? [];
 ?>
 
@@ -43,7 +43,7 @@ $contentItems = $fields['content_blocks'] ?? [];
                     }
 
                     if ($imgId) {
-                        $imgUrl = wp_get_attachment_image_url($imgId, 'large');
+                        $imgUrl = wp_get_attachment_image_url($imgId, 'full');
                     }
                     ?>
                     <div class="how_we_work__block">

@@ -15,7 +15,7 @@ if (empty($caseStudies)) {
     return;
 }
 
-$bgUrl = get_the_post_thumbnail_url($post->ID, 'large');
+$bgUrl = get_the_post_thumbnail_url($post->ID, 'full');
 ?>
 
 <section class="case_studies">

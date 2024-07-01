@@ -11,7 +11,7 @@ if (!$formId) {
     return;
 }
 
-$form = '[contact-form-7 id="' . esc_attr($formId) . '" html_class="contact-form"]' ?? '';
+$form = '[contact-form-7 id="' . esc_attr($formId) . '" html_class="contact-form-popup"]' ?? '';
 ?>
 
 <div id="tl-contact-form" class="modal_window">
