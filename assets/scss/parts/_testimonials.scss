@@ -16,7 +16,7 @@
 }
 
 .testimonial__card {
-    width: 398px;
+    width: 292px;
     background: linear-gradient(135deg, #262626 100%, #737373 100%);
     transition: $transition;
     border-radius: 16px;
@@ -25,11 +25,10 @@
 
     &.swiper-slide-active {
         background: linear-gradient(148.73deg, #7059FF 1.16%, #7B41C4 99.16%);
-        zoom: 1.2;
-    }
 
-    @include response-max($mobile) {
-        width: 296px;
+        @include response-min($desktop) {
+            zoom: 1.2;
+        }
     }
 }
 

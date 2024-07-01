@@ -5,6 +5,7 @@
 
         const mostPopularSlider = new Swiper('.most_popular__slider', {
             slidesPerView: 'auto',
+            spaceBetween : 24,
             pagination   : {
                 el       : '.most_popular__pagination',
                 clickable: true

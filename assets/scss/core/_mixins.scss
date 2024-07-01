@@ -164,7 +164,8 @@
 }
 
 @mixin font-color-main() {
-    background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
+    background: linear-gradient(170deg, #7059FF 0%, #7B41C4 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -181,5 +182,29 @@
     &::-webkit-scrollbar {
         width: 0;
         height: 0;
+    }
+}
+
+@mixin hover-gradient($gradient: false, $blur: false) {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: $transition;
+        z-index: 1;
+
+        @if $gradient {
+            background: $gradient;
+        }
+
+        @if $blur {
+            backdrop-filter: $blur;
+        }
     }
 }

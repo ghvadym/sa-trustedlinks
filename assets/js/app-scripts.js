@@ -7,13 +7,25 @@
         const header = $('#header');
         const isDesktop = $(window).width() > 1024;
 
-        const pricingSlider = new Swiper('.pricing__slider', {
+        let pricingSliderArgs = {
             slidesPerView: 'auto',
             navigation: {
                 nextEl: '.pricing__button_next',
                 prevEl: '.pricing__button_prev'
-            },
-        });
+            }
+        };
+        if (isDesktop) {
+            pricingSliderArgs.keyboard = true;
+            pricingSliderArgs.grabCursor = true;
+            pricingSliderArgs.loop = true;
+            pricingSliderArgs.pauseOnMouseEnter = true;
+            pricingSliderArgs.disableOnInteraction = true;
+            pricingSliderArgs.autoplay = {
+                delay: 3000,
+                disableOnInteraction: false
+            };
+        }
+        const pricingSlider = new Swiper('.pricing__slider', pricingSliderArgs);
 
         const similarPostsSlider = new Swiper('.similar_posts__slider', {
             slidesPerView: 'auto',
@@ -23,8 +35,9 @@
             },
         });
 
-        const testimonialsSliderArgs = {
+        let testimonialsSliderArgs = {
             slidesPerView : 'auto',
+            allowTouchMove: true,
             navigation: {
                 nextEl: '.testimonials__button_next',
                 prevEl: '.testimonials__button_prev'
@@ -33,22 +46,15 @@
 
         if (isDesktop) {
             testimonialsSliderArgs.centeredSlides = true;
-            // testimonialsSliderArgs.spaceBetween = 50;
             testimonialsSliderArgs.keyboard = true;
             testimonialsSliderArgs.grabCursor = true;
-            // testimonialsSliderArgs.effect = 'coverflow';
             testimonialsSliderArgs.loop = true;
+            testimonialsSliderArgs.pauseOnMouseEnter = true;
+            testimonialsSliderArgs.disableOnInteraction = true;
             testimonialsSliderArgs.autoplay = {
                 delay: 3000,
                 disableOnInteraction: false
             };
-            // testimonialsSliderArgs.coverflowEffect = {
-            //     rotate      : 0,
-            //     stretch     : 0,
-            //     depth       : 10,
-            //     modifier    : 12,
-            //     slideShadows: false
-            // };
         }
 
         const testimonialsSlider = new Swiper('.testimonials__slider', testimonialsSliderArgs);
@@ -104,6 +110,18 @@
                     $(inputPlan).val('');
                 }
             });
+        }
+
+        const contactFormPopup = document.querySelector('.contact-form-popup');
+        if (contactFormPopup.length) {
+            contactFormPopup.addEventListener('wpcf7mailsent', function (event) {
+                const popup = document.getElementById('tl-contact-form');
+                if (popup.length && popup.classList.contains('active-popup')) {
+                    setTimeout(function () {
+                        popup.classList.remove('active-popup');
+                    }, 2000 );
+                }
+            }, false);
         }
 
         const copy = $('.copy_url');

@@ -124,6 +124,7 @@
             width: 24px;
             height: 24px;
             margin-right: 10px;
+            flex-shrink: 0;
         }
 
         &:not(:last-child) {
@@ -150,7 +151,7 @@
 .pricing__cta_body {
     position: relative;
     border-radius: 50px;
-    padding: 10px 12px;
+    padding: 12px 12px 12px 24px;
     background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
 
     &:before {

@@ -6,7 +6,7 @@
     z-index: 10;
 
     .container {
-        max-width: 1430px;
+        max-width: 1350px;
 
         @include response-max(1439px) {
             padding: 0 16px;
@@ -16,7 +16,6 @@
     a {
         color: $color-light;
         font-family: 'Inter', sans-serif;
-        letter-spacing: 2px;
         font-size: 16px;
         white-space: nowrap;
     }
@@ -41,7 +40,7 @@
     justify-content: space-between;
 
     width: 100%;
-    padding: 20px 36px;
+    padding: 10px 24px;
     border-radius: 48px;
     transition: $transition;
 
@@ -56,32 +55,35 @@
 }
 
 .header__menu {
-    margin-left: auto;
     position: relative;
+    width: 100%;
 
     ul {
         @include flex-center;
         margin: 0 -10px;
 
         li {
-            padding: 0 10px 3px;
+            padding: 0 16px 3px;
             transition: $transition;
             border-bottom: 1px solid transparent;
-
-            &:not(:last-child) {
-                margin-right: 8px;
-            }
+            margin-bottom: 0;
 
             &.menu-item-btn {
                 @include response-min($header-responsive) {
-                    margin-left: 50px;
+                    margin-left: auto;
+                    height: 48px;
                 }
 
                 a {
-                    @extend .btn;
+                    @extend .btn_primary;
 
                     @include response-max($header-responsive) {
                         min-width: 296px;
+                    }
+
+                    @include response-min($header-responsive + 1) {
+                        padding: 16px 15px 14px;
+                        border-radius: 100px;
                     }
                 }
             }
@@ -89,6 +91,12 @@
             @include response-min($desktop) {
                 &:not(.menu-item-btn):not(.current-menu-item):hover {
                     border-color: $color-light;
+                }
+            }
+
+            @include response-min($header-responsive + 1) {
+                &:first-child {
+                    margin-left: auto;
                 }
             }
 
@@ -159,6 +167,14 @@
 
 .header__burger, .header__logo {
     z-index: 11;
+}
+
+.header__logo {
+    .custom-logo-link {
+        display: block;
+        height: 100%;
+        line-height: 0;
+    }
 }
 
 .header__burger {

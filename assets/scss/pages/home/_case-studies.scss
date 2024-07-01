@@ -30,8 +30,6 @@
 }
 
 .case_studies__btn {
-    letter-spacing: 0;
-
     @include response-max($mobile) {
         display: none;
     }

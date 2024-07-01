@@ -51,7 +51,7 @@ if ($bgId) {
                             <div class="card_simple__title">
                                 <?php echo esc_html($title); ?>
                             </div>
-                            <div class="card_simple__text">
+                            <div class="card_simple__text" title="<?php echo esc_attr($text); ?>">
                                 <?php echo esc_html($text); ?>
                             </div>
                         </div>

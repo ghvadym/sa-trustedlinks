@@ -57,13 +57,11 @@ h3,
     margin: 0 0 15px;
     font-weight: 600;
     line-height: normal;
-    letter-spacing: 2px;
 }
 
 h1 {
     font-size: 70px;
     line-height: normal;
-    letter-spacing: 0.02em;
     margin-bottom: 35px;
 
     @include response-max($mobile) {
@@ -163,7 +161,7 @@ img {
 }
 
 .container {
-    max-width: 1306px;
+    max-width: 1304px;
     width: 100%;
     margin: 0 auto;
     padding: 0 32px;
@@ -174,7 +172,7 @@ img {
     width: 100%;
 
     @include response-min(1363px) {
-        margin-left: calc((100% - 1306px) / 2);
+        margin-left: calc((100% - 1304px) / 2);
     }
 }
 
@@ -288,25 +286,48 @@ section {
 }
 
 .btn {
-    background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
     box-shadow: $box-shadow;
     display: inline-block;
-    letter-spacing: 2px;
     color: $color-light;
-    font-size: 1.6rem;
+    font-size: 16px;
     line-height: 1;
     white-space: nowrap;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
     padding: 16px 25px;
     position: relative;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 24px;
     transition: $transition;
     text-transform: uppercase;
+    min-width: 187px;
+    text-decoration: none;
+    outline: none;
+    overflow: hidden;
+
+    span {
+        z-index: 2;
+        position: relative;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: $transition;
+        z-index: 1;
+    }
 
     &.disabled, &[disabled] {
-        opacity: 0.5;
+        background: #D1D1D0;
+        color: #BABABA;
+        pointer-events: none;
     }
 
     @include response-min($desktop) {
@@ -314,8 +335,17 @@ section {
 
         &:hover, &:focus {
             outline: none;
-            text-decoration: none;
-            opacity: 0.8;
+
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        &:focus, &:active {
+            border: 1px solid $color-theme;
+            background: linear-gradient(149deg, #F9F9F9 1.16%, #E6E6E6 99.16%);
+            backdrop-filter: blur(100px);
+            color: $color-theme;
         }
     }
 
@@ -326,20 +356,54 @@ section {
     }
 }
 
+.btn_primary {
+    @extend .btn;
+    background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
+
+    &:after {
+        background: $color-btn-hover;
+    }
+
+    @include response-min($desktop) {
+        &:hover {
+            color: $color-theme;
+            border-color: $color-btn-hover;
+        }
+    }
+}
+
 .btn_light {
     @extend .btn;
 
-    background: rgba(255, 255, 255, 1);
+    background: $color-light;
+    border-color: $color-light;
     color: $color-theme;
     font-weight: 600;
+
+    @include response-min($desktop) {
+        &:hover {
+            color: $color-theme;
+            border-color: $color-btn-hover;
+            background: $color-btn-hover;
+        }
+    }
 }
 
 .btn_dark {
     @extend .btn;
 
     background: $color-dark;
+    border-color: $color-dark;
     color: $color-light;
     font-weight: 600;
+
+    @include response-min($desktop) {
+        &:hover {
+            color: $color-theme;
+            border-color: $color-theme;
+            background: $color-light;
+        }
+    }
 }
 
 .breadcrumbs {
@@ -446,17 +510,24 @@ section {
     width: 100%;
     margin: 0 0 40px;
     box-shadow: 0 4px 16px 0 rgba(26, 3, 48, 0.25);
-    background: linear-gradient(148.58deg, rgba(101, 101, 101, 0.2) 0%, rgba(37, 37, 37, 0.2) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(7px);
+    background: linear-gradient(149deg, rgba(101, 101, 101, 0.20) 0%, rgba(37, 37, 37, 0.20) 100%);
+    backdrop-filter: blur(87px);
+    border: 1px solid #313131;
     min-width: 800px;
 
     .table__row {
         display: flex;
         padding: 0 100px;
+        transition: $transition;
 
         @include response-max(1250px) {
             padding: 0 32px;
+        }
+
+        @include response-min($desktop) {
+            &:hover {
+                background: rgba(108, 108, 114, 0.35);
+            }
         }
     }
 
@@ -628,6 +699,14 @@ section {
     }
 }
 
+.how_we_work__slider, .services__slider {
+    .swiper-pagination-bullets {
+        @include response-min($header-responsive + 1) {
+            display: none;
+        }
+    }
+}
+
 .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
@@ -691,7 +770,7 @@ section.hero {
     background-color: #000;
 
     .title {
-        font-size: 60px;
+        font-size: 38px;
         font-weight: 700;
         text-transform: uppercase;
         margin-bottom: 32px;
@@ -703,7 +782,7 @@ section.hero {
     }
 
     .subtitle {
-        font-size: 19px;
+        font-size: 16px;
         line-height: 1.4;
         margin-bottom: 0;
 
@@ -815,7 +894,7 @@ section.hero {
 
     @include response-min($laptop-portrait) {
         .card_simple {
-            max-width: 390px;
+            max-width: 395px;
             min-height: 499px;
         }
     }

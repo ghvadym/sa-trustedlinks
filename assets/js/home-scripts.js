@@ -35,6 +35,8 @@
         }
         if (isDesktop) {
             blogSliderArgs.loop = true;
+            blogSliderArgs.pauseOnMouseEnter = true;
+            blogSliderArgs.disableOnInteraction = true;
             blogSliderArgs.autoplay = {
                 delay: 3000,
                 disableOnInteraction: false

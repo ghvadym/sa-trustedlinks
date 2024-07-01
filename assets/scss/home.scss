@@ -38,3 +38,15 @@
         }
     }
 }
+
+@include response-min($desktop) {
+    .blog__slider {
+        .card_simple {
+            min-height: 499px;
+
+            &:not(.card_right_content) {
+                max-width: 397px;
+            }
+        }
+    }
+}

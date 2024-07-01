@@ -6,7 +6,7 @@
     .card_simple__img {
         position: absolute;
         top: -20%;
-        z-index: 2;
+        z-index: 3;
 
         img {
             z-index: 2;
@@ -30,18 +30,18 @@
     .card_simple {
         &:nth-child(1), &:nth-child(2) {
             .card_simple__img {
-                right: -40%;
+                right: -53%;
             }
         }
 
         &:nth-child(3), &:nth-child(4) {
             .card_simple__img {
-                left: -40%;
+                left: -53%;
             }
         }   
     }
 
-    @include response-min($desktop) {
+    @include response-min($laptop-landscape) {
         .head {
             text-align: left;
             margin-left: 0;
