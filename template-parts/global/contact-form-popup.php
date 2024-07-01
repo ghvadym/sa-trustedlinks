@@ -12,11 +12,23 @@ if (!$formId) {
 }
 
 $form = '[contact-form-7 id="' . esc_attr($formId) . '" html_class="contact-form-popup"]' ?? '';
+
+$imgId = $fields['img'] ?? '';
+
+if ($imgId) {
+    $imgUrl = wp_get_attachment_image_url($imgId, 'full');
+}
 ?>
 
 <div id="tl-contact-form" class="modal_window">
     <div class="modal_window__bg"></div>
     <div class="modal_window__wrap">
+        <?php if (!empty($imgUrl)) { ?>
+            <div class="modal_window__img">
+                <img src="<?php echo esc_attr($imgUrl); ?>"
+                     alt="<?php echo get_the_title($imgId); ?>">
+            </div>
+        <?php } ?>
         <div class="modal_window__body white_theme">
             <?php if ($title = $fields['title'] ?? '') { ?>
                 <p class="title modal_window__title">

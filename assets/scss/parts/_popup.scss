@@ -30,11 +30,30 @@
     z-index: 101;
 }
 
+.modal_window__img {
+    border-radius: 16px 0px 0px 16px;
+    background: linear-gradient(105deg, #7059FF 22.14%, #7B41C4 89.55%);
+    position: relative;
+    width: 398px;
+
+    img {
+        object-fit: contain;
+        z-index: 1;
+        position: absolute;
+        right: 24px;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        display: none;
+    }
+}
+
 .modal_window__wrap {
     position: relative;
     z-index: 102;
-    overflow-y: auto;
-    max-width: 360px;
 
     &::-webkit-scrollbar {
         width: 2px;
@@ -49,14 +68,35 @@
         background: #fff;
     }
 
+    @include response-min($laptop-landscape) {
+        display: flex;
+        height: 674px;
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        max-width: 360px;
+        overflow-y: auto;
+    }
+
     @media (max-width: 550px) {
         width: 100%;
     }
 }
 
 .modal_window__body {
-    border-radius: 16px;
+    border-radius: 0 16px 16px 0;
     padding: 24px 34px;
+    background: linear-gradient(149deg, rgba(217, 217, 217, 0.20) 1.16%, rgba(115, 115, 115, 0.20) 99.16%);
+    backdrop-filter: blur(12px);
+
+    @include response-min($laptop-landscape) {
+        max-width: 340px;
+        flex-shrink: 0;
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        border-radius: 16px;
+    }
 
     @media (max-width: $mobile) {
         padding: 22px 18px;
@@ -89,4 +129,8 @@
     height: 24px;
     margin: 0 auto;
     @include pointer;
+
+    @include response-min($laptop-landscape) {
+        display: none;
+    }
 }
