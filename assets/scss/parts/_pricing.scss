@@ -13,13 +13,13 @@
     backdrop-filter: blur(12px);
     border-radius: 16px;
 
-    &.pricing-highlighted {
-        background: linear-gradient(170.37deg, #7059FF 0%, #7B41C4 100%);
-    }
-
     &.white_theme {
         border: 1px solid #313131;
         background: linear-gradient(149deg, rgba(217, 217, 217, 0.20) 1.16%, rgba(115, 115, 115, 0.20) 99.16%);
+    }
+
+    &.pricing-highlighted {
+        background: linear-gradient(170.37deg, #7059FF 0%, #7B41C4 100%);
     }
 
     &.pricing-highlighted, &.white_theme {

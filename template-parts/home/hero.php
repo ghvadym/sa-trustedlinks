@@ -23,7 +23,11 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
             <?php } ?>
         <?php } ?>
         <?php if ($spacemanUrl) { ?>
-            <img src="<?php echo esc_url($spacemanUrl); ?>" class="hero__bg_spaceman" alt="<?php echo esc_attr(get_the_title($fields['hero_spaceman'])); ?>">
+            <div class="hero__bg_spaceman">
+                <img src="<?php echo esc_url($spacemanUrl); ?>" class="hero__spaceman" alt="<?php echo esc_attr(get_the_title($fields['hero_spaceman'])); ?>">
+                <img src="<?php echo img_url('cable-left.svg'); ?>" class="hero__spaceman_cable_left" alt="Cable left">
+                <img src="<?php echo img_url('cable-right.svg'); ?>" class="hero__spaceman_cable_right" alt="Cable right">
+            </div>
         <?php } ?>
     </div>
     <div class="container">

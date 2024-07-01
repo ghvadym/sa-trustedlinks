@@ -14,3 +14,17 @@
         opacity: 1;
     }
 }
+
+@keyframes shining {
+    0% {
+        filter: drop-shadow(0px 0px 0px rgba(112, 89, 255, 1));
+    }
+
+    50% {
+        filter: drop-shadow(0px 0px 25px rgba(112, 89, 255, 1));
+    }
+
+    100% {
+        filter: drop-shadow(0px 0px 0px rgba(112, 89, 255, 1));
+    }
+}
