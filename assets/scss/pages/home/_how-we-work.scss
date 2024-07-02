@@ -5,7 +5,7 @@
 
     .card_simple__img {
         position: absolute;
-        top: -20%;
+        top: -28%;
         z-index: 3;
 
         img {
@@ -39,12 +39,5 @@
                 left: -53%;
             }
         }   
-    }
-
-    @include response-min($laptop-landscape) {
-        .head {
-            text-align: left;
-            margin-left: 0;
-        }
     }
 }

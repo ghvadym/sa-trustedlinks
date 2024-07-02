@@ -26,6 +26,7 @@ if (empty($cards)) {
             <div class="swiper-wrapper">
                 <?php foreach ($cards as $item) {
                     $isWideCard = $item['is_wide_card'] ?? false;
+                    $imageAlign = $item['image_align'] ?? 'left';
                     $imageId = $item['img'] ?? '';
                     $title = $item['title'] ?? '';
                     $text = $item['text'] ?? '';
@@ -35,9 +36,9 @@ if (empty($cards)) {
                         $imageUrl = wp_get_attachment_image_url($imageId, 'medium');
                     }
                     ?>
-                    <div class="card_simple swiper-slide<?php echo $isWideCard ? ' wide-card' : ''; ?>">
+                    <div class="card_simple swiper-slide<?php echo $isWideCard ? ' wide_card' : ''; ?>">
                         <?php if (!empty($imageUrl)) { ?>
-                            <div class="card_simple__img">
+                            <div class="card_simple__img<?php echo $imageAlign ? ' align_'.$imageAlign : ''; ?>">
                                 <img src="<?php echo esc_url($imageUrl); ?>" alt="<?php echo get_the_title($imageId); ?>">
                             </div>
                         <?php } ?>

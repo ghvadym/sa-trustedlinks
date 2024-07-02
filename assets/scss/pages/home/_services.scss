@@ -23,5 +23,14 @@
                 margin-top: 0;
             }
         }
+
+        @include response-min($desktop) {
+            transform: scale(0.97) !important;
+            transition: $transition;
+
+            &:hover {
+                transform: scale(1) !important;
+            }
+        }
     }
 }

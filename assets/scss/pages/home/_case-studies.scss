@@ -20,16 +20,16 @@
     height: auto;
 }
 
-.case_studies__title {
-    color: $color-light;
-}
-
 .case_studies__subtitle {
-    color: $color-light;
     margin-bottom: 32px;
 }
 
 .case_studies__btn {
+    @include response-min($desktop) {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
     @include response-max($mobile) {
         display: none;
     }

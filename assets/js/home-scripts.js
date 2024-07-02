@@ -20,6 +20,11 @@
                 el       : '.how_we_work__pagination',
                 clickable: true
             },
+            breakpoints  : {
+                1025: {
+                    spaceBetween: 18,
+                }
+            }
         });
 
         const servicesSlider = new Swiper('.services__slider', {
@@ -40,6 +45,11 @@
                 el       : '.services__pagination',
                 clickable: true
             },
+            breakpoints  : {
+                1025: {
+                    spaceBetween: 18,
+                }
+            }
         });
 
         const prServiceSlider = new Swiper('.pr_service__slider', {

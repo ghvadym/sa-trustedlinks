@@ -1,10 +1,13 @@
 .faq {
+    padding-bottom: 0;
+
     .section_bg {
-        object-position: top left;
+        object-position: center;
     }
 
-    @include response-min($laptop-landscape) {
-        padding-bottom: 200px;
+    .cta {
+        padding-top: 200px;
+        background-color: transparent;
     }
 }
 

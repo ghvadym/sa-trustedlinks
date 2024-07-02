@@ -23,7 +23,7 @@ $caseStudies = $fields['case_studies'] ?? '';
         <img src="<?php echo esc_url($bgBottomUrl); ?>" alt="<?php echo get_the_title($bgBottomId); ?>" class="case_studies__bg_bottom">
     <?php } ?>
     <div class="container">
-        <div class="head">
+        <div class="head white_theme">
             <?php _get_field($fields['case_studies_title'] ?? '', 'title case_studies__title', 'h2'); ?>
             <?php if ($subtitle = $fields['case_studies_subtitle'] ?? '') { ?>
                 <p class="subtitle case_studies__subtitle">

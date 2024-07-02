@@ -1,6 +1,6 @@
 <?php
 wp_footer();
-if (!is_page_template('templates/about-us.php')) {
+if (!is_home() && !is_front_page() && !is_page_template('templates/about-us.php')) {
     get_template_part_var('global/cta');
 }
 

@@ -89,13 +89,6 @@
 }
 
 .blog_section {
-    @include response-min($laptop-landscape) {
-        .head {
-            margin-left: 0;
-            text-align: left;
-        }
-    }
-
     .card_simple {
         height: auto;
     }
@@ -139,6 +132,8 @@
     }
 
     .card_simple {
+        min-height: 375px;
+
         .card_simple__text {
             height: 88px;
             transition: $transition;
@@ -148,6 +143,9 @@
         }
 
         @include response-min($desktop) {
+            transform: scale(0.97) !important;
+            transition: $transition;
+
             &:after {
                 content: '';
                 position: absolute;
@@ -162,6 +160,8 @@
             }
 
             &:hover {
+                transform: scale(1) !important;
+
                 &:after {
                     opacity: 1;
                 }
@@ -175,7 +175,7 @@
                 .card_simple__text {
                     height: auto;
                     min-height: 88px;
-                    -webkit-line-clamp: 13;
+                    -webkit-line-clamp: 10;
                 }
             }
         }

@@ -53,7 +53,7 @@
 }
 
 .pricing_item_body {
-    padding: 24px;
+    padding: 16px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -84,35 +84,42 @@
 }
 
 .pricing_item__price {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 500;
-    line-height: 33.89px;
+    line-height: 1.2;
     color: $color-dark;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
     border-bottom: 1px solid $color-dark;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 
     span {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
-        line-height: 19.36px;
+        line-height: 1.2;
         color: $color-dark-light;
     }
 }
 
 .pricing_item__btn {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     width: 100%;
+    padding: 10px;
+    font-size: 14px;
 }
 
 .pricing_item__val {
-    font-size: 20px;
-    line-height: 24.2px;
+    font-size: 16px;
+    line-height: 1.2;
     color: $color-dark;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
     column-gap: 10px;
+
+    svg {
+        width: 15px;
+        height: 15px;
+    }
 }
 
 .pricing_item__list {
@@ -121,19 +128,19 @@
     li {
         display: flex;
         align-items: center;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 18px;
         color: $color-dark-light;
 
         svg {
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 19px;
             margin-right: 10px;
             flex-shrink: 0;
         }
 
         &:not(:last-child) {
-            margin-bottom: 17px;
+            margin-bottom: 12px;
         }
     }
 }

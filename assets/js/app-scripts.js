@@ -49,9 +49,12 @@
             slideToClickedSlide: true,
             centeredSlides     : true,
             pauseOnMouseEnter  : true,
-            loop               : true,
             mousewheel         : {
                 forceToAxis: true
+            },
+            loop: true,
+            autoplay: {
+                delay: 3000
             },
             navigation         : {
                 nextEl: '.testimonials__button_next',
@@ -59,6 +62,7 @@
             },
             breakpoints: {
                 0: {
+                    autoplay: false,
                     slidesPerView: 1.2,
                 },
                 768: {
@@ -70,10 +74,10 @@
                     grabCursor: true,
                 },
                 1025: {
-                    loop: true,
-                    autoplay: {
-                        delay: 3000,
-                        disableOnInteraction: false
+                    loop      : true,
+                    grabCursor: true,
+                    autoplay  : {
+                        delay: 3000
                     }
                 }
             }

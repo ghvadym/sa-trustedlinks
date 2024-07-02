@@ -12,18 +12,11 @@
     .card_simple__body {
         justify-content: flex-end;
     }
-
-    @include response-min($laptop-landscape) {
-        .head {
-            text-align: left;
-            margin-left: 0;
-        }
-    }
 }
 
 .pr_service__slider {
     .card_simple {
-        height: 594px;
+        height: 450px;
         @include hover-gradient(linear-gradient(105deg, rgba(112, 89, 255, 0.30) 22.14%, rgba(123, 65, 196, 0.30) 89.55%));
 
         .card_simple__body {
@@ -34,27 +27,12 @@
             }
         }
 
-        &:not(.wide-card) {
-            width: 397px;
-
-            .card_simple__img {
-                width: 100%;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-            }
+        &:not(.wide_card) {
+            width: 377px;
         }
 
-        &.wide-card {
-            width: 608px;
-
-            .card_simple__img {
-                width: 70%;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
+        &.wide_card {
+            width: 500px;
         }
 
         @include response-min($desktop) {
@@ -68,11 +46,11 @@
         @include response-max($mobile) {
             height: 394px;
 
-            &:not(.wide-card) {
+            &:not(.wide_card) {
                 width: 296px;
             }
 
-            &.wide-card {
+            &.wide_card {
                 width: 394px;
             }
         }
@@ -83,6 +61,41 @@
 
         img {
             object-fit: contain;
+        }
+
+        &.align_left, &.align_right {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 90%;
+        }
+
+        &.align_left {
+            left: 0;
+
+            img {
+                object-position: bottom left;
+            }
+        }
+
+        &.align_right {
+            right: 0;
+
+            img {
+                object-position: bottom right;
+            }
+        }
+
+        &.align_center {
+            width: 60%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            img {
+                object-position: center;
+            }
         }
     }
 }
