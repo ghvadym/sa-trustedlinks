@@ -651,7 +651,7 @@ section {
 }
 
 .swiper-wrapper {
-    margin: 0 -12px;
+    //margin: 0 -12px;
 }
 
 .slider_wrapper {
@@ -674,10 +674,6 @@ section {
 
             & > *:not(.slider_wrapper) {
                 padding: 0 32px;
-            }
-
-            .swiper {
-                padding-right: 0 !important;
             }
         }
 
@@ -894,7 +890,7 @@ section.hero {
 
     @include response-min($laptop-portrait) {
         .card_simple {
-            max-width: 395px;
+            width: 395px;
             min-height: 499px;
         }
     }

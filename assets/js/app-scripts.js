@@ -7,55 +7,77 @@
         const header = $('#header');
         const isDesktop = $(window).width() > 1024;
 
-        let pricingSliderArgs = {
-            slidesPerView: 'auto',
-            navigation: {
+        const pricingSlider = new Swiper('.pricing__slider', {
+            slidesPerView       : 'auto',
+            spaceBetween        : 24,
+            loop                : false,
+            keyboard            : true,
+            grabCursor          : true,
+            disableOnInteraction: true,
+            allowTouchMove      : true,
+            longSwipes          : false,
+            simulateTouch       : true,
+            slideToClickedSlide : true,
+            mousewheel          : {
+                forceToAxis: true
+            },
+            navigation          : {
                 nextEl: '.pricing__button_next',
                 prevEl: '.pricing__button_prev'
             }
-        };
-        if (isDesktop) {
-            pricingSliderArgs.keyboard = true;
-            pricingSliderArgs.grabCursor = true;
-            pricingSliderArgs.loop = true;
-            pricingSliderArgs.pauseOnMouseEnter = true;
-            pricingSliderArgs.disableOnInteraction = true;
-            pricingSliderArgs.autoplay = {
-                delay: 3000,
-                disableOnInteraction: false
-            };
-        }
-        const pricingSlider = new Swiper('.pricing__slider', pricingSliderArgs);
+        });
 
         const similarPostsSlider = new Swiper('.similar_posts__slider', {
             slidesPerView: 'auto',
+            spaceBetween : 24,
+            mousewheel   : {
+                forceToAxis: true
+            },
             pagination   : {
                 el       : '.similar_posts__pagination',
                 clickable: true
-            },
+            }
         });
 
-        const testimonialsSliderArgs = {
-            slidesPerView : 'auto',
-            navigation: {
+        const testimonialsSlider = new Swiper('.testimonials__slider', {
+            slidesPerView      : 4,
+            center             : true,
+            spaceBetween       : 24,
+            allowTouchMove     : true,
+            longSwipes         : false,
+            simulateTouch      : true,
+            slideToClickedSlide: true,
+            centeredSlides     : true,
+            pauseOnMouseEnter  : true,
+            loop               : true,
+            mousewheel         : {
+                forceToAxis: true
+            },
+            navigation         : {
                 nextEl: '.testimonials__button_next',
                 prevEl: '.testimonials__button_prev'
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    keyboard: true,
+                    grabCursor: true,
+                },
+                1025: {
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false
+                    }
+                }
             }
-        };
-
-        if (isDesktop) {
-            testimonialsSliderArgs.centeredSlides = true;
-            testimonialsSliderArgs.keyboard = true;
-            testimonialsSliderArgs.grabCursor = true;
-            testimonialsSliderArgs.loop = true;
-
-            testimonialsSliderArgs.autoplay = {
-                delay: 3000,
-                disableOnInteraction: false
-            };
-        }
-
-        const testimonialsSlider = new Swiper('.testimonials__slider', testimonialsSliderArgs);
+        });
 
         if (header.length) {
             $(window).scroll(function () {

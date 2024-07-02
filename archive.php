@@ -16,11 +16,19 @@ get_header();
         <div class="container">
             <?php if (have_posts()) { ?>
                 <div class="archive__posts">
-                    <?php while (have_posts()) {
+                    <?php $i = 1; while (have_posts()) {
+                        $additionalClass = '';
+                        if ($i % 2 === 0) {
+                            $additionalClass = 'full_image';
+                        }
+
                         the_post();
                         get_template_part_var('cards/blog-card', [
-                            'post' => get_post()
+                            'post'         => get_post(),
+                            'card_classes' => $additionalClass
                         ]);
+
+                        $i++;
                     } ?>
                 </div>
             <?php } ?>

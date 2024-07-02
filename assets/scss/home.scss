@@ -12,11 +12,11 @@
 
 @include response-min($laptop-landscape) {
     .card_right_content {
-        max-width: 818px;
+        width: 818px;
         min-height: 412px;
 
         .card_simple__img {
-            max-width: 500px;
+            width: 500px;
         }
 
         .card_simple__cat {
@@ -45,7 +45,7 @@
             min-height: 499px;
 
             &:not(.card_right_content) {
-                max-width: 397px;
+                width: 397px;
             }
         }
     }

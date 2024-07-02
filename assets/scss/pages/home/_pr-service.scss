@@ -1,4 +1,10 @@
 .pr_service {
+    overflow-x: hidden;
+
+    .container, .swiper {
+        overflow: visible;
+    }
+
     .title, .subtitle {
         padding-right: 32px;
     }
@@ -29,7 +35,7 @@
         }
 
         &:not(.wide-card) {
-            max-width: 397px;
+            width: 397px;
 
             .card_simple__img {
                 width: 100%;
@@ -40,7 +46,7 @@
         }
 
         &.wide-card {
-            max-width: 608px;
+            width: 608px;
 
             .card_simple__img {
                 width: 70%;
@@ -63,11 +69,11 @@
             height: 394px;
 
             &:not(.wide-card) {
-                max-width: 296px;
+                width: 296px;
             }
 
             &.wide-card {
-                max-width: 394px;
+                width: 394px;
             }
         }
     }

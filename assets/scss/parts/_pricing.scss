@@ -1,14 +1,18 @@
 .pricing {
+    overflow-x: hidden;
+
+    .container, .swiper {
+        overflow: visible;
+    }
+
     .swiper__nav {
         justify-content: flex-end;
     }
 }
 
 .pricing_item {
-    max-width: 292px;
-    width: 100%;
+    width: 292px;
     height: auto;
-    margin: 0 12px;
     border: 1px solid #737373;
     background: linear-gradient(149deg, rgba(217, 217, 217, 0.20) 1.16%, rgba(115, 115, 115, 0.20) 99.16%);
     backdrop-filter: blur(12px);

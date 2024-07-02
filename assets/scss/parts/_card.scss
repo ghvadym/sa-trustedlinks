@@ -1,8 +1,6 @@
 .card_simple {
-    max-width: 292px;
+    width: 292px;
     min-height: 412px;
-    width: 100%;
-    margin: 0 12px;
     border-radius: 16px;
     overflow: hidden;
     position: relative;
@@ -141,15 +139,15 @@
     }
 
     .card_simple {
-        @include response-min($desktop) {
-            .card_simple__text {
-                height: 88px;
-                transition: $transition;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                @include line-break(4);
-            }
+        .card_simple__text {
+            height: 88px;
+            transition: $transition;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include line-break(4);
+        }
 
+        @include response-min($desktop) {
             &:after {
                 content: '';
                 position: absolute;
