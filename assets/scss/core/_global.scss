@@ -197,6 +197,12 @@ img {
         margin-right: auto;
     }
 
+    @include response-max($laptop-landscape - 1) {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     @include response-max($mobile) {
         margin-bottom: 32px;
     }
@@ -541,6 +547,30 @@ section {
         }
     }
 
+    .table__footer {
+        padding: 20px 16px;
+        display: flex;
+
+        span {
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+    .table__show_more {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+    }
+
     .table__cell {
         font-size: 16px;
         font-weight: 400;
@@ -844,10 +874,12 @@ section.hero {
         transform: translateX(-50%);
         background-color: $color-light;
         border-radius: 3px;
-        padding: 3px 6px;
+        padding: 4px 6px;
         color: $color-dark;
         text-transform: uppercase;
         font-size: 12px;
+        line-height: 1;
+        font-weight: 500;
         z-index: 1;
     }
 
@@ -862,6 +894,7 @@ section.hero {
 
 .similar_posts {
     .card_simple {
+        height: auto;
         background: linear-gradient(125deg, #F3F3F3 0%, #EFEFEF 100%);
     }
 
@@ -888,8 +921,4 @@ section.hero {
         font-size: 29px;
         margin-bottom: 24px;
     }
-}
-
-.similar_posts {
-
 }

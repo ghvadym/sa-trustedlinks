@@ -1,1 +1,1 @@
-.case_studies .section_bg{object-position:top}.case_studies .container{position:relative}@media only screen and (min-width: 1024px){.case_studies{padding:160px 0 200px}}
+.case_studies .section_bg{object-position:center 170px;object-fit:contain}.case_studies .container{position:relative}@media only screen and (min-width: 1024px){.case_studies{padding:160px 0 200px}}@media only screen and (max-width: 1023px){.case_studies{padding-top:128px}.case_studies .section_bg{object-position:center 109px}}

@@ -6,13 +6,23 @@ section.single {
     .container {
         max-width: 883px;
     }
+
+    @include response-max($mobile) {
+        padding-top: 80px;
+    }
 }
 
 .single__cats {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 24px;
     margin-bottom: 16px;
+
+    @include response-max($mobile) {
+        margin-bottom: 32px;
+        gap: 16px;
+    }
 }
 
 .single__cat {
@@ -22,7 +32,7 @@ section.single {
     font-size: 16px;
     font-weight: 500;
     padding: 2px 10px;
-
+    line-height: 1.4;
     transition: $transition;
 
     @include response-min($desktop) {
@@ -30,12 +40,19 @@ section.single {
             opacity: 0.7;
         }
     }
+
+    @include response-max($mobile) {
+        font-size: 12px;
+    }
 }
 
 .single__time {
     font-size: 16px;
     font-weight: 500;
-    line-height: 22px;
+
+    @include response-max($mobile) {
+        font-size: 12px;
+    }
 }
 
 .single__head {
@@ -43,7 +60,7 @@ section.single {
     margin-bottom: 65px;
 
     @include response-max($laptop-landscape) {
-        margin-bottom: 32px;
+        margin-bottom: 72px;
     }
 }
 

@@ -4,7 +4,8 @@
 
 .case_studies {
     .section_bg {
-        object-position: top;
+        object-position: center 170px;
+        object-fit: contain;
     }
 
     .container {
@@ -13,5 +14,13 @@
 
     @include response-min($laptop-landscape) {
         padding: 160px 0 200px;
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        padding-top: 128px;
+
+        .section_bg {
+            object-position: center 109px;
+        }
     }
 }

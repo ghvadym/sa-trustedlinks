@@ -104,7 +104,7 @@
     img {
         width: auto;
         object-fit: contain;
-        border-radius: 16px;
+        border-radius: 8px;
 
         @include response-max($mobile) {
             margin-bottom: 8px;
@@ -152,6 +152,35 @@
                 background-color: $color-light;
             }
         }
+    }
+
+    .wp-caption {
+        width: 100% !important;
+
+        &.aligncenter {
+            text-align: center;
+
+            p {
+                text-align: center;
+            }
+        }
+
+        &.alignright {
+            text-align: right;
+
+            p {
+                text-align: right;
+            }
+        }
+
+        img {
+            margin-bottom: 5px;
+        }
+    }
+
+    .wp-caption-text {
+        text-align: center;
+        margin: 0;
     }
 
     @include response-max($mobile) {

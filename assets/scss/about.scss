@@ -82,7 +82,7 @@ section.hero {
     margin-bottom: 45px;
 
     @include response-max($laptop-landscape - 1) {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         margin-bottom: 24px;
     }

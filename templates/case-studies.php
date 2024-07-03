@@ -15,12 +15,23 @@ if (empty($caseStudies)) {
     return;
 }
 
+$fields = get_fields($post->ID);
+
 $bgUrl = get_the_post_thumbnail_url($post->ID, 'full');
+$bgUrlDesk = !empty($fields['img_bg_desk']) ? wp_get_attachment_image_url($fields['img_bg_desk'], 'full') : '';
+$bgUrlMob = !empty($fields['img_bg_mob']) ? wp_get_attachment_image_url($fields['img_bg_mob'], 'full') : '';
 ?>
 
+<?php if ($bgUrl) { ?>
+    <img src="<?php echo esc_url($bgUrl); ?>" alt="Background" class="section_bg">
+<?php } ?>
+
 <section class="case_studies">
-    <?php if ($bgUrl) { ?>
-        <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo $post->ID; ?>" class="section_bg">
+    <?php if ($bgUrlDesk) { ?>
+        <img src="<?php echo esc_url($bgUrlDesk); ?>" alt="Case Studies Background Planets" class="section_bg desk_ver">
+    <?php } ?>
+    <?php if ($bgUrlMob) { ?>
+        <img src="<?php echo esc_url($bgUrlMob); ?>" alt="Case Studies Background Planets" class="section_bg mob_ver">
     <?php } ?>
     <div class="container">
         <div class="table__wrap">
@@ -98,6 +109,12 @@ $bgUrl = get_the_post_thumbnail_url($post->ID, 'full');
                             </div>
                         </div>
                     <?php } ?>
+                </div>
+                <div class="table__footer d-none">
+                    <div class="table__show_more">
+                        <?php _e('Unfold', DOMAIN); ?>
+                        <?php get_svg('arrow-down-white'); ?>
+                    </div>
                 </div>
             </div>
         </div>

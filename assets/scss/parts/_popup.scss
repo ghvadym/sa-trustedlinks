@@ -86,12 +86,12 @@
 .modal_window__body {
     border-radius: 0 16px 16px 0;
     padding: 24px 34px;
-    background: linear-gradient(149deg, rgba(217, 217, 217, 0.20) 1.16%, rgba(115, 115, 115, 0.20) 99.16%);
-    backdrop-filter: blur(12px);
 
     @include response-min($laptop-landscape) {
         max-width: 340px;
         flex-shrink: 0;
+        background: linear-gradient(149deg, rgba(217, 217, 217, 0.20) 1.16%, rgba(115, 115, 115, 0.20) 99.16%);
+        backdrop-filter: blur(12px);
     }
 
     @include response-max($laptop-landscape - 1) {
