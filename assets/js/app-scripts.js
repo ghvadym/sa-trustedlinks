@@ -40,7 +40,7 @@
         });
 
         const testimonialsSlider = new Swiper('.testimonials__slider', {
-            slidesPerView      : 4,
+            slidesPerView      : 5,
             center             : true,
             spaceBetween       : 24,
             allowTouchMove     : true,
@@ -69,13 +69,12 @@
                     slidesPerView: 3,
                 },
                 1024: {
-                    slidesPerView: 4,
-                    keyboard: true,
-                    grabCursor: true,
+                    slidesPerView: 5,
                 },
                 1025: {
                     loop      : true,
                     grabCursor: true,
+                    keyboard  : true,
                     autoplay  : {
                         delay: 3000
                     }

@@ -72,7 +72,7 @@ if (file_exists(get_template_directory().$bgMobPath)) {
                 <?php } ?>
             <?php } ?>
         </div>
-        <?php if (is_home() || is_front_page()) {
+        <?php if (is_home() || is_front_page() || is_page_template('templates/pricing.php')) {
             get_template_part_var('global/cta');
         } ?>
     </div>
