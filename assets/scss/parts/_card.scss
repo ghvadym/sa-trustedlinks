@@ -31,15 +31,13 @@
 
 .card_simple__title {
     font-size: 28px;
-    font-weight: 500;
-    line-height: 34px;
+    line-height: 1.4;
     margin-bottom: 16px;
     position: relative;
     transition: $transition;
 
     @include response-max($laptop-portrait) {
         font-size: 26px;
-        line-height: 30px
     }
 }
 
@@ -53,7 +51,6 @@
 
 .card_simple__date {
     font-size: 16px;
-    font-weight: 500;
     line-height: normal;
     text-align: right;
     margin-top: auto;
@@ -87,9 +84,12 @@
 
 .card_simple__time {
     font-size: 16px;
-    font-weight: 500;
     color: $color-light;
     transition: $transition;
+
+    @include response-max($mobile) {
+        font-size: 12px;
+    }
 }
 
 .blog_section {
@@ -226,6 +226,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        height: auto;
 
         .card_simple__title {
             margin-top: auto;
