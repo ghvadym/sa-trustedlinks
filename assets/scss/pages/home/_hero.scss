@@ -26,6 +26,10 @@
         background: linear-gradient(0deg, #121212 0%, rgba(18, 18, 18, 0.00) 100%);
         z-index: 2;
     }
+
+    @include response-max($mobile) {
+        padding-bottom: 40px;
+    }
 }
 
 .hero__content {
@@ -48,7 +52,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 90px;
+        padding-top: 50px;
     }
 
     @include response-max($mobile) {
@@ -71,14 +75,14 @@
         left: 0;
         z-index: 1;
         object-fit: cover;
+        bottom: 0;
 
         @include response-min($laptop-landscape) {
             transform: translateY(58%);
-            bottom: 0;
         }
 
         @include response-max($laptop-landscape - 1) {
-            bottom: 85px;
+            bottom: 60px;
         }
     }
 
@@ -122,9 +126,9 @@
 
     @include response-max($laptop-landscape - 1) {
         bottom: unset;
-        top: 65px;
+        top: 70px;
         min-width: 487px;
-        height: 483px;
+        height: 410px;
         transform: translateX(-50%);
         left: 50%;
     }
@@ -142,6 +146,11 @@
     z-index: 2;
     object-fit: contain;
     top: 54%;
+
+    @include response-max($laptop-landscape - 1) {
+        height: 70%;
+        top: 53%;
+    }
 }
 
 .hero__spaceman_cable_left {
@@ -157,7 +166,7 @@
     top: 53%;
 
     @include response-max($laptop-landscape - 1) {
-        left: 72.5%;
+        left: 68.5%;
     }
 }
 
@@ -179,12 +188,17 @@
         line-height: 38px;
         margin-bottom: 16px !important;
     }
+
+    @include response-max($mobile) {
+        margin-left: -6px;
+        margin-right: -6px;
+    }
 }
 
 .hero__text {
     font-size: 20px;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.2;
     max-width: 604px;
     margin-left: auto;
     margin-right: auto;
@@ -200,7 +214,11 @@
     font-weight: 600;
     line-height: 19px;
     margin-top: 30px;
-    opacity: 0.5;
+    text-transform: uppercase;
+
+    @include response-min($desktop) {
+        opacity: 0.5;
+    }
 
     @include response-max($laptop-portrait) {
         margin-top: auto;
@@ -217,13 +235,23 @@
     img {
         object-fit: contain;
     }
+
+    @include response-max($mobile) {
+        column-gap: 22px;
+    }
 }
 
 .hero__partner {
-    opacity: 0.7;
+    @include response-min($desktop) {
+        opacity: 0.7;
+    }
+
+    @include response-max($laptop-landscape) {
+        filter: brightness(0) invert(1);
+    }
 
     @include response-max($laptop-portrait) {
-        width: calc(100% / 3 - 38px);
+        width: calc(100% / 3 - 22px);
         max-height: 40px;
     }
 }

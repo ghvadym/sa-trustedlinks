@@ -29,6 +29,8 @@ if ($bgId) {
                 </p>
             <?php } ?>
         </div>
+    </div>
+    <div class="container slider_wrapper">
         <div class="services__slider swiper">
             <div class="swiper-wrapper">
                 <?php foreach ($services as $service) {
@@ -58,7 +60,9 @@ if ($bgId) {
                     </div>
                 <?php } ?>
             </div>
-            <div class="services__pagination"></div>
         </div>
+    </div>
+    <div class="container">
+        <div class="services__pagination"></div>
     </div>
 </section>

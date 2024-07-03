@@ -58,6 +58,10 @@
     text-align: right;
     margin-top: auto;
     transition: $transition;
+
+    @include response-max($mobile) {
+        font-size: 12px;
+    }
 }
 
 .card_simple__cat {
@@ -143,7 +147,8 @@
         }
 
         @include response-min($desktop) {
-            transform: scale(0.97) !important;
+            transform: scale(1);
+            transform-origin: left;
             transition: $transition;
 
             &:after {
@@ -160,7 +165,7 @@
             }
 
             &:hover {
-                transform: scale(1) !important;
+                transform: scale(1.02) !important;
 
                 &:after {
                     opacity: 1;
@@ -189,7 +194,10 @@
                 z-index: 2;
                 position: relative;
             }
-            @include hover-gradient(linear-gradient(105deg, #7059FF 22.14%, #7B41C4 89.55%), blur(43.5px));
+
+            @include response-min($desktop) {
+                @include hover-gradient(linear-gradient(105deg, #7059FF 22.14%, #7B41C4 89.55%), blur(43.5px));
+            }
         }
 
         @include response-min($desktop) {
@@ -215,6 +223,10 @@
     }
 
     &.full_image {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
         .card_simple__title {
             margin-top: auto;
         }

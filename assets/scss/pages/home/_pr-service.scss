@@ -16,8 +16,8 @@
 
 .pr_service__slider {
     .card_simple {
+        width: 377px;
         height: 450px;
-        @include hover-gradient(linear-gradient(105deg, rgba(112, 89, 255, 0.30) 22.14%, rgba(123, 65, 196, 0.30) 89.55%));
 
         .card_simple__body {
             z-index: 3;
@@ -27,15 +27,15 @@
             }
         }
 
-        &:not(.wide_card) {
-            width: 377px;
-        }
-
-        &.wide_card {
-            width: 500px;
+        @include response-min($laptop-landscape) {
+            &.wide_card {
+                width: 500px;
+            }
         }
 
         @include response-min($desktop) {
+            @include hover-gradient(linear-gradient(105deg, rgba(112, 89, 255, 0.30) 22.14%, rgba(123, 65, 196, 0.30) 89.55%));
+
             &:hover {
                 &:after {
                     opacity: 1;
@@ -45,13 +45,12 @@
 
         @include response-max($mobile) {
             height: 394px;
+            width: 296px;
 
-            &:not(.wide_card) {
-                width: 296px;
-            }
-
-            &.wide_card {
-                width: 394px;
+            .card_simple__img {
+                &.align_center {
+                    width: 80%;
+                }
             }
         }
     }

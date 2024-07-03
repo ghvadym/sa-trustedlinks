@@ -29,24 +29,22 @@ if (empty($posts)) {
             <?php } ?>
         </div>
     </div>
-    <div class="container-left">
-        <div class="slider_wrapper">
-            <div class="blog__slider swiper">
-                <div class="swiper-wrapper">
-                    <?php $i = 1; foreach ($posts as $post) {
-                        $additionalClass = 'swiper-slide';
-                        if ($i === 1 || $i % 4 === 0) {
-                            $additionalClass .= ' card_right_content';
-                        } else if ($i % 3 !== 0) {
-                            $additionalClass .= ' full_image';
-                        }
+    <div class="container-left slider_wrapper">
+        <div class="blog__slider swiper">
+            <div class="swiper-wrapper">
+                <?php $i = 1; foreach ($posts as $post) {
+                    $additionalClass = 'swiper-slide';
+                    if ($i === 1 || $i % 4 === 0) {
+                        $additionalClass .= ' card_right_content';
+                    } else if ($i % 3 !== 0) {
+                        $additionalClass .= ' full_image';
+                    }
 
-                        get_template_part_var('cards/blog-card', [
-                            'post'         => $post,
-                            'card_classes' => $additionalClass
-                        ]);
+                    get_template_part_var('cards/blog-card', [
+                        'post'         => $post,
+                        'card_classes' => $additionalClass
+                    ]);
                     $i++; } ?>
-                </div>
             </div>
         </div>
     </div>

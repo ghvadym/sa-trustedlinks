@@ -3,11 +3,23 @@
 
     .section_bg {
         object-position: top center;
+
+        @include response-max($mobile) {
+            object-position: top left;
+        }
     }
 
     .cta {
+        .container {
+            padding: 0;
+        }
+
         padding-top: 200px;
         background-color: transparent;
+
+        @include response-max($mobile) {
+            padding-top: 100px;
+        }
     }
 }
 

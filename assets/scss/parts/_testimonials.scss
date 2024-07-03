@@ -6,17 +6,14 @@
 }
 
 .testimonials__slider {
+    height: 400px;
+
     .swiper-wrapper {
         align-items: center;
     }
 
-    @include response-min($laptop-landscape) {
-        height: 340px;
-        padding: 0;
-    }
-
-    @include response-max($laptop-landscape - 1) {
-        padding: 0 0 0 32px;
+    @include response-max($mobile) {
+        height: 300px;
     }
 }
 
@@ -29,6 +26,10 @@
         width: 13px;
         height: 13px;
         margin-bottom: 16px;
+    }
+
+    @include response-max($mobile) {
+        padding-bottom: 16px;
     }
 }
 

@@ -8,7 +8,7 @@
     .container {
         max-width: 1350px;
 
-        @include response-max(1439px) {
+        @include response-max($header-responsive) {
             padding: 0 16px;
         }
     }
@@ -49,9 +49,18 @@
     }
 }
 
-[id=header]._scrolled .header__row {
-    background: linear-gradient(149deg, rgba(101, 101, 101, 0.30) 0%, rgba(37, 37, 37, 0.30) 100%);
-    backdrop-filter: blur(16px);
+[id=header] {
+    transition: $transition;
+    padding-top: 0;
+
+    &._scrolled {
+        padding-top: 16px;
+
+        .header__row {
+            background: linear-gradient(149deg, rgba(101, 101, 101, 0.30) 0%, rgba(37, 37, 37, 0.30) 100%);
+            backdrop-filter: blur(16px);
+        }
+    }
 }
 
 .header__menu {
@@ -60,7 +69,6 @@
 
     ul {
         @include flex-center;
-        margin: 0 -10px;
 
         li {
             padding: 0 16px 3px;
@@ -74,6 +82,7 @@
                 @include response-min($header-responsive) {
                     margin-left: auto;
                     height: 48px;
+                    padding-right: 0;
                 }
 
                 a {

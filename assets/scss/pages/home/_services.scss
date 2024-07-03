@@ -25,11 +25,12 @@
         }
 
         @include response-min($desktop) {
-            transform: scale(0.97) !important;
+            transform: scale(1);
+            transform-origin: left;
             transition: $transition;
 
             &:hover {
-                transform: scale(1) !important;
+                transform: scale(1.02) !important;
             }
         }
     }

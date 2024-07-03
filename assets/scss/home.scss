@@ -50,3 +50,15 @@
         }
     }
 }
+
+.how_we_work__slider, .services__slider {
+    @include response-min($desktop) {
+        .swiper-wrapper {
+            padding: 5px 0;
+        }
+    }
+
+    .card_simple {
+        width: 295px;
+    }
+}

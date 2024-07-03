@@ -90,10 +90,13 @@ h3 {
 
 .title {
     @extend h2;
-    font-size: 38px;
     margin-bottom: 8px;
     text-transform: uppercase;
     color: $color-theme;
+
+    @include response-min($laptop-portrait) {
+        font-size: 38px;
+    }
 
     span {
         @include font-style-transparent;
@@ -187,12 +190,10 @@ img {
     margin-bottom: 32px;
     position: relative;
 
-    @include response-min($laptop-landscape) {
-        &.white_theme {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    &.white_theme {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     @include response-max($mobile) {
@@ -663,31 +664,10 @@ section {
 }
 
 .slider_wrapper {
+    padding: 0;
+
     .swiper {
-        @include response-max($laptop-landscape) {
-            padding-left: 32px;
-        }
-    }
-}
-
-.slider_section {
-    .card_simple {
-        height: auto;
-    }
-
-    @include response-max($laptop-landscape) {
-        .container {
-            padding-right: 0;
-            padding-left: 0;
-
-            & > *:not(.slider_wrapper) {
-                padding: 0 32px;
-            }
-        }
-
-        .container-left {
-            padding-left: 0;
-        }
+        padding: 0 32px;
     }
 }
 
@@ -699,15 +679,7 @@ section {
     position: relative;
 
     @include response-max($mobile) {
-        margin-top: 50px;
-    }
-}
-
-.how_we_work__slider, .services__slider {
-    .swiper-pagination-bullets {
-        @include response-min($header-responsive + 1) {
-            display: none;
-        }
+        margin-top: 32px;
     }
 }
 

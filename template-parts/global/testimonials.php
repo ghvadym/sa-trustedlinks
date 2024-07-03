@@ -16,13 +16,15 @@ if ($bgId) {
     <?php if (!empty($bgUrl)) { ?>
         <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bgId); ?>" class="section_bg">
     <?php } ?>
-    <div class="head white_theme">
-        <?php _get_field(acf_option('testimonials_title'), 'title', 'h2'); ?>
-        <?php if ($subtitle = acf_option('testimonials_subtitle')) { ?>
-            <p class="subtitle">
-                <?php echo text_spaces_control($subtitle); ?>
-            </p>
-        <?php } ?>
+    <div class="container">
+        <div class="head white_theme">
+            <?php _get_field(acf_option('testimonials_title'), 'title', 'h2'); ?>
+            <?php if ($subtitle = acf_option('testimonials_subtitle')) { ?>
+                <p class="subtitle">
+                    <?php echo text_spaces_control($subtitle); ?>
+                </p>
+            <?php } ?>
+        </div>
     </div>
     <div class="testimonials__slider swiper">
         <div class="swiper-wrapper">
@@ -60,12 +62,14 @@ if ($bgId) {
             <?php } ?>
         </div>
     </div>
-    <div class="swiper__nav">
-        <div class="swiper__nav_item testimonials__button_prev">
-            <?php get_svg('slider-arrow-left'); ?>
-        </div>
-        <div class="swiper__nav_item testimonials__button_next">
-            <?php get_svg('slider-arrow-right'); ?>
+    <div class="container">
+        <div class="swiper__nav">
+            <div class="swiper__nav_item testimonials__button_prev">
+                <?php get_svg('slider-arrow-left'); ?>
+            </div>
+            <div class="swiper__nav_item testimonials__button_next">
+                <?php get_svg('slider-arrow-right'); ?>
+            </div>
         </div>
     </div>
 </section>
