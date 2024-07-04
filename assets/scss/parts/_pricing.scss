@@ -48,8 +48,13 @@
         }
 
         .pricing_item__link {
-            background: none;
-            -webkit-text-fill-color: unset;
+            color: $color-light;
+
+            @include response-min($desktop) {
+                &:focus, &:active {
+                    color: $color-dark-light;
+                }
+            }
         }
 
         .pricing_item__val {
@@ -159,7 +164,19 @@
     font-weight: 600;
     line-height: 18.15px;
     margin-top: auto;
-    @include font-color-main;
+    transition: $transition;
+    color: $color-theme;
+    @include pointer;
+    
+    @include response-min($desktop) {
+        &:hover {
+            color: $color-btn-hover !important;
+        }
+
+        &:focus, &:active {
+            color: $color-light;
+        }
+    }
 }
 
 .pricing__cta {

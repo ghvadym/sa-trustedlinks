@@ -30,7 +30,7 @@ if ($bgMob) {
     <div class="container">
         <div class="hero__body white_theme">
             <?php if ($title = $fields['title'] ?? '') { ?>
-                <h1 class="title">
+                <h1>
                     <?php echo $title; ?>
                 </h1>
             <?php } ?>

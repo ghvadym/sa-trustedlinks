@@ -44,6 +44,7 @@
         bottom: 0;
         width: 100%;
         height: auto;
+        max-height: 100vh;
     }
 
     @include response-max($laptop-landscape - 1) {
@@ -71,6 +72,7 @@
     @include response-min($laptop-landscape) {
         display: flex;
         height: 674px;
+        max-height: 100vh;
     }
 
     @include response-max($laptop-landscape - 1) {
@@ -86,6 +88,20 @@
 .modal_window__body {
     border-radius: 0 16px 16px 0;
     padding: 24px 34px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(33,12,66,.9);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #fff;
+    }
 
     @include response-min($laptop-landscape) {
         max-width: 340px;

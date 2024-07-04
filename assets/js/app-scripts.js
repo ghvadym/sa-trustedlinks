@@ -85,11 +85,15 @@
         });
 
         if (header.length) {
+            if ($(document).scrollTop() > 30) {
+                header.addClass('_scrolled');
+            }
+
             $(window).scroll(function () {
                 if ($(header).hasClass('active-menu')) {
                     header.removeClass('_scrolled');
                 } else {
-                    if ($(this).scrollTop() > 50) {
+                    if ($(this).scrollTop() > 30) {
                         header.addClass('_scrolled');
                     } else {
                         header.removeClass('_scrolled');
@@ -97,6 +101,10 @@
                 }
             });
         }
+
+        $(document).on('click', 'a[href="#"]', function(e) {
+            e.preventDefault();
+        });
 
         if (header.length && burgerOpen.length && burgerClose.length) {
             $(document).on('click', '.header_burger_icon, .header_close_icon', function () {
@@ -115,7 +123,7 @@
         /* Modal Window */
         const modalWindow = $('.modal_window');
         const openModalWindowBtn = $('.popup_open');
-        const inputPlan = $(".contact-form input[name='plan']");
+        const inputPlan = $('.contact_form__plan');
         if (openModalWindowBtn.length && modalWindow.length) {
             $(document).on('click', '.popup_open', function () {
                 const plan = $(this).attr('data-plan');
@@ -141,7 +149,7 @@
         if (contactFormPopup.length) {
             contactFormPopup.addEventListener('wpcf7mailsent', function (event) {
                 const popup = document.getElementById('tl-contact-form');
-                if (popup.length && popup.classList.contains('active-popup')) {
+                if (popup && popup.classList.contains('active-popup')) {
                     setTimeout(function () {
                         popup.classList.remove('active-popup');
                     }, 2000 );

@@ -72,6 +72,11 @@ h1 {
     line-height: normal;
     font-weight: 800;
     margin-bottom: 35px;
+    text-transform: uppercase;
+
+    span {
+        @include font-style-transparent;
+    }
 
     @include response-max($mobile) {
         font-size: 32px;
@@ -318,7 +323,7 @@ section {
     white-space: nowrap;
     font-weight: 500;
     text-align: center;
-    padding: 16px 25px;
+    padding: 17px 25px 15px;
     position: relative;
     border: 1px solid transparent;
     border-radius: 24px;
@@ -787,19 +792,8 @@ section.hero {
     position: relative;
     background-color: #000;
 
-    .title {
-        font-size: 38px;
-        text-transform: uppercase;
-        margin-bottom: 32px;
-
-        @include response-max($laptop-portrait) {
-            font-size: 32px;
-            margin-bottom: 16px;
-        }
-    }
-
     .subtitle {
-        font-size: 16px;
+        font-size: 19px;
         line-height: 1.4;
         margin-bottom: 0;
 

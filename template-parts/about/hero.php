@@ -13,7 +13,7 @@ $imgSpacemanUrl = !empty($fields['hero_img_spaceman']) ? wp_get_attachment_image
     <?php } ?>
     <div class="container">
         <div class="hero__body white_theme">
-            <h1 class="title">
+            <h1>
                 <?php
                 if ($title = $fields['hero_title'] ?? '') {
                     echo $title;

@@ -44,9 +44,12 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
         </div>
         <div class="hero__content">
             <?php if (!empty($fields['hero_title'])) { ?>
-                <h1 class="hero__title">
-                    <?php echo $fields['hero_title']; ?>
+                <h1 class="d-none">
+                    <?php echo strip_tags($fields['hero_title']); ?>
                 </h1>
+                <h2 class="hero__title">
+                    <?php echo $fields['hero_title']; ?>
+                </h2>
             <?php } ?>
             <?php if ($fields['hero_text'] ?? '') { ?>
                 <p class="hero__text">

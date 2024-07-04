@@ -10,6 +10,19 @@
 
 .page-template-blog {
     @include response-min($laptop-landscape) {
+        .hero {
+            padding: 143px 0 71px;
+
+            .hero__body {
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 60px;
+                margin-bottom: 16px;
+            }
+        }
+
         .cta {
             padding-top: 128px;
         }
@@ -23,7 +36,7 @@
     &.desk_ver {
         right: 0;
         top: 0;
-        width: auto;
+        transform: translate(20%, -15%);
     }
 
     &.mob_ver {
@@ -59,6 +72,10 @@
         max-width: none;
         width: 100%;
         min-height: auto;
+
+        @include response-min($desktop) {
+            max-height: 212px;
+        }
     }
 
     .card_simple__title {
@@ -71,6 +88,12 @@
 
     .card_simple__body {
         flex: 1 1 50%;
+    }
+
+    @include response-min($desktop) {
+        .card_simple__title {
+            @include line-break(3);
+        }
     }
 }
 
@@ -100,10 +123,15 @@
 .recent_posts__head {
     display: flex;
     column-gap: 24px;
+    row-gap: 16px;
     padding: 0 32px;
 
     & > *:last-child {
         margin-right: 32px;
+    }
+
+    @include response-min($desktop) {
+        flex-wrap: wrap;
     }
 }
 
@@ -113,6 +141,7 @@
     line-height: 1.5;
     font-weight: 600;
     text-transform: uppercase;
+    border: 1px solid transparent;
     border-radius: 32px;
     background: linear-gradient(125deg, rgba(255, 255, 255, 0.20) 0%, rgba(227, 227, 227, 0.20) 100%);
     transition: $transition;
@@ -133,12 +162,15 @@
 
         @include response-min($desktop) {
             &:hover {
-                opacity: .7;
+                color: $color-theme;
+                border-color: $color-theme;
+                background: $color-light;
             }
         }
     }
 
     &.active-cat {
+
         svg {
             display: block;
         }
@@ -154,6 +186,7 @@
     height: 48px;
     position: relative;
     white-space: nowrap;
+    flex-shrink: 0;
     @include pointer;
 
     svg {
@@ -164,16 +197,19 @@
         width: 20px;
         height: 20px;
     }
+
+    @include response-min($desktop) {
+        &:hover {
+            opacity: 0.7;
+            transform: scale(0.9);
+        }
+    }
 }
 
 .recent_posts__btn {
     display: none;
     max-width: 244px;
     width: 100%;
-
-    @include response-min($desktop) {
-        margin-left: auto;
-    }
 
     @include response-max($laptop-landscape) {
         min-width: fit-content;
