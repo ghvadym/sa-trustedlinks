@@ -2,14 +2,18 @@
 @import "core/variables";
 @import "core/mixins";
 
-.hero {
-    background-color: $color-dark;
-}
-
 .archive {
    .hero {
        padding-bottom: 30px;
    }
+}
+
+.page-template-blog {
+    @include response-min($laptop-landscape) {
+        .cta {
+            padding-top: 128px;
+        }
+    }
 }
 
 .hero__bg_img {

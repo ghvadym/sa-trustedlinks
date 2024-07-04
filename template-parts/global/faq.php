@@ -14,23 +14,29 @@ if ($faqListItems > 1) {
     $faqListColumns = array_chunk($faqList, ceil($faqListItems / 2));
 }
 
-$bg = $fields['faq_bg_img'] ?? 0;
-if (!empty($bg)) {
-    $bgUrl = wp_get_attachment_image_url($bg, 'full');
-}
+if (!empty($options)) {
+    $bgDeskId = $options['faq_bg_img_desk'] ?? '';
+    $bgMobId = $options['faq_bg_img_mob'] ?? '';
 
-$bgMobPath = '/dest/img/FAQ Block Mob.png';
-if (file_exists(get_template_directory().$bgMobPath)) {
-    $bgUrlMob = get_template_directory_uri() . $bgMobPath;
+    if ($bgDeskId) {
+        $bgDeskUrl = wp_get_attachment_image_url($bgDeskId, 'full');
+    }
+
+    if ($bgMobId) {
+        $bgMobUrl = wp_get_attachment_image_url($bgMobId, 'full');
+    }
 }
 ?>
 
 <section class="faq">
-    <?php if (!empty($bgUrl)) { ?>
-        <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bg); ?>" class="section_bg faq_bg_desk">
+    <?php if (is_home() || is_front_page()) { ?>
+        <img src="<?php echo get_stylesheet_directory_uri() . '/dest/img/bg-stars.png'; ?>" alt="Background main" class="section_bg section_bg_main">
     <?php } ?>
-    <?php if (!empty($bgUrlMob)) { ?>
-        <img src="<?php echo esc_url($bgUrlMob); ?>" alt="Faq mobile background" class="section_bg faq_bg_mob">
+    <?php if (!empty($bgDeskUrl)) { ?>
+        <img src="<?php echo esc_url($bgDeskUrl); ?>" alt="Background desktop" class="section_bg faq_bg_desk">
+    <?php } ?>
+    <?php if (!empty($bgMobUrl)) { ?>
+        <img src="<?php echo esc_url($bgMobUrl); ?>" alt="Background mobile" class="section_bg faq_bg_mob">
     <?php } ?>
     <div class="container">
         <div class="head white_theme">

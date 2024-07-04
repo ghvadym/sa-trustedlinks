@@ -4,6 +4,10 @@
     .section_bg {
         object-position: top center;
 
+        &:not(.section_bg_main) {
+            object-fit: contain;
+        }
+
         @include response-max($mobile) {
             object-position: top left;
         }
@@ -79,13 +83,13 @@
 }
 
 .faq_bg_mob {
-    @include response-min($laptop-portrait) {
+    @include response-min(431px) {
         display: none !important;
     }
 }
 
 .faq_bg_desk {
-    @include response-max($mobile) {
+    @include response-max(430px) {
         display: none !important;
     }
 }

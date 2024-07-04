@@ -175,5 +175,20 @@
             document.execCommand('copy');
             temp.remove();
         }
+
+        const tableShowMore = $('.table__show_more');
+        if (tableShowMore.length) {
+            $(document).on('click', '.table__show_more', function () {
+                const table = $(this).closest('.table');
+                const title = $(this).find('.table__show_more_title');
+                const dataTitle = $(this).attr('data-title');
+                const currentTitle = $(title).text();
+
+                $(table).toggleClass('full_content');
+                $(this).attr('data-title', currentTitle);
+                $(title).text(dataTitle);
+            });
+        }
+
     });
 })(jQuery);

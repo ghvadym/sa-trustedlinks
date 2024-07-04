@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-    <section class="hero">
+    <section class="hero white_theme">
         <div class="container">
             <h1 class="title">
                 <?php echo single_term_title(); ?>

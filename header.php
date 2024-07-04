@@ -10,7 +10,7 @@
     <title><?php echo custom_get_page_title(); ?></title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(is_page_template('templates/pricing.php') || is_page_template('templates/how-we-work.php') || is_page_template('templates/case-studies.php') || is_archive() || is_tax() ? 'main_bg' : ''); ?>>
 <?php wp_body_open(); ?>
 <header id="header" class="header">
     <div class="container">
