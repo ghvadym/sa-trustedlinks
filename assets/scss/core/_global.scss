@@ -24,6 +24,10 @@ body {
 
     &.home {
         background-color: $color-bg-light;
+
+        .header__logo {
+            pointer-events: none;
+        }
     }
 
     &:not(.home) {

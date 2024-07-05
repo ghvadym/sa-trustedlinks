@@ -6,7 +6,7 @@
     z-index: 10;
 
     .container {
-        max-width: 1350px;
+        max-width: 1322px;
 
         @include response-max($header-responsive) {
             padding: 0 16px;
@@ -38,9 +38,8 @@
 .header__row {
     @include flex-center;
     justify-content: space-between;
-
     width: 100%;
-    padding: 10px 24px;
+    padding: 10px;
     border-radius: 48px;
     transition: $transition;
 
@@ -181,10 +180,27 @@
 }
 
 .header__logo {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    .logo_icon {
+        width: 30px;
+        height: 16px;
+    }
+
     .custom-logo-link {
         display: block;
         height: 100%;
         line-height: 0;
+    }
+
+    &.clicked {
+        pointer-events: none;
+
+        .logo_icon {
+            animation: rotating 0.5s linear infinite;
+        }
     }
 }
 

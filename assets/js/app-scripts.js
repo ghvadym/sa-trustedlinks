@@ -111,6 +111,13 @@
             e.preventDefault();
         });
 
+        const logo = $('.header__logo');
+        if (logo.length) {
+            $(document).on('click', '.header__logo', function(e) {
+                $(this).addClass('clicked');
+            });
+        }
+
         if (header.length && burgerOpen.length && burgerClose.length) {
             $(document).on('click', '.header_burger_icon, .header_close_icon', function () {
                 $(header).removeClass('_scrolled');
