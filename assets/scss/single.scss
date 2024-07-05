@@ -109,6 +109,21 @@ section.single {
     padding-bottom: 63px;
     margin-bottom: 32px;
     border-bottom: 1px solid $color-light;
+    position: relative;
+
+    &:first-letter {
+        text-transform: uppercase;
+        font-size: 87px;
+        font-weight: 500;
+        float: left;
+        margin-inline-end: 8px;
+        line-height: 0.9;
+
+        @include response-max($mobile) {
+            font-size: 55px;
+            margin-inline-end: 4px;
+        }
+    }
 
     @include response-max($mobile) {
         padding-bottom: 32px;

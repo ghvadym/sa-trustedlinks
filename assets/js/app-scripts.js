@@ -1,5 +1,9 @@
 (function ($) {
     $(document).ready(function () {
+        if (typeof AOS['init'] == 'function') {
+            AOS.init();
+        }
+
         const ajax = tl_ajax.ajaxurl;
         const nonce = tl_ajax.nonce;
         const burgerOpen = $('.header_burger_icon');

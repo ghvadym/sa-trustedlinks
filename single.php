@@ -20,7 +20,9 @@ if (!empty($terms)) {
 
 $fields = get_fields($post->ID);
 $postLink = get_the_permalink($post->ID);
-$shareLinks = $fields['share_links'] ?? [];
+$shareLinks = _get_posts([
+    'post_type' => 'social'
+]);
 $similarPosts = _get_posts($similarPostsArgs);
 ?>
 
@@ -60,15 +62,14 @@ $similarPosts = _get_posts($similarPostsArgs);
             </div>
             <?php if (!empty($shareLinks)) { ?>
                 <div class="single__links">
-                    <?php foreach ($shareLinks as $shareLinkId) {
-                        $title = get_the_title($shareLinkId);
-                        $url = socials_share_links($title);
+                    <?php foreach ($shareLinks as $shareLink) {
+                        $url = socials_share_links($shareLink->post_title);
 
                         if (!$url) {
                             continue;
                         }
-                        $title = rawurlencode($title);
-                        $shareImgUrl = get_the_post_thumbnail_url($shareLinkId);
+                        $title = rawurlencode($shareLink->post_title);
+                        $shareImgUrl = get_the_post_thumbnail_url($shareLink->ID);
                         $url = str_replace(['[link]', '[title]'], [$postLink, $title], $url);
 
                         echo sprintf(
