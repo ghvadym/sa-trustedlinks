@@ -825,43 +825,65 @@ section.hero {
 }
 
 .pagination-container {
-    margin: 50px 0;
+    margin: 64px 0;
+
+    @include response-max($mobile) {
+        margin-bottom: 0;
+    }
 }
 
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 15px;
-    font-size: 22px;
+    flex-wrap: wrap;
+    gap: 24px;
 
-    .next, .prev {
-        width: 25px;
-        height: 25px;
-        display: flex;
-        border-radius: 50%;
-        background-color: $color-bg-light;
-        transition: $transition;
-
-        svg {
-            width: 15px;
-            height: 15px;
-            margin: auto;
-        }
+    @include response-max($mobile) {
+        gap: 16px;
     }
 
-    a {
+    & > * {
+        width: 48px;
+        height: 48px;
+        border-radius: 48px;
+        border: 1px solid #313131;
+        background: linear-gradient(149deg, rgba(101, 101, 101, 0.20) 0%, rgba(37, 37, 37, 0.20) 100%);
+        backdrop-filter: blur(43.5px);
         transition: $transition;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        color: $color-light;
+
+        &.current {
+            border: 1px solid #7B41C4;
+            background: linear-gradient(105deg, #7059FF 22.14%, #7B41C4 89.55%);
+        }
 
         @include response-min($desktop) {
             &:hover {
-                opacity: 0.7;
+                &:not(.dots) {
+                    border: 1px solid #7B41C4;
+                    background: linear-gradient(105deg, #7059FF 22.14%, #7B41C4 89.55%);
+                }
             }
         }
+
+        @include response-max($mobile) {
+            width: 36px;
+            height: 36px;
+        }
     }
-    
-    .current {
-        text-decoration: underline;
+
+    .next, .prev {
+        svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
     }
 }
 

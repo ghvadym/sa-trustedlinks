@@ -4,7 +4,7 @@
     .section_bg {
         object-position: top center;
 
-        &:not(.section_bg_main) {
+        &:not(.section_bg_hero) {
             object-fit: contain;
         }
 

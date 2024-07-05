@@ -106,6 +106,15 @@ function _get_field($field, string $class = '', string $tag = 'div')
     echo sprintf('<%1$s%2$s>%3$s</%1$s>', $tag, $class, esc_html($field));
 }
 
+function bg_img(string $url = ''): string
+{
+    if (!$url) {
+        return '';
+    }
+
+    return sprintf('style="background-image:url(%1$s)"', $url);
+}
+
 function acf_option(string $key = '')
 {
     if (!function_exists('get_field')) {
