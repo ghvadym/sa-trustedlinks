@@ -34,16 +34,13 @@ $terms = get_terms([
                             <?php echo esc_html($term->name); ?>
                         </div>
                     <?php } ?>
-                    <div class="recent_posts__close" data-id="">
-                        <?php get_svg('close'); ?>
-                    </div>
-                    <?php if (!empty($terms[0])) { ?>
-                        <a class="recent_posts__btn btn_light" href="<?php echo get_term_link($terms[0]->term_id); ?>">
-                            <?php _e('View all', DOMAIN); ?>
-                        </a>
-                    <?php } ?>
                 </div>
             </div>
+            <?php if (!empty($terms[0])) { ?>
+                <a class="recent_posts__btn btn_light" href="<?php echo get_term_link($terms[0]->term_id); ?>">
+                    <?php _e('View all', DOMAIN); ?>
+                </a>
+            <?php } ?>
         <?php } ?>
         <div class="recent_posts__list">
             <?php get_template_part_var('archive/recent-posts-list', [

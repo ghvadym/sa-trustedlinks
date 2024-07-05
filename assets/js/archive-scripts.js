@@ -13,7 +13,6 @@
         });
 
         const btnViewAll = $('.recent_posts__btn');
-        const resetFilter = $('.recent_posts__close');
         const blogTabs = $('.recent_posts__cat');
         if (blogTabs.length) {
             $(document).on('click', '.recent_posts__cat', function () {
@@ -22,27 +21,21 @@
                 const link = $(cat).attr('data-link');
 
                 if ($(cat).hasClass('active-cat')) {
+                    $(cat).removeClass('active-cat');
+                    $(btnViewAll).hide();
+                    postsFilter();
+
                     return false;
                 }
 
                 $(blogTabs).removeClass('active-cat');
                 $(cat).addClass('active-cat');
-                $(resetFilter).show();
 
                 if (btnViewAll.length && link) {
                     $(btnViewAll).show().attr('href', link);
                 }
 
                 postsFilter(id);
-            });
-        }
-
-        if (resetFilter.length) {
-            $(document).on('click', '.recent_posts__close', function () {
-                $(resetFilter).hide();
-                $(blogTabs).removeClass('active-cat');
-                $(btnViewAll).hide();
-                postsFilter();
             });
         }
 

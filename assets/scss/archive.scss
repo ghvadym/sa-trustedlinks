@@ -149,6 +149,7 @@
     align-items: center;
     white-space: nowrap;
     height: 50px;
+    @include pointer;
 
     svg {
         display: none;
@@ -157,51 +158,17 @@
         margin-right: 8px;
     }
 
-    &:not(.active-cat) {
-        @include pointer;
-
-        @include response-min($desktop) {
-            &:hover {
-                color: $color-theme;
-                border-color: $color-theme;
-                background: $color-light;
-            }
+    @include response-min($desktop) {
+        &:hover {
+            color: $color-theme;
+            border-color: $color-theme;
+            background: $color-light;
         }
     }
 
     &.active-cat {
-
         svg {
             display: block;
-        }
-    }
-}
-
-.recent_posts__close {
-    display: none;
-    background: linear-gradient(125deg, rgba(255, 255, 255, 0.20) 0%, rgba(227, 227, 227, 0.20) 100%);
-    transition: $transition;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    position: relative;
-    white-space: nowrap;
-    flex-shrink: 0;
-    @include pointer;
-
-    svg {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-    }
-
-    @include response-min($desktop) {
-        &:hover {
-            opacity: 0.7;
-            transform: scale(0.9);
         }
     }
 }
@@ -210,6 +177,7 @@
     display: none;
     max-width: 244px;
     width: 100%;
+    margin-bottom: 24px;
 
     @include response-max($laptop-landscape) {
         min-width: fit-content;
