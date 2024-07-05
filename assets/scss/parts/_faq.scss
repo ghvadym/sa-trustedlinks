@@ -1,12 +1,12 @@
 .faq {
     padding-bottom: 0;
 
+    .container {
+        position: relative;
+    }
+
     .section_bg {
         object-position: top center;
-
-        &:not(.section_bg_hero) {
-            object-fit: contain;
-        }
 
         @include response-max($mobile) {
             object-position: top left;
@@ -38,6 +38,10 @@
 }
 
 .faq__list_column {
+    @include response-min($laptop-landscape) {
+        width: 50%;
+    }
+
     &:not(:last-child) {
         margin-bottom: 16px;
     }

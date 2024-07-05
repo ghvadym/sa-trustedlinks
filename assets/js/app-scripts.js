@@ -18,6 +18,7 @@
             longSwipes          : false,
             simulateTouch       : true,
             slideToClickedSlide : true,
+            speed               : 1000,
             mousewheel          : {
                 forceToAxis: true
             },
@@ -30,6 +31,7 @@
         const similarPostsSlider = new Swiper('.similar_posts__slider', {
             slidesPerView: 'auto',
             spaceBetween : 24,
+            speed        : 1000,
             mousewheel   : {
                 forceToAxis: true
             },
@@ -42,43 +44,42 @@
         const testimonialsSlider = new Swiper('.testimonials__slider', {
             slidesPerView      : 5,
             center             : true,
-            spaceBetween       : 24,
+            centeredSlides     : true,
+            loop               : true,
+            speed              : 1000,
+            grabCursor         : true,
+            keyboard           : true,
             allowTouchMove     : true,
             longSwipes         : false,
             simulateTouch      : true,
             slideToClickedSlide: true,
-            centeredSlides     : true,
-            pauseOnMouseEnter  : true,
-            mousewheel         : {
-                forceToAxis: true
-            },
-            loop: true,
-            autoplay: {
-                delay: 3000
+            autoplay           : {
+                delay            : 3000,
+                pauseOnMouseEnter: true
             },
             navigation         : {
                 nextEl: '.testimonials__button_next',
                 prevEl: '.testimonials__button_prev'
             },
-            breakpoints: {
-                0: {
+            breakpoints        : {
+                0   : {
                     autoplay     : false,
-                    slidesPerView: 1.3,
-                    spaceBetween : 32
+                    slidesPerView: 1.3
                 },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween : 24
+                768 : {
+                    slidesPerView: 3
                 },
                 1024: {
-                    slidesPerView: 5,
+                    slidesPerView: 5
                 },
                 1025: {
                     loop      : true,
-                    grabCursor: true,
-                    keyboard  : true,
+                    mousewheel: {
+                        forceToAxis: true
+                    },
                     autoplay  : {
-                        delay: 3000
+                        delay            : 3000,
+                        pauseOnMouseEnter: true
                     }
                 }
             }

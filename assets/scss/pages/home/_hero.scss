@@ -202,6 +202,7 @@
     max-width: 604px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 1px 1px black;
 
     @include response-max($laptop-portrait) {
         font-size: 15px;

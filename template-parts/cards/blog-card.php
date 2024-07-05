@@ -30,7 +30,7 @@ $url = get_the_permalink($post);
                 </div>
             <?php } ?>
         </div>
-        <a href="<?php echo esc_url($url); ?>" class="card_simple__title">
+        <a href="<?php echo esc_url($url); ?>" class="card_simple__title" title="<?php echo esc_attr($post->post_title); ?>">
             <?php echo esc_html($post->post_title); ?>
         </a>
         <div class="card_simple__date">

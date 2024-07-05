@@ -30,15 +30,15 @@ if (!empty($options)) {
 
 <section class="faq">
     <?php if (is_home() || is_front_page()) { ?>
-        <img src="<?php echo get_stylesheet_directory_uri() . '/dest/img/bg-stars.png'; ?>" alt="Background main" class="section_bg section_bg_main">
-    <?php } ?>
-    <?php if (!empty($bgDeskUrl)) { ?>
-        <img src="<?php echo esc_url($bgDeskUrl); ?>" alt="Background desktop" class="section_bg faq_bg_desk">
+        <img src="<?php echo get_stylesheet_directory_uri() . '/dest/img/bg-stars.png'; ?>" alt="Background main" class="section_bg">
     <?php } ?>
     <?php if (!empty($bgMobUrl)) { ?>
-        <img src="<?php echo esc_url($bgMobUrl); ?>" alt="Background mobile" class="section_bg faq_bg_mob">
+        <img src="<?php echo esc_url($bgMobUrl); ?>" alt="Background mobile" class="section_bg_contain faq_bg_mob">
     <?php } ?>
     <div class="container">
+        <?php if (!empty($bgDeskUrl)) { ?>
+            <img src="<?php echo esc_url($bgDeskUrl); ?>" alt="Background desktop" class="section_bg_contain faq_bg_desk">
+        <?php } ?>
         <div class="head white_theme">
             <?php _get_field($fields['faq_title'] ?? '', 'title', 'h2'); ?>
             <?php if ($subtitle = $fields['faq_subtitle'] ?? '') { ?>

@@ -183,6 +183,10 @@ img {
     width: 100%;
     margin: 0 auto;
     padding: 0 32px;
+
+    @include response-min(1200px) {
+        padding: 0 100px;
+    }
 }
 
 .container-left {
@@ -192,11 +196,19 @@ img {
     @include response-min(1363px) {
         margin-left: calc((100% - 1304px) / 2);
     }
+
+    @include response-min(1200px) {
+        padding-left: 100px;
+    }
 }
 
 .no-container {
     width: 100%;
     padding: 0 32px;
+
+    @include response-min(1200px) {
+        padding: 0 100px;
+    }
 }
 
 .head {
@@ -705,6 +717,11 @@ section {
     object-position: top;
     width: 100%;
     height: 100%;
+}
+
+.section_bg_contain {
+    @extend .section_bg;
+    object-fit: contain;
 }
 
 .slider_wrapper {

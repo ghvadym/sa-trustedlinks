@@ -13,6 +13,7 @@
             longSwipes          : false,
             simulateTouch       : true,
             slideToClickedSlide : true,
+            speed               : 1000,
             mousewheel          : {
                 forceToAxis: true
             },
@@ -38,6 +39,7 @@
             longSwipes          : false,
             simulateTouch       : true,
             slideToClickedSlide : true,
+            speed               : 1000,
             mousewheel          : {
                 forceToAxis: true
             },
@@ -63,6 +65,7 @@
             longSwipes          : false,
             simulateTouch       : true,
             slideToClickedSlide : true,
+            speed               : 1000,
             mousewheel          : {
                 forceToAxis: true
             },
@@ -75,6 +78,7 @@
         const blogSlider = new Swiper('.blog__slider', {
             slidesPerView: 'auto',
             spaceBetween : 24,
+            speed        : 1000,
             mousewheel   : {
                 forceToAxis: true
             },

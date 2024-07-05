@@ -51,7 +51,7 @@
     }
 }
 
-.how_we_work__slider, .services__slider {
+section.how_we_work, section.services {
     @include response-min(1300px) {
         .swiper-pagination-bullets {
             display: none;

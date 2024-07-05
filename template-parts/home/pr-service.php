@@ -26,7 +26,7 @@ if (empty($cards)) {
             <div class="swiper-wrapper">
                 <?php foreach ($cards as $item) {
                     $isWideCard = $item['is_wide_card'] ?? false;
-                    $imageAlign = $item['image_align'] ?? 'left';
+                    $imageAlign = $item['image_align'] ?: 'left';
                     $imageId = $item['img'] ?? '';
                     $title = $item['title'] ?? '';
                     $text = $item['text'] ?? '';

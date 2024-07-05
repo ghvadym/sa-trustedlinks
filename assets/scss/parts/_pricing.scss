@@ -47,6 +47,10 @@
             color: $color-light;
         }
 
+        .pricing_item__price {
+            border-color: $color-light;
+        }
+
         .pricing_item__link {
             color: $color-light;
 
@@ -66,7 +70,7 @@
 }
 
 .pricing_item_body {
-    padding: 16px;
+    padding: 16px 24px 24px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -75,6 +79,9 @@
 .pricing_item__name {
     position: relative;
     margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     span {
         font-size: 12px;
@@ -87,9 +94,6 @@
     }
 
     img {
-        position: absolute;
-        right: 0;
-        top: 0;
         height: 42px;
         width: auto;
         object-fit: contain;
@@ -166,6 +170,7 @@
     margin-top: auto;
     transition: $transition;
     color: $color-theme;
+    text-align: right;
     @include pointer;
     
     @include response-min($desktop) {
