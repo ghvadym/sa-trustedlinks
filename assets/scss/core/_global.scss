@@ -951,7 +951,7 @@ section.hero {
 
     @include response-min($laptop-portrait) {
         .card_simple {
-            width: 395px;
+            max-width: 355px;
         }
     }
 }
