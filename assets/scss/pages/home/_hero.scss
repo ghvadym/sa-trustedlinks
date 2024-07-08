@@ -4,7 +4,7 @@
     height: 100vh;
 
     @include response-min($desktop) {
-        min-height: 1024px;
+        min-height: 800px;
     }
 
     .container {
@@ -121,8 +121,8 @@
     transform: translateX(-50%);
     top: 50px;
     z-index: 2;
-    width: 590px;
-    height: 890px;
+    width: 545px;
+    height: 830px;
 
     @include response-max($laptop-landscape - 1) {
         bottom: unset;
@@ -162,8 +162,8 @@
 }
 
 .hero__spaceman_cable_right {
-    left: 89.5%;
-    top: 53%;
+    left: 89.2%;
+    top: 53.4%;
 
     @include response-max($laptop-landscape - 1) {
         left: 68.5%;

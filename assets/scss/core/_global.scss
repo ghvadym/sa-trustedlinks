@@ -113,7 +113,7 @@ h3 {
     color: $color-theme;
 
     @include response-min($laptop-portrait) {
-        font-size: 38px;
+        font-size: 35px;
     }
 
     span {
@@ -814,7 +814,7 @@ section.hero {
     background-color: #000;
 
     .subtitle {
-        font-size: 19px;
+        font-size: 17px;
         line-height: 1.4;
         margin-bottom: 0;
 
@@ -846,7 +846,7 @@ section.hero {
 }
 
 .pagination-container {
-    margin: 64px 0;
+    margin: 64px 0 0;
 
     @include response-max($mobile) {
         margin-bottom: 0;

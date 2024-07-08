@@ -4,9 +4,17 @@
         const nonce = tl_ajax.nonce;
 
         const mostPopularSlider = new Swiper('.most_popular__slider', {
-            slidesPerView: 'auto',
-            spaceBetween : 24,
-            pagination   : {
+            slidesPerView : 'auto',
+            spaceBetween  : 24,
+            speed         : 1000,
+            grabCursor    : true,
+            keyboard      : true,
+            allowTouchMove: true,
+            longSwipes    : false,
+            mousewheel    : {
+                forceToAxis: true
+            },
+            pagination    : {
                 el       : '.most_popular__pagination',
                 clickable: true
             },

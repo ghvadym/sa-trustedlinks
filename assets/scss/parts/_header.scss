@@ -16,7 +16,7 @@
     a {
         color: $color-light;
         font-family: 'Inter', sans-serif;
-        font-size: 15px;
+        font-size: 14px;
         white-space: nowrap;
     }
 
@@ -70,7 +70,7 @@
         @include flex-center;
 
         li {
-            padding: 0 16px 2px;
+            padding: 0 15px 2px;
             transition: $transition;
             border-bottom: 1px solid transparent;
             margin-bottom: 0;
