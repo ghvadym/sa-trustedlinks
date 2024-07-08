@@ -28,8 +28,8 @@
 
 .pr_service__slider {
     .card_simple {
-        width: 377px;
-        height: 450px;
+        max-width: 320px;
+        height: 405px;
 
         .card_simple__body {
             z-index: 3;
@@ -41,7 +41,7 @@
 
         @include response-min($laptop-landscape) {
             &.wide_card {
-                width: 500px;
+                max-width: 425px;
             }
         }
 
@@ -57,7 +57,7 @@
 
         @include response-max($mobile) {
             height: 394px;
-            width: 296px;
+            max-width: 296px;
 
             .card_simple__img {
                 &.align_center {

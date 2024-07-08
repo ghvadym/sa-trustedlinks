@@ -137,7 +137,7 @@
 
 .recent_posts__cat {
     padding: 12px 24px;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
     font-weight: 600;
     text-transform: uppercase;
@@ -213,7 +213,7 @@
 
         .card_simple {
             max-width: none;
-            min-height: 500px;
+            //min-height: 500px;
 
             &:first-child {
                 grid-column: 1 / span 2;
@@ -261,7 +261,6 @@
 
     .card_simple__img {
         height: 260px;
-        flex-shrink: 0;
     }
 
     @include response-max($laptop-landscape - 1) {

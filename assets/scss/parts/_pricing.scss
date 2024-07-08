@@ -19,7 +19,8 @@
 }
 
 .pricing_item {
-    width: 292px;
+    max-width: 260px;
+    width: 100%;
     height: auto;
     border: 1px solid #737373;
     background: linear-gradient(149deg, rgba(217, 217, 217, 0.20) 1.16%, rgba(115, 115, 115, 0.20) 99.16%);
@@ -70,7 +71,7 @@
 }
 
 .pricing_item_body {
-    padding: 16px 24px 24px;
+    padding: 12px 16px 16px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -78,7 +79,7 @@
 
 .pricing_item__name {
     position: relative;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -86,28 +87,27 @@
     span {
         font-size: 12px;
         font-weight: 500;
-        line-height: 16px;
         background-color: $color-dark;
         color: $color-light;
-        padding: 4px 12px;
+        padding: 4px 10px;
         border-radius: 32px;
     }
 
     img {
-        height: 42px;
+        height: 32px;
         width: auto;
         object-fit: contain;
     }
 }
 
 .pricing_item__price {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 1.2;
     color: $color-dark;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
     border-bottom: 1px solid $color-dark;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 
     span {
         font-size: 14px;
@@ -120,39 +120,38 @@
 .pricing_item__btn {
     margin-bottom: 16px;
     width: 100%;
-    padding: 10px;
-    font-size: 14px;
+    padding: 9px;
+    font-size: 13px;
 }
 
 .pricing_item__val {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2;
     color: $color-dark;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 6px;
 
     svg {
-        width: 15px;
-        height: 15px;
+        width: 13px;
+        height: 13px;
     }
 }
 
 .pricing_item__list {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 
     li {
         display: flex;
         align-items: center;
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 13px;
         color: $color-dark-light;
 
         svg {
-            width: 18px;
-            height: 19px;
-            margin-right: 10px;
+            width: 16px;
+            height: 16px;
+            margin-right: 9px;
             flex-shrink: 0;
         }
 
@@ -164,9 +163,8 @@
 
 .pricing_item__link {
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 18.15px;
     margin-top: auto;
     transition: $transition;
     color: $color-theme;
@@ -187,13 +185,17 @@
 .pricing__cta {
     display: flex;
     justify-content: center;
-    margin-top: 24px;
+    margin-top: 64px;
+
+    @include response-max($mobile) {
+        margin-top: 32px;
+    }
 }
 
 .pricing__cta_body {
     position: relative;
     border-radius: 50px;
-    padding: 12px 12px 12px 24px;
+    padding: 10px 10px 10px 20px;
     background: linear-gradient(105.43deg, #7059FF 22.14%, #7B41C4 89.55%);
 
     &:before {
@@ -236,15 +238,13 @@
 }
 
 .pricing__cta_title {
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 500;
-    line-height: 29px;
     color: $color-light;
 
     @include response-max($laptop-landscape) {
         font-size: 29px;
         font-weight: 700;
-        line-height: 35.1px;
         text-align: center;
         margin-bottom: 24px;
 

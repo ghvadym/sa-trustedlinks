@@ -6,7 +6,7 @@
     z-index: 10;
 
     .container {
-        max-width: 1322px;
+        max-width: 1198px;
 
         @include response-max($header-responsive) {
             padding: 0 16px;
@@ -16,7 +16,7 @@
     a {
         color: $color-light;
         font-family: 'Inter', sans-serif;
-        font-size: 16px;
+        font-size: 15px;
         white-space: nowrap;
     }
 
@@ -70,7 +70,7 @@
         @include flex-center;
 
         li {
-            padding: 0 16px 3px;
+            padding: 0 16px 2px;
             transition: $transition;
             border-bottom: 1px solid transparent;
             margin-bottom: 0;
@@ -80,7 +80,7 @@
 
                 @include response-min($header-responsive) {
                     margin-left: auto;
-                    height: 48px;
+                    height: 40px;
                     padding-right: 0;
                 }
 
@@ -92,8 +92,9 @@
                     }
 
                     @include response-min($header-responsive + 1) {
-                        padding: 16px 15px 14px;
-                        border-radius: 100px;
+                        padding: 13px 16px 11px;
+                        min-width: 155px;
+                        font-size: 14px;
                     }
                 }
             }
@@ -183,9 +184,9 @@
     display: flex;
     align-items: center;
     gap: 3px;
+    height: 16px;
 
     .logo_icon {
-        width: 30px;
         height: 16px;
     }
 

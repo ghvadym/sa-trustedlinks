@@ -17,7 +17,7 @@ body {
     color: $color-light;
     font-style: normal;
     line-height: normal;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     font-family: 'Inter', sans-serif;
@@ -122,7 +122,7 @@ h3 {
 }
 
 .subtitle {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     line-height: normal;
     color: $color-dark-light;
@@ -183,7 +183,7 @@ img {
 }
 
 .container {
-    max-width: 1304px;
+    max-width: 1180px;
     width: 100%;
     margin: 0 auto;
     padding: 0 32px;
@@ -193,8 +193,8 @@ img {
     padding-left: 32px;
     width: 100%;
 
-    @include response-min(1363px) {
-        margin-left: calc((100% - 1304px) / 2);
+    @include response-min(1250px) {
+        margin-left: calc((100% - 1180px) / 2);
     }
 }
 
@@ -240,7 +240,7 @@ img {
 }
 
 section {
-    padding: 128px 0;
+    padding: 100px 0;
     position: relative;
 
     @include response-max($laptop-landscape) {
@@ -326,18 +326,18 @@ section {
     box-shadow: $box-shadow;
     display: inline-block;
     color: $color-light;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1;
     white-space: nowrap;
     font-weight: 500;
     text-align: center;
-    padding: 17px 25px 15px;
+    padding: 16px 25px 13px;
     position: relative;
     border: 1px solid transparent;
     border-radius: 24px;
     transition: $transition;
     text-transform: uppercase;
-    min-width: 187px;
+    min-width: 170px;
     text-decoration: none;
     outline: none;
     overflow: hidden;
@@ -589,13 +589,12 @@ section {
     }
 
     .table__cell {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
-        line-height: 20px;
         padding: 20px 0;
         display: flex;
         align-items: center;
-        column-gap: 10px;
+        column-gap: 8px;
 
         @include response-min($laptop-landscape) {
             width: 25%;
@@ -616,6 +615,13 @@ section {
 
             &:nth-child(4) {
                 flex-basis: 25%;
+            }
+        }
+
+        &:last-child {
+            svg {
+                width: 16px;
+                height: 16px;
             }
         }
     }
@@ -642,8 +648,8 @@ section {
         }
 
         .table__cell {
-            padding: 8px 0;
-            min-height: 56px;
+            padding: 6px 0;
+            min-height: 52px;
 
             &:nth-child(3) {
                 border-left: 1px solid #333;
@@ -657,8 +663,8 @@ section {
 }
 
 .table__img {
-    width: 40px;
-    height: 40px;
+    width: 37px;
+    height: 37px;
     border-radius: 8px;
     background-color: rgba(235, 235, 240, 1);
     display: flex;
@@ -687,11 +693,10 @@ section {
 
     span {
         background: rgba(235, 235, 240, 1);
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
-        line-height: 20px;
         color: $color-dark-light;
-        padding: 8px 16px;
+        padding: 7px 12px;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
         width: 100%;
@@ -701,8 +706,12 @@ section {
 .traffic__range {
     font-size: 12px;
     font-weight: 400;
-    line-height: 15px;
     color: $color-grey;
+}
+
+.traffic__icon {
+    width: 15px;
+    height: 15px;
 }
 
 .section_bg {
@@ -759,8 +768,8 @@ section {
 .swiper__nav {
     display: flex;
     justify-content: center;
-    margin: 64px 0 0;
-    column-gap: 24px;
+    margin: 32px 0 0;
+    column-gap: 16px;
     position: relative;
     z-index: 1;
 
@@ -770,10 +779,9 @@ section {
 }
 
 .swiper__nav_item {
-    width: 48px;
-    height: 48px;
-
     svg {
+        width: 42px;
+        height: 42px;
         transition: $transition;
     }
 
@@ -944,7 +952,6 @@ section.hero {
     @include response-min($laptop-portrait) {
         .card_simple {
             width: 395px;
-            min-height: 499px;
         }
     }
 }

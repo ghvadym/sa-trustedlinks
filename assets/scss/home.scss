@@ -12,11 +12,12 @@
 
 @include response-min($laptop-landscape) {
     .card_right_content {
-        width: 818px;
-        min-height: 412px;
+        max-width: 735px;
+        width: 100%;
 
         .card_simple__img {
-            width: 500px;
+            max-width: 445px;
+            width: 100%;
         }
 
         .card_simple__cat {
@@ -42,10 +43,9 @@
 @include response-min($desktop) {
     .blog__slider {
         .card_simple {
-            min-height: 499px;
-
             &:not(.card_right_content) {
-                width: 397px;
+                max-width: 335px;
+                width: 100%;
             }
         }
     }
@@ -65,6 +65,7 @@ section.how_we_work, section.services {
     }
 
     .card_simple {
-        width: 295px;
+        max-width: 264px;
+        width: 100%;
     }
 }

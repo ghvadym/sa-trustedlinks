@@ -35,9 +35,8 @@
 
         li {
             a {
-                font-size: 15px;
+                font-size: 14px;
                 font-weight: 600;
-                line-height: 18px;
                 padding: 0;
                 text-transform: uppercase;
 
@@ -159,8 +158,8 @@
 }
 
 .social__item {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     position: relative;
     z-index: 2;
     background-color: rgba(227, 227, 227, 1);
@@ -207,16 +206,14 @@
 
     strong {
         display: block;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
-        line-height: 20px;
         margin-bottom: 4px;
     }
 
     a {
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 600;
-        line-height: 18px;
         text-transform: uppercase;
         display: block;
         @include font-color-main;
@@ -230,7 +227,7 @@
 
 .footer__img {
     @include response-min($laptop-portrait) {
-        height: 52px;
+        height: 48px;
 
         img {
             object-fit: contain;

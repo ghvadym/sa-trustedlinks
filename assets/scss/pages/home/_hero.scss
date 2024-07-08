@@ -37,10 +37,10 @@
     margin: 0 auto;
     z-index: 3;
     text-align: center;
-    padding-top: 20vh;
+    padding-top: 24vh;
 
     & > *:not(:last-child) {
-        margin-bottom: 32px;
+        margin-bottom: 24px;
 
         @include response-max($laptop-portrait) {
             margin-bottom: 16px;
@@ -91,7 +91,7 @@
             position: absolute;
             left: 40px;
             top: 0;
-            width: 110px;
+            width: 95px;
             object-fit: contain;
         }
 
@@ -104,8 +104,8 @@
         @include response-min($header-responsive + 1) {
             position: absolute;
             right: 20px;
-            top: 150px;
-            width: 150px;
+            top: 100px;
+            width: 130px;
             object-fit: contain;
         }
 
@@ -121,8 +121,8 @@
     transform: translateX(-50%);
     top: 50px;
     z-index: 2;
-    width: 620px;
-    height: 940px;
+    width: 590px;
+    height: 890px;
 
     @include response-max($laptop-landscape - 1) {
         bottom: unset;
@@ -174,9 +174,8 @@
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 64px;
+    font-size: 55px;
     font-weight: 800;
-    line-height: 77px;
     text-transform: uppercase;
 
     span {
@@ -185,7 +184,6 @@
 
     @include response-max($laptop-portrait) {
         font-size: 32px;
-        line-height: 38px;
         margin-bottom: 16px !important;
     }
 
@@ -196,10 +194,10 @@
 }
 
 .hero__text {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.2;
-    max-width: 604px;
+    max-width: 590px;
     margin-left: auto;
     margin-right: auto;
     text-shadow: 1px 1px black;
@@ -211,10 +209,9 @@
 }
 
 .hero__subtitle {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
-    line-height: 19px;
-    margin-top: 30px;
+    margin-top: 24px;
     text-transform: uppercase;
 
     @include response-min($desktop) {

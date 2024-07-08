@@ -6,7 +6,7 @@
 }
 
 .testimonials__slider {
-    height: 400px;
+    height: 250px;
 
     .swiper-wrapper {
         align-items: center;
@@ -18,7 +18,7 @@
 }
 
 .testimonial__body {
-    padding: 16px 16px 32px;
+    padding: 16px 16px 24px;
     background: linear-gradient(135deg, #262626 100%, #737373 100%);
     transition: $transition;
 
@@ -51,15 +51,14 @@
 }
 
 .testimonial__text {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     color: rgba(234, 234, 234, 1);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 1.4;
 
     @include response-max($mobile) {
         font-size: 15px;
-        line-height: 20px;
     }
 }
 
@@ -84,7 +83,7 @@
 }
 
 .testimonial__name {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
 
     span {
@@ -95,11 +94,9 @@
 
     @include response-max($mobile) {
         font-size: 18px;
-        line-height: 22px;
 
         span {
             font-size: 12px;
-            line-height: 15px;
             color: $color-light;
         }
     }
