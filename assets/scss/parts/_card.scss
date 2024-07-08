@@ -34,6 +34,7 @@
     line-height: normal;
     margin-bottom: 16px;
     position: relative;
+    font-weight: 500;
     transition: $transition;
 
     @include response-max($laptop-portrait) {
