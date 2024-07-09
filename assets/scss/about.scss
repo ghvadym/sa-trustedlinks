@@ -51,6 +51,10 @@ section.hero {
     }
 }
 
+.about_us__bg {
+    object-position: bottom;
+}
+
 .ach__row {
     .head {
         max-width: 420px;
@@ -154,6 +158,12 @@ section.hero {
             font-size: 14px;
             color: $color-dark;
         }
+    }
+}
+
+.mission {
+    .section_bg {
+        object-position: bottom;
     }
 }
 
