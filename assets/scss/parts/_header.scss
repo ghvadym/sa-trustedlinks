@@ -70,9 +70,8 @@
         @include flex-center;
 
         li {
-            padding: 0 15px 2px;
+            padding: 0;
             transition: $transition;
-            border-bottom: 1px solid transparent;
             margin-bottom: 0;
 
             &.menu-item-btn {
@@ -99,9 +98,25 @@
                 }
             }
 
+            &:not(.menu-item-btn) {
+                a {
+                    border: 1px solid transparent;
+                    padding: 10px 16px;
+                    border-radius: 32px;
+                }
+            }
+
             @include response-min($desktop) {
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+
                 &:not(.menu-item-btn):not(.current-menu-item):hover {
-                    border-color: $color-light;
+                    a {
+                        border-color: #7B41C4;
+                        background: rgba(112, 89, 255, 0.30);
+                        backdrop-filter: blur(16px);
+                    }
                 }
             }
 
@@ -115,10 +130,10 @@
                 a {
                     text-decoration: none;
                     pointer-events: none;
-                    color: rgba(207, 0, 218, 1);
+                    border-color: #7B41C4;
+                    background: rgba(112, 89, 255, 0.30);
+                    backdrop-filter: blur(16px);
                 }
-
-                border-color: rgba(207, 0, 218, 1);
             }
         }
     }
