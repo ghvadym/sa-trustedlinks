@@ -12,12 +12,16 @@ body.archive {
     .cta {
         padding-top: 128px;
     }
+
+    .hero {
+        padding-bottom: 0;
+    }
 }
 
 .page-template-blog {
     @include response-min($laptop-landscape) {
         .hero {
-            padding: 125px 0 55px;
+            padding-bottom: 55px;
 
             .hero__body {
                 padding: 0;

@@ -34,7 +34,8 @@
     border-radius: 16px 0px 0px 16px;
     background: linear-gradient(105deg, #7059FF 22.14%, #7B41C4 89.55%);
     position: relative;
-    width: 398px;
+    width: 350px;
+    max-height: 90vh;
 
     img {
         object-fit: contain;
@@ -44,7 +45,6 @@
         bottom: 0;
         width: 100%;
         height: auto;
-        max-height: 100vh;
     }
 
     @include response-max($laptop-landscape - 1) {
@@ -71,12 +71,12 @@
 
     @include response-min($laptop-landscape) {
         display: flex;
-        height: 674px;
-        max-height: 100vh;
+        height: 550px;
+        max-height: 90vh;
     }
 
     @include response-max($laptop-landscape - 1) {
-        max-width: 360px;
+        max-width: 330px;
         overflow-y: auto;
     }
 
@@ -121,7 +121,7 @@
 }
 
 .modal_window__title {
-    font-size: 42px;
+    font-size: 35px;
     font-weight: 800;
     margin-bottom: 16px;
     text-transform: capitalize;
@@ -134,15 +134,15 @@
 }
 
 .modal_window__subtitle {
-    font-size: 19px;
+    font-size: 15px;
     line-height: 1.4;
-    margin-bottom: 34px;
+    margin-bottom: 24px;
     text-align: center;
 }
 
 .modal_window__icon_close {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     margin: 0 auto;
     @include pointer;
 

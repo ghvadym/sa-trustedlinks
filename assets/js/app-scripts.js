@@ -56,7 +56,7 @@
             allowTouchMove     : true,
             longSwipes         : false,
             simulateTouch      : true,
-            slideToClickedSlide: true,
+            //slideToClickedSlide: true, //issue with loop after clicking
             autoplay           : {
                 delay            : 3000,
                 pauseOnMouseEnter: true
