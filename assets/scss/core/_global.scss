@@ -42,6 +42,10 @@ body {
         }
     }
 
+    @include response-min($desktop) {
+
+    }
+
     @media (max-width: $mobile) {
         font-size: 1.6rem;
     }
@@ -521,14 +525,12 @@ section {
     @include text-block;
 }
 
-.table__wrap {
+.table__body_wrap {
     overflow-x: auto;
-    margin-right: -32px;
-    padding-right: 32px;
 
     &::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+        width: 2px;
+        height: 2px;
     }
 
     &::-webkit-scrollbar-track {
@@ -542,15 +544,18 @@ section {
     }
 }
 
+.table__body_rows {
+    min-width: 800px;
+}
+
 .table {
     border-radius: 16px;
     width: 100%;
-    margin: 0 0 40px;
     box-shadow: 0 4px 16px 0 rgba(26, 3, 48, 0.25);
     background: linear-gradient(149deg, rgba(101, 101, 101, 0.20) 0%, rgba(37, 37, 37, 0.20) 100%);
     backdrop-filter: blur(87px);
     border: 1px solid #313131;
-    min-width: 800px;
+    overflow: hidden;
 
     .table__row {
         display: flex;
@@ -627,6 +632,7 @@ section {
     }
 
     .table__head {
+        min-width: 800px;
         border-bottom: 1px solid #333;
 
         .table__cell {
@@ -748,7 +754,7 @@ section {
     position: relative;
 
     @include response-max($mobile) {
-        margin-top: 32px;
+        margin-top: 40px;
     }
 }
 
@@ -765,6 +771,32 @@ section {
     }
 }
 
+.swiper__nav_item {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    background: linear-gradient(149deg, rgba(217, 217, 217, 0.20) 1.16%, rgba(115, 115, 115, 0.20) 99.16%);
+    backdrop-filter: blur(12px);
+    border-radius: 50%;
+    transition: $transition;
+    position: relative;
+
+    svg {
+        margin: auto;
+        width: 9px;
+        height: 16px;
+    }
+
+    @include pointer;
+
+    @include response-min($desktop) {
+        &:hover {
+            transform: scale(0.95);
+            opacity: 0.9;
+        }
+    }
+}
+
 .swiper__nav {
     display: flex;
     justify-content: center;
@@ -775,25 +807,6 @@ section {
 
     @include response-max($laptop-landscape - 1) {
         margin-top: 44px;
-    }
-}
-
-.swiper__nav_item {
-    svg {
-        width: 42px;
-        height: 42px;
-        transition: $transition;
-    }
-
-    @include pointer;
-
-    @include response-min($desktop) {
-        &:hover {
-            svg {
-                transform: scale(0.95);
-                opacity: 0.9;
-            }
-        }
     }
 }
 

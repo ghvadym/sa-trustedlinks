@@ -171,7 +171,7 @@
     @include response-min($desktop) {
         &:hover {
             .social__item_bg {
-                transform: scale(2) translateY(-20%);
+                transform: scale(1.2);
                 left: 0;
                 top: 0;
             }

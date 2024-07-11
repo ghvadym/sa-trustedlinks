@@ -12,7 +12,6 @@ if (!empty($bg)) {
 
 $ctaTitle = acf_option('pricing_cta_title');
 $ctaBtnText = acf_option('pricing_cta_btn_text');
-$lightArrows = !empty($light_arrows) ? '-light' : '';
 $lightTheme = !empty($light_theme) ? ' white_theme' : '';
 ?>
 
@@ -103,10 +102,10 @@ $lightTheme = !empty($light_theme) ? ' white_theme' : '';
     <div class="container">
         <div class="swiper__nav">
             <div class="swiper__nav_item pricing__button_prev">
-                <?php get_svg("slider-arrow$lightArrows-left"); ?>
+                <?php get_svg("slider-arrow-left"); ?>
             </div>
             <div class="swiper__nav_item pricing__button_next">
-                <?php get_svg("slider-arrow$lightArrows-right"); ?>
+                <?php get_svg("slider-arrow-right"); ?>
             </div>
         </div>
         <?php if ($ctaTitle && $ctaBtnText) { ?>

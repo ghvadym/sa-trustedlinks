@@ -27,6 +27,10 @@
             width: 100vw;
             height: 100vh;
         }
+
+        a {
+            font-size: 16px;
+        }
     }
 
     @include response-max($laptop-portrait) {
@@ -52,8 +56,12 @@
     transition: $transition;
     padding-top: 0;
 
+    @include response-max($header-responsive) {
+        top: 0;
+    }
+
     &._scrolled {
-        padding-top: 16px;
+        top: 16px;
 
         .header__row {
             background: linear-gradient(149deg, rgba(101, 101, 101, 0.30) 0%, rgba(37, 37, 37, 0.30) 100%);
@@ -103,6 +111,20 @@
                     border: 1px solid transparent;
                     padding: 4px 12px;
                     border-radius: 32px;
+
+                    @include response-max($header-responsive) {
+                        padding: 10px 16px;
+                    }
+                }
+            }
+
+            &:not(.menu-item-btn):not(.current-menu-item) {
+                a {
+                    &:active, &:focus {
+                        border-color: #7B41C4;
+                        background: rgba(112, 89, 255, 0.30);
+                        backdrop-filter: blur(16px);
+                    }
                 }
             }
 
@@ -113,7 +135,7 @@
 
                 &:not(.menu-item-btn):not(.current-menu-item) {
                     a {
-                        &:hover, &:active, &:focus {
+                        &:hover {
                             border-color: #7B41C4;
                             background: rgba(112, 89, 255, 0.30);
                             backdrop-filter: blur(16px);
@@ -142,7 +164,7 @@
 
     @include response-max($header-responsive) {
         display: none;
-        padding: 160px 15px 50px 15px;
+        padding: 100px 15px 50px 15px;
         position: fixed;
         left: 0;
         top: 0;
@@ -160,24 +182,10 @@
                     margin-bottom: 16px;
                 }
 
-                a {
-                    padding: 16px 24px;
-                }
-
                 &.menu-item-btn {
                     margin-top: 48px;
                     max-width: 296px;
                     width: 100%;
-                }
-            }
-        }
-    }
-
-    @include response-max($mobile) {
-        .menu {
-            li {
-                &:not(:last-child) {
-                    margin-bottom: 0;
                 }
             }
         }

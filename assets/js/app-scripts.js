@@ -29,6 +29,14 @@
             navigation          : {
                 nextEl: '.pricing__button_next',
                 prevEl: '.pricing__button_prev'
+            },
+            breakpoints        : {
+                0   : {
+                    speed : 500
+                },
+                1025: {
+                    speed : 1000
+                }
             }
         });
 
@@ -42,6 +50,14 @@
             pagination   : {
                 el       : '.similar_posts__pagination',
                 clickable: true
+            },
+            breakpoints        : {
+                0   : {
+                    speed : 500
+                },
+                1025: {
+                    speed : 1000
+                }
             }
         });
 
@@ -71,7 +87,8 @@
             breakpoints        : {
                 0   : {
                     autoplay     : false,
-                    slidesPerView: 1.3
+                    slidesPerView: 1.3,
+                    speed        : 500
                 },
                 768 : {
                     slidesPerView: 3
@@ -81,6 +98,7 @@
                 },
                 1025: {
                     loop         : true,
+                    speed        : 1000,
                     mousewheel   : {
                         forceToAxis: true
                     },

@@ -18,6 +18,14 @@
                 el       : '.most_popular__pagination',
                 clickable: true
             },
+            breakpoints        : {
+                0   : {
+                    speed : 500
+                },
+                1025: {
+                    speed : 1000
+                }
+            }
         });
 
         const btnViewAll = $('.recent_posts__btn');

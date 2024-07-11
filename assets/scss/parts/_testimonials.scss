@@ -3,18 +3,18 @@
         z-index: 1;
         position: relative;
     }
+
+    .swiper__nav {
+        margin-top: 0;
+    }
 }
 
 .testimonials__slider {
-    height: 250px;
+    height: 320px;
 
     .swiper-wrapper {
         align-items: center;
         margin-left: -16px;
-    }
-
-    @include response-max($mobile) {
-        height: 300px;
     }
 }
 

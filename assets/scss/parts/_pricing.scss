@@ -6,7 +6,9 @@
     }
 
     .swiper__nav {
-        justify-content: flex-end;
+        @include response-min($laptop-landscape) {
+            justify-content: flex-end;
+        }
 
         @include response-max($mobile) {
             margin-bottom: 60px;

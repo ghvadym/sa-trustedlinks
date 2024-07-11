@@ -106,11 +106,19 @@ body.archive {
     }
 }
 
-.most_popular__slider .full_image {
-   .card_simple__cat {
-        span {
-            color: $color-dark;
-            background-color: $color-light;
+.most_popular__slider {
+    .card_simple {
+        @include response-max($laptop-landscape) {
+            height: 412px;
+        }
+    }
+
+    .full_image {
+        .card_simple__cat {
+            span {
+                color: $color-dark;
+                background-color: $color-light;
+            }
         }
     }
 }
@@ -127,6 +135,10 @@ body.archive {
     margin: 32px -32px;
     overflow-x: auto;
     @include hide-scrollbar;
+
+    @include response-max($mobile) {
+        margin-bottom: 24px;
+    }
 }
 
 .recent_posts__head {
@@ -188,7 +200,7 @@ body.archive {
     margin-bottom: 24px;
     padding: 12px;
 
-    @include response-max($laptop-landscape) {
+    @include response-min($laptop-portrait) {
         min-width: fit-content;
     }
 }
@@ -214,6 +226,7 @@ body.archive {
     @include response-max($laptop-portrait) {
         .card_simple {
             max-width: 100%;
+            min-height: 412px;
         }
     }
 
@@ -278,5 +291,11 @@ body.archive {
 
     @include response-max($mobile) {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.most_popular__pagination {
+    @include response-max($mobile) {
+        margin-top: 45px;
     }
 }

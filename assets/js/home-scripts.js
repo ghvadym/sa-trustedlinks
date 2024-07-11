@@ -24,8 +24,12 @@
                     clickable: true
                 },
                 breakpoints  : {
+                    0   : {
+                        speed : 500
+                    },
                     1025: {
                         spaceBetween: 18,
+                        speed       : 1000
                     }
                 }
             });
@@ -50,8 +54,12 @@
                     clickable: true
                 },
                 breakpoints  : {
+                    0   : {
+                        speed : 500
+                    },
                     1025: {
                         spaceBetween: 18,
+                        speed       : 1000
                     }
                 }
             });
@@ -76,6 +84,14 @@
                 el       : '.pr_service__pagination',
                 clickable: true
             },
+            breakpoints: {
+                0   : {
+                    speed: 500
+                },
+                1025: {
+                    speed: 1000
+                }
+            }
         });
 
         const blogSlider = new Swiper('.blog__slider', {
@@ -90,8 +106,12 @@
                 clickable: true
             },
             breakpoints  : {
+                0   : {
+                    speed: 500
+                },
                 1025: {
-                    loop : true
+                    loop : true,
+                    speed: 1000
                 }
             }
         });

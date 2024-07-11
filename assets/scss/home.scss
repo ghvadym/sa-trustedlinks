@@ -71,3 +71,13 @@ section.how_we_work, section.services {
         width: 100%;
     }
 }
+
+section.pricing {
+    .swiper__nav {
+        .swiper__nav_item {
+            svg {
+                filter: brightness(1) invert(1);
+            }
+        }
+    }
+}

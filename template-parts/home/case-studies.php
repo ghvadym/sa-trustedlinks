@@ -60,7 +60,9 @@ $caseStudies = $fields['case_studies'] ?? '';
                         </div>
                     </div>
                     <div class="table__body">
-                        <?php foreach ($caseStudies as $caseStudyId) {
+                        <div class="table__body_wrap">
+                            <div class="table__body_rows">
+                                <?php foreach ($caseStudies as $caseStudyId) {
                             $title = get_the_title($caseStudyId);
                             $fields = get_fields($caseStudyId);
                             ?>
@@ -116,6 +118,8 @@ $caseStudies = $fields['case_studies'] ?? '';
                                 </div>
                             </div>
                         <?php } ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

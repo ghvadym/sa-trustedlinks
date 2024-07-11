@@ -26,8 +26,7 @@
 }
 
 .case_studies__table {
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-radius: 16px;
     overflow: hidden;
 
     .table__body {
@@ -48,21 +47,9 @@
     }
 }
 
-.table__show_more {
-    position: absolute;
-    left: 24%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.table__wrap {
-    margin-right: 0;
-    padding-right: 0;
-}
-
 .table__body {
     @include response-max($mobile) {
-        height: 290px;
+        height: 265px;
         overflow: hidden;
     }
 }
