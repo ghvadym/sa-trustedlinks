@@ -52,9 +52,11 @@
 }
 
 section.how_we_work, section.services {
-    @include response-min(1300px) {
-        .swiper-pagination-bullets {
-            display: none;
+    @include response-min(1180px) {
+        .card_simple {
+            &:not(:last-child) {
+                margin-right: 18px;
+            }
         }
     }
 

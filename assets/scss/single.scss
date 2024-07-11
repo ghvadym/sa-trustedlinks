@@ -165,4 +165,8 @@ section.single {
 
 .similar_posts {
     padding-top: 0;
+
+    @include response-min($desktop) {
+        padding-bottom: 130px;
+    }
 }

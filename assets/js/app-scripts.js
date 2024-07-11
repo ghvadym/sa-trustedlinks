@@ -56,10 +56,13 @@
             allowTouchMove     : true,
             longSwipes         : false,
             simulateTouch      : true,
-            //slideToClickedSlide: true, //issue with loop after clicking
+            slideToClickedSlide: true,
             autoplay           : {
                 delay            : 3000,
                 pauseOnMouseEnter: true
+            },
+            mousewheel         : {
+                forceToAxis: true
             },
             navigation         : {
                 nextEl: '.testimonials__button_next',
@@ -77,11 +80,11 @@
                     slidesPerView: 5
                 },
                 1025: {
-                    loop      : true,
-                    mousewheel: {
+                    loop         : true,
+                    mousewheel   : {
                         forceToAxis: true
                     },
-                    autoplay  : {
+                    autoplay     : {
                         delay            : 3000,
                         pauseOnMouseEnter: true
                     }

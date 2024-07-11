@@ -83,7 +83,7 @@ body.archive {
         min-height: auto;
 
         @include response-min($desktop) {
-            max-height: 212px;
+            height: 212px;
         }
     }
 

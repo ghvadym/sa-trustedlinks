@@ -10,6 +10,7 @@
 
     .swiper-wrapper {
         align-items: center;
+        margin-left: -16px;
     }
 
     @include response-max($mobile) {
@@ -39,10 +40,11 @@
     border-radius: 16px;
     overflow: hidden;
     transition: $transition;
-    transform: scale3d(0.8, 0.8, 1) !important;
+    transform: scale3d(0.9, 0.9, 1) !important;
 
     &.swiper-slide-active {
         transform: scale3d(1.0, 1.0, 1) !important;
+        margin: 0 16px;
 
         .testimonial__body {
             background: linear-gradient(148.73deg, #7059FF 1.16%, #7B41C4 99.16%);

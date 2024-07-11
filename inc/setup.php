@@ -113,7 +113,7 @@ function the_content_call($content)
     ];
 
     foreach ($tags as $tag) {
-        $content = str_replace($tag, $tag.' data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1000"', $content);
+        $content = str_replace($tag, $tag.' data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500"', $content);
     }
 
     return $content;

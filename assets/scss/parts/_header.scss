@@ -101,7 +101,7 @@
             &:not(.menu-item-btn) {
                 a {
                     border: 1px solid transparent;
-                    padding: 10px 16px;
+                    padding: 4px 12px;
                     border-radius: 32px;
                 }
             }
@@ -111,11 +111,13 @@
                     margin-right: 15px;
                 }
 
-                &:not(.menu-item-btn):not(.current-menu-item):hover {
+                &:not(.menu-item-btn):not(.current-menu-item) {
                     a {
-                        border-color: #7B41C4;
-                        background: rgba(112, 89, 255, 0.30);
-                        backdrop-filter: blur(16px);
+                        &:hover, &:active, &:focus {
+                            border-color: #7B41C4;
+                            background: rgba(112, 89, 255, 0.30);
+                            backdrop-filter: blur(16px);
+                        }
                     }
                 }
             }

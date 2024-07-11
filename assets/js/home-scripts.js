@@ -1,58 +1,61 @@
 (function($){
     $(document).ready(function() {
         const isDesktop = $(window).width() > 1024;
+        const isSliderWidthAllowed = $(window).width() < 1180;
 
-        const howWorkSlider = new Swiper('.how_we_work__slider', {
-            slidesPerView       : 'auto',
-            spaceBetween        : 24,
-            loop                : false,
-            keyboard            : true,
-            grabCursor          : true,
-            disableOnInteraction: true,
-            allowTouchMove      : true,
-            longSwipes          : false,
-            simulateTouch       : true,
-            slideToClickedSlide : true,
-            speed               : 1000,
-            mousewheel          : {
-                forceToAxis: true
-            },
-            pagination          : {
-                el       : '.how_we_work__pagination',
-                clickable: true
-            },
-            breakpoints  : {
-                1025: {
-                    spaceBetween: 18,
+        if (isSliderWidthAllowed) {
+            const howWorkSlider = new Swiper('.how_we_work__slider', {
+                slidesPerView       : 'auto',
+                spaceBetween        : 24,
+                loop                : false,
+                keyboard            : true,
+                grabCursor          : true,
+                disableOnInteraction: true,
+                allowTouchMove      : true,
+                longSwipes          : false,
+                simulateTouch       : true,
+                slideToClickedSlide : true,
+                speed               : 1000,
+                mousewheel          : {
+                    forceToAxis: true
+                },
+                pagination          : {
+                    el       : '.how_we_work__pagination',
+                    clickable: true
+                },
+                breakpoints  : {
+                    1025: {
+                        spaceBetween: 18,
+                    }
                 }
-            }
-        });
+            });
 
-        const servicesSlider = new Swiper('.services__slider', {
-            slidesPerView       : 'auto',
-            spaceBetween        : 24,
-            loop                : false,
-            keyboard            : true,
-            grabCursor          : true,
-            disableOnInteraction: true,
-            allowTouchMove      : true,
-            longSwipes          : false,
-            simulateTouch       : true,
-            slideToClickedSlide : true,
-            speed               : 1000,
-            mousewheel          : {
-                forceToAxis: true
-            },
-            pagination          : {
-                el       : '.services__pagination',
-                clickable: true
-            },
-            breakpoints  : {
-                1025: {
-                    spaceBetween: 18,
+            const servicesSlider = new Swiper('.services__slider', {
+                slidesPerView       : 'auto',
+                spaceBetween        : 24,
+                loop                : false,
+                keyboard            : true,
+                grabCursor          : true,
+                disableOnInteraction: true,
+                allowTouchMove      : true,
+                longSwipes          : false,
+                simulateTouch       : true,
+                slideToClickedSlide : true,
+                speed               : 1000,
+                mousewheel          : {
+                    forceToAxis: true
+                },
+                pagination          : {
+                    el       : '.services__pagination',
+                    clickable: true
+                },
+                breakpoints  : {
+                    1025: {
+                        spaceBetween: 18,
+                    }
                 }
-            }
-        });
+            });
+        }
 
         const prServiceSlider = new Swiper('.pr_service__slider', {
             slidesPerView       : 'auto',
