@@ -18,6 +18,14 @@
         font-family: 'Inter', sans-serif;
         font-size: 14px;
         white-space: nowrap;
+
+        @media (max-width: $header-responsive) {
+            font-size: 22px;
+        }
+
+        @media (max-width: $laptop-portrait) {
+            font-size: 16px;
+        }
     }
 
     @media (max-width: $header-responsive) {
@@ -26,10 +34,6 @@
         .header__menu {
             width: 100vw;
             height: 100vh;
-        }
-
-        a {
-            font-size: 16px;
         }
     }
 

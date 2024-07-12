@@ -16,8 +16,10 @@ $ctaTitle = acf_option('pricing_cta_title');
 $ctaBtnText = acf_option('pricing_cta_btn_text');
 $lightTheme = !empty($light_theme) ? ' white_theme' : '';
 
-$imgUrlPlanet = !empty($options['pricing_img']) ?  wp_get_attachment_image_url($options['pricing_img'], 'full') : '';
-$imgUrlPlanetSecond = !empty($options['pricing_img_second']) ?  wp_get_attachment_image_url($options['pricing_img_second'], 'full') : '';
+if (is_home() || is_front_page()) {
+    $imgUrlPlanet = !empty($options['pricing_img']) ?  wp_get_attachment_image_url($options['pricing_img'], 'full') : '';
+    $imgUrlPlanetSecond = !empty($options['pricing_img_second']) ?  wp_get_attachment_image_url($options['pricing_img_second'], 'full') : '';
+}
 ?>
 
 <section class="pricing slider_section">
