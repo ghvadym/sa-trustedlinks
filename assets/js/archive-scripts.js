@@ -35,6 +35,12 @@
                 const id = $(cat).attr('data-id');
 
                 if ($(cat).hasClass('active-cat')) {
+                    if (!id) {
+                        return false;
+                    } else {
+                        $(blogTabs).first().addClass('active-cat');
+                    }
+
                     $(cat).removeClass('active-cat');
                     postsFilter();
 

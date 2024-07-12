@@ -190,6 +190,12 @@ body.archive {
             display: block;
         }
     }
+
+    &:first-child {
+        &.active-cat {
+            pointer-events: none;
+        }
+    }
 }
 
 .recent_posts__btn {
