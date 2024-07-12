@@ -1,25 +1,35 @@
 <?php
-$testimonials = acf_option('testimonials');
+
+$options = get_fields('options');
+
+$testimonials = $options['testimonials'] ?? '';
 
 if (empty($testimonials)) {
     return;
 }
 
-$bgId = acf_option('testimonials_bg');
-if ($bgId) {
-    $bgUrl = wp_get_attachment_image_url($bgId, 'full');
-}
+$bgUrl = !empty($options['testimonials_bg']) ?  wp_get_attachment_image_url($options['testimonials_bg'], 'full') : '';
+$bgUrlPlanet = !empty($options['testimonials_planet_img']) ?  wp_get_attachment_image_url($options['testimonials_planet_img'], 'full') : '';
+$bgUrlPlanetSecond = !empty($options['testimonials_planet_img_second']) ?  wp_get_attachment_image_url($options['testimonials_planet_img_second'], 'full') : '';
 
 ?>
 
 <section class="testimonials slider_section">
     <?php if (!empty($bgUrl)) { ?>
-        <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bgId); ?>" class="section_bg">
+        <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($options['testimonials_bg']); ?>" class="section_bg">
+    <?php } ?>
+    <?php if (!wp_is_mobile()) { ?>
+        <?php if (!empty($bgUrlPlanet)) { ?>
+            <img src="<?php echo esc_url($bgUrlPlanet); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img']); ?>" class="testimonials_planet_img">
+        <?php } ?>
+        <?php if (!empty($bgUrlPlanetSecond)) { ?>
+            <img src="<?php echo esc_url($bgUrlPlanetSecond); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img_second']); ?>" class="testimonials_planet_img">
+        <?php } ?>
     <?php } ?>
     <div class="container">
         <div class="head white_theme">
-            <?php _get_field(acf_option('testimonials_title'), 'title', 'h2'); ?>
-            <?php if ($subtitle = acf_option('testimonials_subtitle')) { ?>
+            <?php _get_field($options['testimonials_title'] ?? '', 'title', 'h2'); ?>
+            <?php if ($subtitle = $options['testimonials_subtitle'] ?? '') { ?>
                 <p class="subtitle">
                     <?php echo text_spaces_control($subtitle); ?>
                 </p>

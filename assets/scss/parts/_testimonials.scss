@@ -103,3 +103,25 @@
         }
     }
 }
+
+.testimonials_planet_img {
+    position: absolute;
+
+    &:nth-of-type(2) {
+        width: 187px;
+        height: 187px;
+        left: calc((100% - 1180px) / 2 + 90px);
+        top: 50px;
+    }
+
+    &:nth-of-type(3) {
+        width: 291px;
+        height: 291px;
+        right: calc((100% - 1180px) / 2 + 40px);
+        top: 200px;
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        display: none;
+    }
+}
