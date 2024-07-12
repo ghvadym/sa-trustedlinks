@@ -1,6 +1,8 @@
 <?php
 
-$cards = acf_option('pricing_cards');
+$options = get_fields('options');
+
+$cards = $options['pricing_cards'] ?? '';
 
 if (empty($cards)) {
     return;
@@ -13,11 +15,21 @@ if (!empty($bg)) {
 $ctaTitle = acf_option('pricing_cta_title');
 $ctaBtnText = acf_option('pricing_cta_btn_text');
 $lightTheme = !empty($light_theme) ? ' white_theme' : '';
+
+$bgUrlPlanet = !empty($options['pricing_img']) ?  wp_get_attachment_image_url($options['pricing_img'], 'full') : '';
+$bgUrlPlanetSecond = !empty($options['pricing_img_second']) ?  wp_get_attachment_image_url($options['pricing_img_second'], 'full') : '';
 ?>
 
 <section class="pricing slider_section">
-    <?php if (!empty($bgUrl)) { ?>
-        <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bg); ?>" class="section_bg">
+    <?php if (!empty($bgUrlPlanet)) { ?>
+        <div class="pricing_planet_img">
+            <img src="<?php echo esc_url($bgUrlPlanet); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img']); ?>">
+        </div>
+    <?php } ?>
+    <?php if (!empty($bgUrlPlanetSecond)) { ?>
+        <div class="pricing_planet_img">
+            <img src="<?php echo esc_url($bgUrlPlanetSecond); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img_second']); ?>">
+        </div>
     <?php } ?>
     <div class="container">
         <div class="head<?php echo $lightTheme; ?>">

@@ -80,4 +80,62 @@ section.pricing {
             }
         }
     }
+
+    .container {
+        position: relative;
+    }
+}
+
+.pricing_planet_img {
+    position: absolute;
+
+    &:after {
+        content: '';
+        position: absolute;
+        background: #B06CE4;
+        filter: blur(100px);
+    }
+
+    img {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:nth-of-type(1) {
+        width: 187px;
+        height: 187px;
+        right: 0;
+        top: 28px;
+        transform: translateX(40%);
+
+        &:after {
+            left: 50%;
+            transform: translate(-70%, -15%);
+            top: 50%;
+            width: 300px;
+            height: 300px;
+            border-radius: 30%;
+        }
+    }
+
+    &:nth-of-type(2) {
+        width: 291px;
+        height: 291px;
+        left: 0;
+        bottom: 28px;
+        transform: translateX(-40%);
+
+        &:after {
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+        }
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        display: none;
+    }
 }
