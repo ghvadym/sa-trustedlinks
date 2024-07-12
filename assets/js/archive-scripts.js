@@ -28,17 +28,14 @@
             }
         });
 
-        const btnViewAll = $('.recent_posts__btn');
         const blogTabs = $('.recent_posts__cat');
         if (blogTabs.length) {
             $(document).on('click', '.recent_posts__cat', function () {
                 const cat = $(this);
                 const id = $(cat).attr('data-id');
-                const link = $(cat).attr('data-link');
 
                 if ($(cat).hasClass('active-cat')) {
                     $(cat).removeClass('active-cat');
-                    $(btnViewAll).hide();
                     postsFilter();
 
                     return false;
@@ -47,17 +44,33 @@
                 $(blogTabs).removeClass('active-cat');
                 $(cat).addClass('active-cat');
 
-                if (btnViewAll.length && link) {
-                    $(btnViewAll).show().attr('href', link);
-                }
-
                 postsFilter(id);
             });
         }
 
-        function postsFilter(id = '')
+        const navItems = $('.recent_posts__nav a');
+        if (navItems.length) {
+            $(document).on('click', '.recent_posts__nav a', function (e) {
+                e.preventDefault();
+                $('.recent_posts__nav').addClass('event-none');
+
+                const hrefItems = $(this).attr('href').match(/\d+/);
+                let page = 1;
+
+                if (hrefItems) {
+                    page = hrefItems[0]
+                }
+
+                const catId = $('.recent_posts__cat.active-cat').data('id');
+
+                postsFilter(catId, page);
+            });
+        }
+
+        function postsFilter(id = '', page = 1)
         {
             const wrap = $('.recent_posts__list');
+            const nav = $('.recent_posts__nav');
 
             $.ajax({
                 type: 'POST',
@@ -65,7 +78,8 @@
                 data: {
                     action : 'posts_filter',
                     nonce  : nonce,
-                    term_id: id
+                    term_id: id,
+                    page   : page
                 },
                 beforeSend : function () {
                     $(wrap).addClass('_spinner');
@@ -73,6 +87,12 @@
                 success: function (response) {
                     if (response.posts) {
                         $(wrap).html(response.posts);
+                    }
+
+                    if (response.nav) {
+                        $(nav).html(response.nav).removeClass('event-none');
+                    } else {
+                        $(nav).empty();
                     }
 
                     $(wrap).removeClass('_spinner');

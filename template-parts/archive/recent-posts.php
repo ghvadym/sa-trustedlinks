@@ -3,8 +3,12 @@ if (empty($fields)) {
     return;
 }
 
-$posts = _get_posts([
-    'numberposts' => 5
+$posts = new WP_Query([
+    'post_type'      => 'post',
+    'post_status'    => 'publish',
+    'orderby'        => 'DATE',
+    'order'          => 'DESC',
+    'posts_per_page' => 5
 ]);
 
 if (empty($posts)) {
@@ -26,25 +30,29 @@ $terms = get_terms([
         <?php if (!empty($terms)) { ?>
             <div class="recent_posts__head_wrap">
                 <div class="recent_posts__head">
+                    <div class="recent_posts__cat active-cat" data-id="">
+                        <?php get_svg('check-black'); ?>
+                        <?php _e('View all', DOMAIN); ?>
+                    </div>
                     <?php foreach ($terms as $term) { ?>
                         <div class="recent_posts__cat"
-                             data-id="<?php echo $term->term_id; ?>"
-                             data-link="<?php echo get_term_link($term->term_id); ?>">
+                             data-id="<?php echo $term->term_id; ?>">
                             <?php get_svg('check-black'); ?>
                             <?php echo esc_html($term->name); ?>
                         </div>
                     <?php } ?>
                 </div>
             </div>
-            <?php if (!empty($terms[0])) { ?>
-                <a class="recent_posts__btn btn_light" href="<?php echo get_term_link($terms[0]->term_id); ?>">
-                    <?php _e('View all', DOMAIN); ?>
-                </a>
-            <?php } ?>
         <?php } ?>
         <div class="recent_posts__list">
             <?php get_template_part_var('archive/recent-posts-list', [
                 'posts' => $posts
+            ]); ?>
+        </div>
+        <div class="recent_posts__nav">
+            <?php get_template_part_var('global/pagination', [
+                'current' => 1,
+                'total'   => ceil($posts->found_posts / 5)
             ]); ?>
         </div>
     </div>

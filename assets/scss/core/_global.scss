@@ -893,7 +893,7 @@ section.hero {
         overflow: hidden;
         color: $color-light;
 
-        &.current {
+        &.current, &:active, &:focus {
             border: 1px solid #7B41C4;
             background: linear-gradient(105deg, #7059FF 22.14%, #7B41C4 89.55%);
         }

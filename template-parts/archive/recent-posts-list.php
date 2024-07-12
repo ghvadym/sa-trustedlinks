@@ -3,8 +3,13 @@ if (empty($posts)) {
     return;
 }
 
+if (!$posts->have_posts()) {
+    return;
+}
+
 $i = 1;
-foreach ($posts as $post) {
+while ($posts->have_posts()) {
+    $posts->the_post();
     $isMob = wp_is_mobile();
     $cardClass = '';
 
@@ -21,7 +26,7 @@ foreach ($posts as $post) {
     }
 
     get_template_part_var('cards/blog-card', [
-        'post'         => $post,
+        'post'         => $posts->post,
         'card_classes' => $cardClass
     ]);
 

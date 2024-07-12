@@ -13,12 +13,12 @@ $attr = [
     'after_page_number'  => ''
 ];
 
-if (!empty($args['current'])) {
-    $attr['current'] = $args['current'];
+if (!empty($current)) {
+    $attr['current'] = $current;
 }
 
-if (!empty($args['current'])) {
-    $attr['total'] = $args['total'];
+if (!empty($total)) {
+    $attr['total'] = $total;
 }
 
 $pagination_output = paginate_links($attr);
