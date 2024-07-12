@@ -35,3 +35,25 @@
         }
     }
 }
+
+.services_planet_img {
+    position: absolute;
+
+    &:nth-of-type(2) {
+        width: 292px;
+        height: 341px;
+        left: calc((100% - 1180px) / 2 - 50px);
+        top: 45px;
+    }
+
+    &:nth-of-type(3) {
+        width: 149px;
+        height: 125px;
+        right: calc((100% - 1180px) / 2);
+        top: 20px;
+    }
+
+    @include response-max($laptop-landscape - 1) {
+        display: none;
+    }
+}

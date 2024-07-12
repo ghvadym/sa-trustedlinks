@@ -52,7 +52,7 @@
 }
 
 section.how_we_work, section.services {
-    @include response-min(1180px) {
+    @include response-min($container) {
         .card_simple {
             &:not(:last-child) {
                 margin-right: 18px;

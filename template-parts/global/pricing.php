@@ -16,19 +16,19 @@ $ctaTitle = acf_option('pricing_cta_title');
 $ctaBtnText = acf_option('pricing_cta_btn_text');
 $lightTheme = !empty($light_theme) ? ' white_theme' : '';
 
-$bgUrlPlanet = !empty($options['pricing_img']) ?  wp_get_attachment_image_url($options['pricing_img'], 'full') : '';
-$bgUrlPlanetSecond = !empty($options['pricing_img_second']) ?  wp_get_attachment_image_url($options['pricing_img_second'], 'full') : '';
+$imgUrlPlanet = !empty($options['pricing_img']) ?  wp_get_attachment_image_url($options['pricing_img'], 'full') : '';
+$imgUrlPlanetSecond = !empty($options['pricing_img_second']) ?  wp_get_attachment_image_url($options['pricing_img_second'], 'full') : '';
 ?>
 
 <section class="pricing slider_section">
-    <?php if (!empty($bgUrlPlanet)) { ?>
+    <?php if (!empty($imgUrlPlanet)) { ?>
         <div class="pricing_planet_img">
-            <img src="<?php echo esc_url($bgUrlPlanet); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img']); ?>">
+            <img src="<?php echo esc_url($imgUrlPlanet); ?>" alt="<?php echo get_the_title($options['pricing_img']); ?>">
         </div>
     <?php } ?>
-    <?php if (!empty($bgUrlPlanetSecond)) { ?>
+    <?php if (!empty($imgUrlPlanetSecond)) { ?>
         <div class="pricing_planet_img">
-            <img src="<?php echo esc_url($bgUrlPlanetSecond); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img_second']); ?>">
+            <img src="<?php echo esc_url($imgUrlPlanetSecond); ?>" alt="<?php echo get_the_title($options['pricing_img_second']); ?>">
         </div>
     <?php } ?>
     <div class="container">

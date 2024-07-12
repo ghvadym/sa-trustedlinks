@@ -9,16 +9,23 @@ if (empty($services)) {
     return;
 }
 
-$bgId = $fields['services_img'] ?? '';
-if ($bgId) {
-    $bgUrl = wp_get_attachment_image_url($bgId, 'full');
-}
+$bgUrl = !empty($fields['services_bg']) ?  wp_get_attachment_image_url($fields['services_bg'], 'full') : '';
+$imgUrl = !empty($fields['services_img_left']) ?  wp_get_attachment_image_url($fields['services_img_left'], 'full') : '';
+$imgUrlSecond = !empty($fields['services_img_right']) ?  wp_get_attachment_image_url($fields['services_img_right'], 'full') : '';
 
 ?>
 
 <section class="services slider_section">
     <?php if (!empty($bgUrl)) { ?>
-        <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($bgId); ?>" class="section_bg">
+        <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($fields['services_bg']); ?>" class="section_bg">
+    <?php } ?>
+    <?php if (!wp_is_mobile()) { ?>
+        <?php if (!empty($imgUrl)) { ?>
+            <img src="<?php echo esc_url($imgUrl); ?>" alt="<?php echo get_the_title($fields['services_img_left']); ?>" class="services_planet_img">
+        <?php } ?>
+        <?php if (!empty($imgUrlSecond)) { ?>
+            <img src="<?php echo esc_url($imgUrlSecond); ?>" alt="<?php echo get_the_title($fields['services_img_right']); ?>" class="services_planet_img">
+        <?php } ?>
     <?php } ?>
     <div class="container">
         <div class="head white_theme">

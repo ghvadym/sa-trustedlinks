@@ -9,8 +9,8 @@ if (empty($testimonials)) {
 }
 
 $bgUrl = !empty($options['testimonials_bg']) ?  wp_get_attachment_image_url($options['testimonials_bg'], 'full') : '';
-$bgUrlPlanet = !empty($options['testimonials_planet_img']) ?  wp_get_attachment_image_url($options['testimonials_planet_img'], 'full') : '';
-$bgUrlPlanetSecond = !empty($options['testimonials_planet_img_second']) ?  wp_get_attachment_image_url($options['testimonials_planet_img_second'], 'full') : '';
+$imgUrlPlanet = !empty($options['testimonials_planet_img']) ?  wp_get_attachment_image_url($options['testimonials_planet_img'], 'full') : '';
+$imgUrlPlanetSecond = !empty($options['testimonials_planet_img_second']) ?  wp_get_attachment_image_url($options['testimonials_planet_img_second'], 'full') : '';
 
 ?>
 
@@ -19,11 +19,11 @@ $bgUrlPlanetSecond = !empty($options['testimonials_planet_img_second']) ?  wp_ge
         <img src="<?php echo esc_url($bgUrl); ?>" alt="<?php echo get_the_title($options['testimonials_bg']); ?>" class="section_bg">
     <?php } ?>
     <?php if (!wp_is_mobile()) { ?>
-        <?php if (!empty($bgUrlPlanet)) { ?>
-            <img src="<?php echo esc_url($bgUrlPlanet); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img']); ?>" class="testimonials_planet_img">
+        <?php if (!empty($imgUrlPlanet)) { ?>
+            <img src="<?php echo esc_url($imgUrlPlanet); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img']); ?>" class="testimonials_planet_img">
         <?php } ?>
-        <?php if (!empty($bgUrlPlanetSecond)) { ?>
-            <img src="<?php echo esc_url($bgUrlPlanetSecond); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img_second']); ?>" class="testimonials_planet_img">
+        <?php if (!empty($imgUrlPlanetSecond)) { ?>
+            <img src="<?php echo esc_url($imgUrlPlanetSecond); ?>" alt="<?php echo get_the_title($options['testimonials_planet_img_second']); ?>" class="testimonials_planet_img">
         <?php } ?>
     <?php } ?>
     <div class="container">
