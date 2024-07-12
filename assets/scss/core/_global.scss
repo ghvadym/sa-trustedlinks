@@ -525,7 +525,7 @@ section {
     @include text-block;
 }
 
-.table__body_wrap {
+.table__content {
     overflow-x: auto;
 
     &::-webkit-scrollbar {
@@ -542,10 +542,10 @@ section {
         background: #fff;
         border-radius: 4px;
     }
-}
 
-.table__body_rows {
-    min-width: 800px;
+    .table__head, .table__body {
+        min-width: 800px;
+    }
 }
 
 .table {
