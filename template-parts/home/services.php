@@ -10,7 +10,7 @@ if (empty($services)) {
 }
 
 $bgUrl = !empty($fields['services_bg']) ?  wp_get_attachment_image_url($fields['services_bg'], 'full') : '';
-$imgUrl = !empty($fields['services_img_left']) ?  wp_get_attachment_image_url($fields['services_img_left'], 'full') : '';
+$imgUrl = !empty($fields['services_img_left']) ?  wp_get_attachment_image_url($fields['services_img_left'], 'medium') : '';
 $imgUrlSecond = !empty($fields['services_img_right']) ?  wp_get_attachment_image_url($fields['services_img_right'], 'full') : '';
 
 ?>

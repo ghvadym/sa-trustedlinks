@@ -62,29 +62,29 @@
         });
 
         const testimonialsSlider = new Swiper('.testimonials__slider', {
-            slidesPerView      : 5,
-            center             : true,
-            centeredSlides     : true,
-            loop               : true,
-            speed              : 1000,
-            grabCursor         : true,
-            keyboard           : true,
-            allowTouchMove     : true,
-            longSwipes         : false,
-            simulateTouch      : true,
-            slideToClickedSlide: true,
-            autoplay           : {
+            slidesPerView       : 5,
+            centeredSlidesBounds: true,
+            centeredSlides      : true,
+            loop                : true,
+            speed               : 1000,
+            grabCursor          : true,
+            keyboard            : true,
+            allowTouchMove      : true,
+            longSwipes          : false,
+            simulateTouch       : true,
+            slideToClickedSlide : true,
+            autoplay            : {
                 delay            : 3000,
                 pauseOnMouseEnter: true
             },
-            mousewheel         : {
+            mousewheel          : {
                 forceToAxis: true
             },
-            navigation         : {
+            navigation          : {
                 nextEl: '.testimonials__button_next',
                 prevEl: '.testimonials__button_prev'
             },
-            breakpoints        : {
+            breakpoints         : {
                 0   : {
                     autoplay     : false,
                     slidesPerView: 1.3,
@@ -97,12 +97,12 @@
                     slidesPerView: 5
                 },
                 1025: {
-                    loop         : true,
-                    speed        : 1000,
-                    mousewheel   : {
+                    loop      : true,
+                    speed     : 1000,
+                    mousewheel: {
                         forceToAxis: true
                     },
-                    autoplay     : {
+                    autoplay  : {
                         delay            : 3000,
                         pauseOnMouseEnter: true
                     }

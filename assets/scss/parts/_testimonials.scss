@@ -75,6 +75,7 @@
     border-radius: 50%;
     background: $color-grey;
     padding: 2px;
+    flex-shrink: 0;
 
     img {
         border-radius: 50%;
