@@ -143,6 +143,12 @@
 
 .pricing_item__list {
     margin-bottom: 24px;
+    height: 150px;
+    overflow: hidden;
+
+    &.opened {
+        height: auto;
+    }
 
     li {
         display: flex;

@@ -103,10 +103,12 @@ if (is_home() || is_front_page()) {
                                         </li>
                                     <?php } ?>
                                 </ul>
+                                <?php if (count($advantages) > 5) { ?>
+                                    <div class="pricing_item__link pricing__load_more">
+                                        <?php _e('Load more', DOMAIN); ?>
+                                    </div>
+                                <?php } ?>
                             <?php } ?>
-                            <div class="pricing_item__link popup_open" data-plan="<?php echo esc_attr($name); ?>">
-                                <?php _e('Learn more', DOMAIN); ?>
-                            </div>
                         </div>
                     </div>
                 <?php } ?>

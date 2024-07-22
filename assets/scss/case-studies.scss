@@ -4,8 +4,12 @@
 
 .case_studies {
     .section_bg {
-        object-position: center 170px;
+        object-position: center 340px;
         object-fit: contain;
+    }
+
+    .head {
+        margin-bottom: 128px;
     }
 
     .container {
@@ -20,7 +24,11 @@
         padding-top: 128px;
 
         .section_bg {
-            object-position: center 109px;
+            object-position: center 306px;
+        }
+
+        .head {
+            margin-bottom: 84px;
         }
     }
 }

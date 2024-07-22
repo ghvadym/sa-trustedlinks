@@ -29,6 +29,14 @@ $bgUrlMob = !empty($fields['img_bg_mob']) ? wp_get_attachment_image_url($fields[
         <img src="<?php echo esc_url($bgUrlMob); ?>" alt="Case Studies Background Planets" class="section_bg mob_ver">
     <?php } ?>
     <div class="container">
+        <div class="head white_theme">
+            <?php _get_field($fields['title'] ?? '', 'title', 'h2'); ?>
+            <?php if (!empty($fields['subtitle'])) { ?>
+                <p class="subtitle">
+                    <?php echo text_spaces_control($fields['subtitle']); ?>
+                </p>
+            <?php } ?>
+        </div>
         <div class="case_studies__table">
             <div class="table__wrap">
                 <div class="table">

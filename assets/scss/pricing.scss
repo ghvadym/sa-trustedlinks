@@ -3,8 +3,16 @@
 @import "core/mixins";
 
 section.pricing {
+    .head {
+        margin-bottom: 64px;
+    }
+
     @include response-min($desktop) {
         padding-top: 160px;
+    }
+
+    @include response-max($mobile) {
+        margin-bottom: 32px;
     }
 }
 
