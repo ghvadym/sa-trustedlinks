@@ -143,18 +143,16 @@
 
 .pricing_item__list {
     margin-bottom: 24px;
-    height: 150px;
-    overflow: hidden;
-
-    &.opened {
-        height: auto;
-    }
 
     li {
         display: flex;
         align-items: center;
         font-size: 13px;
         color: $color-dark-light;
+
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
 
         svg {
             width: 16px;
@@ -163,8 +161,8 @@
             flex-shrink: 0;
         }
 
-        &:not(:last-child) {
-            margin-bottom: 12px;
+        &.hidden {
+            display: none;
         }
     }
 }

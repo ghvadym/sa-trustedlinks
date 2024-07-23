@@ -88,7 +88,11 @@ if (is_home() || is_front_page()) {
                                     <?php echo esc_html($value); ?>
                                 </div>
                             <?php } ?>
-                            <?php if (!empty($advantages)) { ?>
+                            <?php if (!empty($advantages)) {
+                                $i = 1;
+                                $visibleListItems = 5;
+                                $listItemClass = '';
+                                ?>
                                 <ul class="pricing_item__list">
                                     <?php foreach ($advantages as $advantage) {
                                         $title = $advantage['title'] ?? '';
@@ -96,12 +100,16 @@ if (is_home() || is_front_page()) {
                                         if (!$title) {
                                             return;
                                         }
+
+                                        if ($i > $visibleListItems) {
+                                            $listItemClass = ' class="hidden"';
+                                        }
                                         ?>
-                                        <li>
+                                        <li<?php echo !empty($listItemClass) ? $listItemClass : ''; ?>>
                                             <?php get_svg("check-$iconColor"); ?>
                                             <?php echo esc_html($title); ?>
                                         </li>
-                                    <?php } ?>
+                                    <?php $i++; } ?>
                                 </ul>
                                 <?php if (count($advantages) > 5) { ?>
                                     <div class="pricing_item__link pricing__load_more">

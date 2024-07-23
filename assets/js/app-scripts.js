@@ -21,7 +21,6 @@
             allowTouchMove      : true,
             longSwipes          : false,
             simulateTouch       : true,
-            slideToClickedSlide : true,
             speed               : 1000,
             mousewheel          : {
                 forceToAxis: true
@@ -233,6 +232,19 @@
                 $(table).toggleClass('full_content');
                 $(this).attr('data-title', currentTitle);
                 $(title).text(dataTitle);
+            });
+        }
+
+        const pricingShowMore = $('.pricing__load_more');
+        if (pricingShowMore.length) {
+            $(document).on('click', '.pricing__load_more', function () {
+                const list = $(this).closest('.pricing_item_body').find('.pricing_item__list li.hidden');
+                if (!list.length) {
+                    return false;
+                }
+
+                $(list).removeClass('hidden');
+                $(this).remove();
             });
         }
 
