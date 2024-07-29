@@ -3,6 +3,12 @@ if (empty($fields)) {
     return;
 }
 
+$caseStudies = $fields['case_studies'] ?? [];
+
+if (empty($caseStudies)) {
+    return;
+}
+
 $bgMainId = $fields['case_studies_image_bg'] ?? '';
 if ($bgMainId) {
     $bgMainUrl = wp_get_attachment_image_url($bgMainId, 'full');
@@ -11,8 +17,6 @@ $bgBottomId = $fields['case_studies_image_bottom'] ?? '';
 if ($bgBottomId) {
     $bgBottomUrl = wp_get_attachment_image_url($bgBottomId, 'full');
 }
-
-$caseStudies = $fields['case_studies'] ?? '';
 ?>
 
 <section class="case_studies">
@@ -40,87 +44,85 @@ $caseStudies = $fields['case_studies'] ?? '';
                 </a>
             <?php } ?>
         </div>
-        <?php if (!empty($caseStudies)) { ?>
-            <div class="table__wrap">
-                <div class="table">
-                    <div class="table__content">
-                        <div class="table__head">
-                            <div class="table__row">
-                                <div class="table__cell">
-                                    <?php _e('Client', DOMAIN); ?>
-                                </div>
-                                <div class="table__cell">
-                                    <?php _e('Traffic Increase', DOMAIN); ?>
-                                </div>
-                                <div class="table__cell">
-                                    <?php _e('Links Built', DOMAIN); ?>
-                                </div>
-                                <div class="table__cell">
-                                    <?php _e('Time Span', DOMAIN); ?>
-                                </div>
+        <div class="table__wrap">
+            <div class="table">
+                <div class="table__content">
+                    <div class="table__head">
+                        <div class="table__row">
+                            <div class="table__cell">
+                                <?php _e('Client', DOMAIN); ?>
+                            </div>
+                            <div class="table__cell">
+                                <?php _e('Traffic Increase', DOMAIN); ?>
+                            </div>
+                            <div class="table__cell">
+                                <?php _e('Links Built', DOMAIN); ?>
+                            </div>
+                            <div class="table__cell">
+                                <?php _e('Time Span', DOMAIN); ?>
                             </div>
                         </div>
-                        <div class="table__body">
-                            <?php foreach ($caseStudies as $caseStudyId) {
-                                $title = get_the_title($caseStudyId);
-                                $fields = get_fields($caseStudyId);
-                                ?>
-                                <div class="table__row">
-                                    <div class="table__cell">
-                                        <?php if (has_post_thumbnail($caseStudyId)) { ?>
-                                            <div class="table__img">
-                                                <?php echo get_the_post_thumbnail($caseStudyId); ?>
-                                            </div>
-                                        <?php } ?>
-                                        <div class="table__name">
-                                            <?php echo esc_html($title); ?>
+                    </div>
+                    <div class="table__body">
+                        <?php foreach ($caseStudies as $caseStudyId) {
+                            $title = get_the_title($caseStudyId);
+                            $fields = get_fields($caseStudyId);
+                            ?>
+                            <div class="table__row">
+                                <div class="table__cell">
+                                    <?php if (has_post_thumbnail($caseStudyId)) { ?>
+                                        <div class="table__img">
+                                            <?php echo get_the_post_thumbnail($caseStudyId); ?>
                                         </div>
-                                    </div>
-                                    <div class="table__cell">
-                                        <div class="traffic__row">
-                                            <div class="traffic__icon">
-                                                <?php get_svg('arrow-top-green'); ?>
-                                            </div>
-                                            <div class="traffic__value">
-                                                <?php if ($fields['traffic_increase_percentage']) { ?>
-                                                    <div class="traffic__percent">
-                                                        <?php echo esc_html($fields['traffic_increase_percentage']) . '%'; ?>
-                                                    </div>
-                                                <?php } ?>
-                                                <?php if ($fields['traffic_increase']) { ?>
-                                                    <div class="traffic__range">
-                                                        <?php echo esc_html($fields['traffic_increase']); ?>
-                                                    </div>
-                                                <?php } ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="table__cell">
-                                        <?php if ($fields['links_built']) { ?>
-                                            <div class="traffic__links_progress"
-                                                 style="max-width: <?php echo $fields['links_built'] / 3.5; ?>px">
-                                        <span>
-                                            <?php echo esc_html($fields['links_built']); ?>
-                                        </span>
-                                            </div>
-                                        <?php } else {
-                                            echo '-';
-                                        } ?>
-                                    </div>
-                                    <div class="table__cell">
-                                        <?php if ($fields['time_spent']) {
-                                            get_svg('clock');
-                                            echo esc_html($fields['time_spent']);
-                                        } else {
-                                            echo '-';
-                                        } ?>
+                                    <?php } ?>
+                                    <div class="table__name">
+                                        <?php echo esc_html($title); ?>
                                     </div>
                                 </div>
-                            <?php } ?>
-                        </div>
+                                <div class="table__cell">
+                                    <div class="traffic__row">
+                                        <div class="traffic__icon">
+                                            <?php get_svg('arrow-top-green'); ?>
+                                        </div>
+                                        <div class="traffic__value">
+                                            <?php if ($fields['traffic_increase_percentage']) { ?>
+                                                <div class="traffic__percent">
+                                                    <?php echo esc_html($fields['traffic_increase_percentage']) . '%'; ?>
+                                                </div>
+                                            <?php } ?>
+                                            <?php if ($fields['traffic_increase']) { ?>
+                                                <div class="traffic__range">
+                                                    <?php echo esc_html($fields['traffic_increase']); ?>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table__cell">
+                                    <?php if ($fields['links_built']) { ?>
+                                        <div class="traffic__links_progress"
+                                             style="max-width: <?php echo $fields['links_built'] / 3.5; ?>px">
+                                    <span>
+                                        <?php echo esc_html($fields['links_built']); ?>
+                                    </span>
+                                        </div>
+                                    <?php } else {
+                                        echo '-';
+                                    } ?>
+                                </div>
+                                <div class="table__cell">
+                                    <?php if ($fields['time_spent']) {
+                                        get_svg('clock');
+                                        echo esc_html($fields['time_spent']);
+                                    } else {
+                                        echo '-';
+                                    } ?>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        </div>
     </div>
 </section>

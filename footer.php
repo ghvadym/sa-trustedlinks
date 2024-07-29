@@ -5,6 +5,18 @@ if (!is_home() && !is_front_page() && !is_page_template('templates/about-us.php'
 }
 
 get_template_part_var('global/contact-form-popup');
+
+if (is_single()) {
+    ?>
+    <script>
+        (function($){
+            $(document).ready(function() {
+                AOS.init();
+            });
+        })(jQuery);
+    </script>
+    <?php
+}
 ?>
 
 </main>

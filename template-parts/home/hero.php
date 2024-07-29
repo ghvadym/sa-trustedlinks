@@ -15,18 +15,18 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
     <div class="hero__bg">
         <?php if (wp_is_mobile()) { ?>
             <?php if ($bgUrl) { ?>
-                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main section_bg" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_desk'])); ?>">
+                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main section_bg wmu-preview-img" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_desk'])); ?>">
             <?php } ?>
         <?php } else { ?>
             <?php if ($bgUrl) { ?>
-                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main section_bg" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_mob'])); ?>">
+                <img src="<?php echo esc_url($bgUrl); ?>" class="hero__bg_main section_bg wmu-preview-img" alt="<?php echo esc_attr(get_the_title($fields['hero_bg_mob'])); ?>">
             <?php } ?>
         <?php } ?>
         <?php if ($spacemanUrl) { ?>
             <div class="hero__bg_spaceman">
-                <img src="<?php echo esc_url($spacemanUrl); ?>" class="hero__spaceman" alt="<?php echo esc_attr(get_the_title($fields['hero_spaceman'])); ?>">
-                <img src="<?php echo img_url('cable-left.svg'); ?>" class="hero__spaceman_cable_left" alt="Cable left">
-                <img src="<?php echo img_url('cable-right.svg'); ?>" class="hero__spaceman_cable_right" alt="Cable right">
+                <img src="<?php echo esc_url($spacemanUrl); ?>" class="hero__spaceman wmu-preview-img" alt="<?php echo esc_attr(get_the_title($fields['hero_spaceman'])); ?>">
+                <img src="<?php echo img_url('cable-left.svg'); ?>" class="hero__spaceman_cable_left wmu-preview-img" alt="Cable left">
+                <img src="<?php echo img_url('cable-right.svg'); ?>" class="hero__spaceman_cable_right wmu-preview-img" alt="Cable right">
             </div>
         <?php } ?>
     </div>
@@ -39,7 +39,7 @@ $spacemanUrl = !empty($fields['hero_spaceman']) ? wp_get_attachment_image_url($f
                 <img src="<?php echo esc_url($flyRightImbUrl); ?>" class="hero__bg_fly_right" alt="<?php echo esc_attr(get_the_title($fields['hero_fly_img_right'])); ?>">
             <?php } ?>
             <?php if ($earthUrl) { ?>
-                <img src="<?php echo esc_url($earthUrl); ?>" class="hero__bg_earth" alt="<?php echo esc_attr(get_the_title($fields['hero_earth'])); ?>">
+                <img src="<?php echo esc_url($earthUrl); ?>" class="hero__bg_earth wmu-preview-img" alt="<?php echo esc_attr(get_the_title($fields['hero_earth'])); ?>">
             <?php } ?>
         </div>
         <div class="hero__content">
